@@ -7,9 +7,9 @@ const printToDom = (divId, textToPrint) => {
 const createCards = (arr, card, id) => {
   let domString = '';
 
-  for (let i=0; i < arr.length; i++) {
-    domString += card;
+  for (let item of arr) {
+  domString += card(item);
+
   }
   printToDom(id, domString);
-
 };
