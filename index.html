@@ -12,7 +12,7 @@
     />
     <!-- CSS Link -->
     <link rel="stylesheet" href="main.css" />
-    <title>Document</title>
+    <title>Gitsub</title>
   </head>
   <body>
     <nav class="navbar fixed-bottom navbar-expand-lg navbar-dark">
@@ -34,6 +34,64 @@
         </li>
       </ul>
     </nav>
+    <div class="container-fluid">
+      <div class="row content">
+        <div class="col-sm-3" id="profile card">
+          <!--Profile Card - aligned left-->
+          <h4></h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-9" id="objects-container">
+      <!--This is for projects, repos, etc-->
+      <br /><!--Objects --><br />
+
+      <div class="col-sm-9" id="form-container">
+        <!--For each page's create & submit form-->
+        <br />
+        <!--Form-->
+        <div class="mb-3">
+          <label for="title" class="form-label">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="text-input"
+            placeholder="Your Project Name"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <textarea
+            class="form-control"
+            id="object-description"
+            rows="3"
+          ></textarea>
+        </div>
+        <br />
+        <button type="button" class="btn btn-outline-info">Submit</button>
+      </div>
+    </div>
+    <!--Footer with justified nav links-->
+    <footer class="container-fluid" id="footer-nav">
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Overview</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Repositories</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Packages</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Organizations</a>
+        </li>
+      </ul>
+    </footer>
 
     <!-- Bootstrap Script -->
     <script
@@ -41,7 +99,7 @@
       integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
       crossorigin="anonymous"
     ></script>
-    <!-- Js Script -->
-    <script src="main.js"></script>
+    <!-- JS Script -->
+    <script src="main.js" async defer></script>
   </body>
 </html>
