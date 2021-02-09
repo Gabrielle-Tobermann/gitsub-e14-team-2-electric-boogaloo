@@ -1,19 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Bootstrap Link -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-  <!-- CSS Link -->
-  <link rel="stylesheet" href="main.css">
-  <title>Document</title>
-</head>
-<body>
-  
-  <!-- Bootstrap Script -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-  <!-- Js Script -->
-  <script src="main.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap Link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="main.css" />
+    <title>Gitsub</title>
+  </head>
+  <body>
+    <div class="navbar">
+      <nav class="nav nav-pills flex-column flex-sm-row">
+        <a
+          class="flex-sm-fill text-sm-center nav-link active"
+          aria-current="page"
+          href="#"
+          >Overview</a
+        >
+        <a class="flex-sm-fill text-sm-center nav-link" href="#"
+          >Repositories</a
+        >
+        <a class="flex-sm-fill text-sm-center nav-link" href="#">Projects</a>
+        <a class="flex-sm-fill text-sm-center nav-link disabled" href="#"
+          >Packages</a
+        >
+        <a class="flex-sm-fill text-sm-center nav-link disabled" href="#"
+          >Organizations</a
+        >
+      </nav>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row content">
+        <div class="col-sm-3" id="profile card">
+          <!--Profile Card - aligned left-->
+          <h4>User</h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-9" id="objects-container">
+      <!--This is for projects, repos, etc-->
+      <br /><!--Objects --><br />
+
+      <div class="col-sm-9" id="form-container">
+        <!--For each page's create & submit form-->
+        <br />
+        <!--Form-->
+        <div class="mb-3">
+          <label for="title" class="form-label">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="text-input"
+            placeholder="Your Project Name"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <textarea
+            class="form-control"
+            id="object-description"
+            rows="3"
+          ></textarea>
+        </div>
+        <br />
+        <button type="button" class="btn btn-outline-info">Submit</button>
+      </div>
+    </div>
+    <!--Footer with justified nav links-->
+    <footer class="container-fluid" id="footer-nav">
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Overview</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Repositories</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Packages</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Organizations</a>
+        </li>
+      </ul>
+    </footer>
+    <!-- Bootstrap Script -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+    <!-- JS Script -->
+    <script src="main.js"></script>
+  </body>
 </html>
