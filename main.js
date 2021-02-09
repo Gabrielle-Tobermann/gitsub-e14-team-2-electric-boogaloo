@@ -12,4 +12,4 @@ const createCards = (arr, card, id) => {
   }
   printToDom(id, domString);
 
-}
+};
