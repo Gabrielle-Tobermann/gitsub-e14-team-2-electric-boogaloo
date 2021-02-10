@@ -1,24 +1,55 @@
 // Start arrays
 const organizations = [
   {
-    img:"images/orgImgs/oi_nss.png",
-    name:"nss-evening-cohort-14",
-    repos:30,
+    img: "images/orgImgs/oi_nss.png",
+    name: "nss-evening-cohort-14",
+    repos: 30,
   },
   {
-    img:"images/orgImgs/oi_org1.png",
-    name:"React Ladies",
-    repos:32,
+    img: "images/orgImgs/oi_org1.png",
+    name: "React Ladies",
+    repos: 32,
   },
   {
-    img:"images/orgImgs/oi_org2.png",
-    name:"TN Code Pros",
-    repos:20,
+    img: "images/orgImgs/oi_org2.png",
+    name: "TN Code Pros",
+    repos: 20,
   },
   {
-    img:"images/orgImgs/oi_org3.png",
-    name:"Fortune 500 Devs",
-    repos:27,
+    img: "images/orgImgs/oi_org3.png",
+    name: "Fortune 500 Devs",
+    repos: 27,
+  },
+];
+
+const repos = [
+  {
+    name: "example-repo",
+    description: "This is an example of what a repository will look like.",
+  },
+  {
+    name: "create-your-own-repo",
+    description: "Use the form below to create repositories of your own.",
+  },
+];
+
+const pins = [
+  {
+    name: "affirmation-generator",
+    description:
+      "This app randomly generates an affirmation statement. Built by React.js.",
+  },
+  {
+    name: "github-clone",
+    description: "Powered by HTML, CSS, Vanilla Javascript, Bootstrap.",
+  },
+  {
+    name: "accessibility-hacks",
+    description: "Snippets to enhance app accessibility.",
+  },
+  {
+    name: "portfolio",
+    description: "Personal portfolio site, deployed through Netlify.",
   },
 ];
 
@@ -31,22 +62,38 @@ const organizations = [
 // ]
 // End arrays
 
-// GABBY - PRINT TO DOM FUNCTION + LOOP FUNCTION 
+//Holly - pin favorite repo
+const card = (item) => {
+  return `<div class="card text-white bg-primary mb-3" style="max-width: 18rem;" id="${item.id}">
+      <div class="card-header"></div>
+      <div class="card-body">
+        <h5 class="card-title">${item.name}</h5>
+        <p class="card-text">${item.description}</p>
+        <div class="card-footer text-center font-weight-bolder" id="pinned">
+        <img
+        src="images/profileImgs/pi_fullStar.png"
+        alt="image of solid star"
+      />
+        </div>
+      </div>
+    </div>`;
+};
+
+// GABBY - PRINT TO DOM FUNCTION + LOOP FUNCTION
 const printToDom = (divId, textToPrint) => {
   const selectedDiv = document.querySelector(divId);
   selectedDiv.innerHTML = textToPrint;
-}
+};
 
-const createCards = (arr, card, id) => {
-  let domString = '';
+const createCards = (arr, id) => {
+  //id of div
+  let domString = document.querySelector(id).innerHTML;
 
   for (let item of arr) {
-  domString += card(item);
-
+    domString += card(item);
   }
   printToDom(id, domString);
 };
-
 // start my code
 // Create Profile Card
 const profileString = `<!-- Profile -->
@@ -103,11 +150,14 @@ const profileString = `<!-- Profile -->
   <!-- Print Images of Organizations Object Here -->
   <div></div>
 <!-- Sponsors -->
-  <!-- Print Images of Sponsors Object Here -->`
-  
+  <!-- Print Images of Sponsors Object Here -->`;
+
 // end my code
+
+//Init function
 const init = () => {
-  printToDom("#profile-card", profileString)
+  printToDom("#profile-card", profileString);
+  createCards(pins, "#pins");
 };
 
 init();

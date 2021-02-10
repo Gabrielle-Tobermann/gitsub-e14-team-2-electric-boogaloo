@@ -15,7 +15,6 @@
     <title>Gitsub</title>
   </head>
   <body>
-
     <nav class="navbar navbar-expand-lg navbar-dark">
       <ul class="navbar-nav">
         <li class="nav-item">
@@ -35,49 +34,57 @@
         </li>
       </ul>
     </nav>
-    <div class="container-fluid">
-      <div class="row content">
+    <div class="container-fluid row-content">
         <div class="col-sm-3" id="profile-card">
           <!--Profile Card - aligned left-->
-          
         </div>
+        <!--This is for projects, repos, etc-->
+        <div class="position-relative">
+          <div class="mt-4">
+            <div class="pinned-items" id="pins"></div>
+          </div>
+        </div>
+        <br /><!--Objects --><br />
       </div>
-    </div>
-
-    <div class="col-sm-9" id="objects-container">
-      <!--This is for projects, repos, etc-->
-      <br /><!--Objects --><br />
-
-      <div class="col-sm-9" id="form-container">
-        <!--For each page's create & submit form-->
-        <br />
-        <!--Form-->
-        <div class="mb-3">
-          <label for="title" class="form-label">Name</label>
+      <div class="col-sm-9=" id="form-container">
+        <form class="form">
+          <div class="mb-3">
+          <label for="title" class="form-label"></label>
           <input
             type="text"
             class="form-control"
             id="text-input"
             placeholder="Your Project Name"
           />
-        </div>
-        <div class="mb-3">
-          <label for="description" class="form-label">Description</label>
-          <textarea
-            class="form-control"
-            id="object-description"
-            rows="3"
-          ></textarea>
-        </div>
-        <br />
-        <button type="button" class="btn btn-outline-info">Submit</button>
+          </div>
+          <div class="mb-3">
+            <label for="description" class="form-label"></label>
+            <textarea
+              class="form-control"
+              id="object-description"
+              rows="3"
+              placeholder="Project Highlights"
+            ></textarea>
+          </div>
+        </form>
       </div>
-    </div>
+          <br />
+        <div class="button" id="pinBtn">
+          <button type="button" class="btn btn-outline-info">Add to Pins</button>
+        </div>
     <!-- Footer -->
     <nav class="navbar navbar-expand-lg fixed-bottom navbar-light bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">@ 2021 Github, Inc.</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarText"
+          aria-controls="navbarText"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse">
@@ -97,7 +104,7 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Docs</a>
             </li>
-            <img src="GitHub-Mark-Light-64px.png">
+            <img src="GitHub-Mark-Light-64px.png" />
             <li class="nav-item">
               <a class="nav-link" href="#">Contact Github</a>
             </li>
@@ -120,6 +127,7 @@
         </div>
       </div>
     </nav>
+
     <!-- Bootstrap Script -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
