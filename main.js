@@ -152,12 +152,21 @@ const projectCards = (projects) => {
 </div>`
 };
 
+//Gabby - function to build cards only if on projects page 
+const onProjectsPage = () => {
+  const projectLink = document.links[2].href; //target the link to the projects page
+  if (projectLink) {
+    createCards(projects, projectCards, '#project-container');
+  }
+};
+
+
 
 
 // end projects page 
 const init = () => {
   printToDom("#profile-card", profileString)
-  createCards(projects, projectCards, '#project-container');
+  onProjectsPage();
 };
 
 init();
