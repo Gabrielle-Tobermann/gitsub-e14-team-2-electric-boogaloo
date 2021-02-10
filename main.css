@@ -1,8 +1,24 @@
 body {
-  background-color: #0F1218;
-  color: #8B949E;
+  background-color: #0f1218;
+  color: #8b949e;
 }
 
 nav {
-  border-bottom: 1px solid #8B949E;
+  border-bottom: 1px solid #8b949e;
+}
+
+#profile-card {
+  max-width: 250px;
+}
+
+#reposPage {
+  max-width: 1300px;
+}
+
+.repo-card {
+  width: 100%;
+  background-color: #0f1218;
+  margin: 10px;
+  padding: 10px;
+  border-bottom: 1px solid #8b949e;
 }

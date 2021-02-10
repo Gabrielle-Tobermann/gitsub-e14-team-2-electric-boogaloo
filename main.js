@@ -58,7 +58,7 @@ const createCards = (arr, card, id) => {
   printToDom(id, domString);
 };
 
-// start my code
+
 // Create Profile Card
 const profileString = `<!-- Profile -->
 <!-- Picture -->
@@ -117,8 +117,29 @@ const profileString = `<!-- Profile -->
   <!-- Print Images of Sponsors Object Here -->`
   
 // end my code
+
+const repoCard = (item) => `<div class="repo-card w-100" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">${item.name}</h5>
+      <p class="card-text">${item.description}</p>
+    </div>
+  </div>`;
+
+const buildReposPage = () => {
+  createCards(repos, repoCard, '#reposContainer');
+};
+
+const pageInit = () => {
+  const fileName = location.pathname.split('/').slice(-1);
+
+  if (fileName[0] === 'repos.html') {
+    buildReposPage();
+  }
+};
+
 const init = () => {
-  printToDom("#profile-card", profileString)
+  printToDom('#profile-card', profileString);
+  pageInit();
 };
 
 init();
