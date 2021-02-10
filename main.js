@@ -116,11 +116,12 @@ return `<div class="card bg-transparent" >
   </div>
 </div>`};
 
-createCards(organizations,orgCard,"#org-objects-container");
+
 // MG - End Create Organizations Cards
 
 const init = () => {
   printToDom("#profile-card", profileString)
+  createCards(organizations,orgCard,"#org-objects-container");
 };
 
 init();
