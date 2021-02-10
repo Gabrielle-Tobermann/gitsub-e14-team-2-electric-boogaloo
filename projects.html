@@ -2,74 +2,111 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Bootstrap Link -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
       crossorigin="anonymous"
     />
-    <!-- CSS Link -->
     <link rel="stylesheet" href="main.css" />
-    <title>Gitsub</title>
+    <title>Projects Page</title>
   </head>
   <body>
+    <!-- Nav bar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a href="#" class="nav-link">Overview</a>
+          <a href="index.html" class="nav-link">Overview</a>
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link">Repositories</a>
         </li>
         <li class="nav-item">
-          <a href="projects.html" class="nav-link">Projects</a>
+          <a href="#" class="nav-link">Projects</a>
         </li>
         <li class="nav-item">
-          <a href="packages.html" class="nav-link">Packages</a>
+          <a href="#" class="nav-link">Packages</a>
         </li>
         <li class="nav-item">
-          <a href="organizations.html" class="nav-link">Organizations</a>
+          <a href="#" class="nav-link">Organizations</a>
         </li>
       </ul>
     </nav>
+    <!-- end nav bar -->
+    <!-- profile card -->
     <div class="container-fluid">
       <div class="row content">
         <div class="col-sm-3" id="profile-card">
           <!--Profile Card - aligned left-->
-        </div>
-      </div>
-    </div>
-    
-    <div class="col-sm-9" id="objects-container">
-      <!--This is for projects, repos, etc-->
-      <br /><!--Objects --><br/>
-      <!--For each page's create & submit form-->
-      <div class="col-sm-9" id="form-container">
-        <br />
-        <!--Form-->
-        <div class="mb-3">
-          <label for="title" class="form-label">Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="text-input"
-            placeholder="Your Project Name"
+          <!-- Profile -->
+          <!-- Picture -->
+          <img
+            src="images/profileImgs/Monica.png"
+            class="img-fluid rounded-circle"
+            alt="profile picture"
+            height="200"
+            width="200"
           />
+          <!-- Name -->
+          <h4>Monica Powell</h4>
+          <!-- Git handle -->
+          <p>M0nica</p>
+          <!-- Blurb -->
+          <p>
+            Building tech to elevate people. Founder of React Ladies a community
+            for React JS develops.
+          </p>
+          <!-- Buttons? -->
+          <!-- Stats? -->
+          <!-- Contact info -->
+          <p>
+            <img
+              src="images/profileImgs/pi_location.png"
+              alt="pin drop image"
+            />New York,New York<br />
+            <img
+              src="images/profileImgs/pi_email.png"
+              alt="emil image"
+            />github@aboutmonica.com<br />
+            <img
+              src="images/profileImgs/pi_link.png"
+              alt="chain link image"
+            />https://www.aboutmonica.com<br />
+            <img
+              src="images/profileImgs/pi_twitter.png"
+              alt="twitter bird image"
+            />@indigitalcolor
+          </p>
+          <!-- Highlights -->
+          <h5>Highlights</h5>
+          <p>
+            <img
+              src="images/profileImgs/pi_asterisk.png"
+              alt="asterisk image"
+            />Arctic Code Vault Contributor<br />
+            <img
+              src="images/profileImgs/pi_fullStar.png"
+              alt="image of solid star"
+            />GitHub Star<br />
+            <img
+              src="images/profileImgs/pi_hollowStar.png"
+              alt="image of hollowed star"
+            />PRO
+          </p>
+          <!-- Organizations -->
+          <!-- Print Images of Organizations Object Here -->
+          <div></div>
+          <!-- Sponsors -->
+          <!-- Print Images of Sponsors Object Here -->
         </div>
-        <div class="mb-3">
-          <label for="description" class="form-label">Description</label>
-          <textarea
-            class="form-control"
-            id="object-description"
-            rows="3"
-          ></textarea>
-        </div>
-        <br />
-        <button type="button" class="btn btn-outline-info">Submit</button>
       </div>
     </div>
+    <!-- end profile card -->
+    
+
+    <div id="project-container"></div>
 
     <!-- Footer -->
     <nav class="navbar navbar-expand-lg fixed-bottom navbar-light bg-light">
@@ -126,14 +163,12 @@
         </div>
       </div>
     </nav>
-
-    <!-- Bootstrap Script -->
+    <!-- end footer -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
       crossorigin="anonymous"
     ></script>
-    <!-- JS Script -->
-    <script src="main.js" async defer></script>
+    <script src="main.js"></script>
   </body>
 </html>

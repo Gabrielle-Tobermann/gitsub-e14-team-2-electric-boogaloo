@@ -1,3 +1,25 @@
+const projects = [
+  {
+    name: 'Project 1',
+    description: 'no description',
+  }, 
+  {
+    name: 'Project 2',
+    description: 'no description',
+  },
+  {
+    name: 'Project 3',
+    description: 'no description',
+  }, 
+  {
+    name: 'project 4', 
+    description: 'no description',
+  },
+  {
+    name: 'project 5',
+    description: 'no description',
+  }
+];
 // Start arrays
 const organizations = [
   {
@@ -22,6 +44,7 @@ const organizations = [
   },
 ];
 
+<<<<<<< HEAD
 // Array of package objects
 const packages = [
   {
@@ -61,6 +84,23 @@ const packages = [
    id: 5,
    },
 ];
+=======
+const repos = [
+  {
+    name: 'example-repo',
+    description: 'This is an example of what a repository will look like.',
+  },
+  {
+    name: 'create-your-own-repo',
+    description: 'Use the form below to create repositories of your own.',
+  },
+];
+
+//Stretch:
+// Sponsors go on bottom of Profile section
+// const sponsors = [
+//   {
+>>>>>>> 30492d801e8aea8b5839d8d02930e07f1a1b716f
 
 // HTML string of Package cards to be printed to DOM
 const packageCardString = (item) => { 
@@ -147,6 +187,7 @@ const profileString = `<!-- Profile -->
   <!-- Print Images of Organizations Object Here -->
   <div></div>
 <!-- Sponsors -->
+<<<<<<< HEAD
   <!-- Print Images of Sponsors Object Here -->`
 
 
@@ -156,5 +197,30 @@ const init = () => {
   printToDom("#profile-card", profileString);
   createCards(packages, packageCardString, "#package-container");
 }
+=======
+  <!-- Print Images of Sponsors Object Here -->`;
+  
+// end my code
+
+
+// Gabby - projects page 
+const projectCards = (projects) => {
+  return `<div class="card">
+  <h5 class="card-header"></h5>
+  <div class="card-body">
+    <h5 class="card-title">${projects.name}</h5>
+    <p class="card-text">${projects.description}</p>
+  </div>
+</div>`
+};
+
+
+
+// end projects page 
+const init = () => {
+  printToDom("#profile-card", profileString)
+  createCards(projects, projectCards, '#project-container');
+};
+>>>>>>> 30492d801e8aea8b5839d8d02930e07f1a1b716f
 
 init();
