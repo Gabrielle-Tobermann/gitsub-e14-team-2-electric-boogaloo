@@ -1,3 +1,4 @@
+const projects = ['project 1', 'project 2', 'project 3', 'project 4', 'project 5'];
 // Start arrays
 const organizations = [
   {
@@ -106,6 +107,12 @@ const profileString = `<!-- Profile -->
   <!-- Print Images of Sponsors Object Here -->`
   
 // end my code
+
+
+// Gabby - projects page 
+
+
+// end projects page 
 const init = () => {
   printToDom("#profile-card", profileString)
 };
