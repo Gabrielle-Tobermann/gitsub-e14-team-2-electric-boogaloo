@@ -22,21 +22,81 @@ const organizations = [
   },
 ];
 
-//Stretch:
-// Sponsors go on bottom of Profile section
-// const sponsors = [
-//   {
+// Array of package objects
+const packages = [
+  {
+   name: "Docker",
+   description: "A software platform used for building applications based on containers — small and lightweight execution environments.",
+   iconImgSrc: "packagesIcons/Docker.png",
+   id: 0,
+  },
+  {
+   name: "Apache Maven",
+   description: "A default package manager used for the Java programming language and the Java runtime environment.",
+   iconImgSrc: "packagesIcons/Apache-Maven.png",
+   id: 1,
+  },
+  {
+   name: "NuGet",
+   description: "A free and open source package manager used for the Microsoft development platforms including .NET.",
+   iconImgSrc: "packagesIcons/NuGet.png",
+   id: 2,
+  },
+  {
+   name: "RubyGems",
+   description: "A standard format for distributing Ruby programs and libraries used for the Ruby programming language.",
+   iconImgSrc: "packagesIcons/RubyGems.png",
+   id: 3,
+  },
+  {
+   name: "npm",
+   description: "A package manager for JavaScript, included with Node.js. npm makes it easy for developers to share and reuse code.",
+   iconImgSrc: "packagesIcons/npm.png",
+   id: 4,
+  },
+  {
+   name: "Containers",
+   description: "A single place for your team to manage Docker images and decide who can see and access your images.",
+   iconImgSrc: "packagesIcons/Containers.png", 
+   id: 5,
+   },
+];
 
-//   },
-// ]
-// End arrays
+// HTML string of Package cards to be printed to DOM
+const packageCardString = (item) => { 
+  return `<div class="card border-secondary mb-3 bg-transparent" style="max-width: 18rem;" id="${item.id}">
+            <div class="card-body text-secondary">
+              <img src="${item.iconImgSrc}">
+              <h5 class="card-title">${item.name}</h5>
+              <p class="card-text">${item.description}</p>
+              <button type="button" class="btn btn-secondary">Learn More</button>
+              <button type="button" class="btn btn-danger" id="${item.id}">Delete</button>
+            </div>
+          </div>`
+};
 
-// GABBY - PRINT TO DOM FUNCTION + LOOP FUNCTION 
-const printToDom = (divId, textToPrint) => {
-  const selectedDiv = document.querySelector(divId);
-  selectedDiv.innerHTML = textToPrint;
+// Stretch: Delete Packages **** NOT FUNCTIONING YET *****
+const deletePackage = (e) => {
+  let targetId = e.target.id;
+  let targetType = e.target.type;
+  
+  console.log(targetId);
+  
+  if (targetType === "button") {
+      packages.splice(targetId, 1);
+    } else {
+      createCards(packages, packageCardString, "#package-container"); 
+    }
+  createCards(packages, packageCardString, "#package-container"); 
 }
 
+// Print to DOM function
+const printToDom = (divId, textToPrint) => {
+  const selectedDiv = document.querySelector(divId);
+  selectedDiv.innerHTML = textToPrint; 
+}
+
+// Create card function
 const createCards = (arr, card, id) => {
   let domString = '';
 
@@ -45,10 +105,9 @@ const createCards = (arr, card, id) => {
 
   }
   printToDom(id, domString);
-};
+}
 
-// start my code
-// Create Profile Card
+// HTML string for printing profile sidebar via printToDom function
 const profileString = `<!-- Profile -->
 <!-- Picture -->
 <img
@@ -104,10 +163,18 @@ const profileString = `<!-- Profile -->
   <div></div>
 <!-- Sponsors -->
   <!-- Print Images of Sponsors Object Here -->`
+
+// Functions triggered by mouse events 
+const buttonEvents = () => {
+  // Event listener for delete packages button
+  document.querySelector("#package-container").addEventListener("click", deletePackage)
+}
   
-// end my code
+// Init function
 const init = () => {
-  printToDom("#profile-card", profileString)
-};
+  printToDom("#profile-card", profileString);
+  createCards(packages, packageCardString, "#package-container");
+  buttonEvents();
+}
 
 init();
