@@ -153,11 +153,32 @@ const projectCards = (projects) => {
 };
 
 
+// Gabby - projects form 
+const projectsForm = () => {
+  let formString = `<form>
+  <div class="mb-3">
+    <div class='form-text'>Create a new project</div>
+    <div class='form-text'>Coordinate, track and update all in one place, so projects stay transparent and on schedule</div>
+    <label for="projectsForm" class="form-label">Project board name</label>
+    <input type="text" class="form-control" id="project-board-name" aria-describedby="projectBoardNameHelp">
+  </div>
+  <div class="mb-3">
+    <label for="projectDescription" class="form-label">Description (optional)</label>
+    <input type="text" class="form-control" id="project-description">
+  </div>
+  <button type="submit" class="btn btn-primary">Create project</button>
+</form>`
+
+printToDom('#project-form', formString);
+}
+// end projects form
+
 
 // end projects page 
 const init = () => {
   printToDom("#profile-card", profileString)
   createCards(projects, projectCards, '#project-container');
+  projectsForm();
 };
 
 init();
