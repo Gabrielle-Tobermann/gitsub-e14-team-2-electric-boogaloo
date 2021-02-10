@@ -75,21 +75,6 @@ const packageCardString = (item) => {
           </div>`
 };
 
-// Stretch: Delete Packages **** NOT FUNCTIONING YET*****
-// const deletePackage = (e) => {
-//   let targetId = e.target.id;
-//   let targetType = e.target.type;
-  
-//   console.log(targetId);
-  
-//   if (targetType === "button") {
-//       packages.splice(targetId, 1);
-//     } else {
-//       createCards(packages, packageCardString, "#package-container"); 
-//     }
-//   createCards(packages, packageCardString, "#package-container"); 
-// }
-
 // Print to DOM function
 const printToDom = (divId, textToPrint) => {
   const selectedDiv = document.querySelector(divId);
@@ -164,17 +149,12 @@ const profileString = `<!-- Profile -->
 <!-- Sponsors -->
   <!-- Print Images of Sponsors Object Here -->`
 
-// Functions triggered by mouse events 
-const buttonEvents = () => {
-  // Event listener for delete packages button
-  document.querySelector("#package-container").addEventListener("click", deletePackage)
-}
+
   
 // Init function
 const init = () => {
   printToDom("#profile-card", profileString);
   createCards(packages, packageCardString, "#package-container");
-  buttonEvents();
 }
 
 init();
