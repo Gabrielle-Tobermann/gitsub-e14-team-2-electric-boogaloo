@@ -1,4 +1,25 @@
-const projects = ['project 1', 'project 2', 'project 3', 'project 4', 'project 5'];
+const projects = [
+  {
+    name: 'Project 1',
+    description: 'no description',
+  }, 
+  {
+    name: 'Project 2',
+    description: 'no description',
+  },
+  {
+    name: 'Project 3',
+    description: 'no description',
+  }, 
+  {
+    name: 'project 4', 
+    description: 'no description',
+  },
+  {
+    name: 'project 5',
+    description: 'no description',
+  }
+];
 // Start arrays
 const organizations = [
   {
@@ -104,17 +125,28 @@ const profileString = `<!-- Profile -->
   <!-- Print Images of Organizations Object Here -->
   <div></div>
 <!-- Sponsors -->
-  <!-- Print Images of Sponsors Object Here -->`
+  <!-- Print Images of Sponsors Object Here -->`;
   
 // end my code
 
 
 // Gabby - projects page 
+const projectCards = (projects) => {
+  return `<div class="card">
+  <h5 class="card-header"></h5>
+  <div class="card-body">
+    <h5 class="card-title">${projects.name}</h5>
+    <p class="card-text">${projects.description}</p>
+  </div>
+</div>`
+};
+
 
 
 // end projects page 
 const init = () => {
   printToDom("#profile-card", profileString)
+  createCards(projects, projectCards, '#project-container');
 };
 
 init();
