@@ -6,3 +6,7 @@ body {
 nav {
   border-bottom: 1px solid #8B949E;
 }
+
+#package-form-container {
+  margin-bottom: 25%;
+}

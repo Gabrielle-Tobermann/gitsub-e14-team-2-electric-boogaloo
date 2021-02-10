@@ -83,6 +83,7 @@ const packages = [
    id: 5,
    },
 ];
+
 const repos = [
   {
     name: 'example-repo',
@@ -93,6 +94,34 @@ const repos = [
     description: 'Use the form below to create repositories of your own.',
   },
 ];
+// Creates new packages after package form is submitted
+const packageMaker = (e) => {
+  
+  e.preventDefault();
+  
+  const name = document.querySelector("#package-name").value;
+  const description = document.querySelector("#package-description").value;
+  const id = 1;
+  const newPackageCardString = (item) => { 
+    return `<div class="card border-secondary mb-3 bg-transparent" style="max-width: 18rem;" id="${item.id}">
+              <div class="card-body text-secondary">
+                <h5 class="card-title">${item.name}</h5>
+                <p class="card-text">${item.description}</p>
+                <button type="button" class="btn btn-secondary">Learn More</button>
+                <button type="button" class="btn btn-danger" id="${item.id}">Delete</button>
+              </div>
+            </div>`
+  }
+
+  const newPackage = {
+    name,
+    description,
+    id,
+  }
+
+  packages.push(newPackage);
+  createCards(packages, newPackageCardString, "#package-container");
+}
 
 //Stretch:
 // Sponsors go on bottom of Profile section
@@ -110,7 +139,7 @@ const packageCardString = (item) => {
               <button type="button" class="btn btn-danger" id="${item.id}">Delete</button>
             </div>
           </div>`
-};
+}
 
 // Print to DOM function
 const printToDom = (divId, textToPrint) => {
@@ -186,10 +215,16 @@ const profileString = `<!-- Profile -->
 <!-- Sponsors -->
   <!-- Print Images of Sponsors Object Here -->`
 
+const buttonEvents = () => {
+  document.querySelector("#create-package").addEventListener("click", packageMaker)
+}
+
 // Init function
 const init = () => {
   printToDom("#profile-card", profileString);
+  buttonEvents();
   createCards(packages, packageCardString, "#package-container");
+  
 }
 
 init();
