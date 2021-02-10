@@ -109,7 +109,7 @@ const printToDom = (divId, textToPrint) => {
 
 const createCards = (arr, id) => {
   //id of div
-  let domString = document.querySelector(id).innerHTML;
+  let domString = '';
 
   for (let item of arr) {
     domString += card(item);
