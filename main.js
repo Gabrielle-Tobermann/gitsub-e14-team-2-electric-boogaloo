@@ -107,7 +107,7 @@ const printToDom = (divId, textToPrint) => {
   selectedDiv.innerHTML = textToPrint;
 };
 
-const createCards = (arr, id) => {
+const createCards = (arr, card, id) => {
   //id of div
   let domString = '';
 
