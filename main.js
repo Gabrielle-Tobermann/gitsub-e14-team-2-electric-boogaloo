@@ -75,20 +75,20 @@ const packageCardString = (item) => {
           </div>`
 };
 
-// Stretch: Delete Packages **** NOT FUNCTIONING YET *****
-const deletePackage = (e) => {
-  let targetId = e.target.id;
-  let targetType = e.target.type;
+// Stretch: Delete Packages **** NOT FUNCTIONING YET*****
+// const deletePackage = (e) => {
+//   let targetId = e.target.id;
+//   let targetType = e.target.type;
   
-  console.log(targetId);
+//   console.log(targetId);
   
-  if (targetType === "button") {
-      packages.splice(targetId, 1);
-    } else {
-      createCards(packages, packageCardString, "#package-container"); 
-    }
-  createCards(packages, packageCardString, "#package-container"); 
-}
+//   if (targetType === "button") {
+//       packages.splice(targetId, 1);
+//     } else {
+//       createCards(packages, packageCardString, "#package-container"); 
+//     }
+//   createCards(packages, packageCardString, "#package-container"); 
+// }
 
 // Print to DOM function
 const printToDom = (divId, textToPrint) => {
