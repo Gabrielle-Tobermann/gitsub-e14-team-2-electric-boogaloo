@@ -75,17 +75,6 @@ const pins = [
   },
 ];
 
-const repos = [
-  {
-    name: 'example-repo',
-    description: 'This is an example of what a repository will look like.',
-  },
-  {
-    name: 'create-your-own-repo',
-    description: 'Use the form below to create repositories of your own.',
-  },
-];
-
 //Stretch:
 // Sponsors go on bottom of Profile section
 // const sponsors = [
