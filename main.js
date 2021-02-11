@@ -171,14 +171,37 @@ const projectsForm = () => {
 
 printToDom('#project-form', formString);
 }
-// end projects form
+
+// Gabby - updating projects when form is filled in 
+const projectsFormInfo = (e) => {
+  e.preventDefault();
+
+  const name = document.querySelector('#project-board-name').value;
+  const description = document.querySelector('#project-description').value;
+
+  const obj = {
+    name,
+    description,
+  }
+  projects.push(obj);
+  createCards(projects, projectCards, '#project-container'); 
+  //This will have to call onProjectsPage instead of createcards after PR is approved
+  document.querySelector('form').reset();
+}
+
+// Gabby - event when form is submitted
+const ProjectsformSubmition = () => {
+  document.querySelector('form').addEventListener('submit').projectsFormInfo;
+}
 
 
-// end projects page 
+
+
 const init = () => {
   printToDom("#profile-card", profileString)
   createCards(projects, projectCards, '#project-container');
   projectsForm();
+  ProjectsformSubmition();
 };
 
 init();
