@@ -170,6 +170,7 @@ const projectsForm = () => {
 </form>`
 
 printToDom('#project-form', formString);
+document.querySelector('form').addEventListener('submit', projectsFormInfo);
 }
 
 // Gabby - updating projects when form is filled in 
@@ -189,19 +190,12 @@ const projectsFormInfo = (e) => {
   document.querySelector('form').reset();
 }
 
-// Gabby - event when form is submitted
-const ProjectsformSubmition = () => {
-  document.querySelector('form').addEventListener('submit').projectsFormInfo;
-}
-
-
 
 
 const init = () => {
   printToDom("#profile-card", profileString)
   createCards(projects, projectCards, '#project-container');
   projectsForm();
-  ProjectsformSubmition();
 };
 
 init();
