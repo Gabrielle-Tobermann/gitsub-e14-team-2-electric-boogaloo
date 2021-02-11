@@ -121,7 +121,8 @@ return `<div class="card bg-transparent" >
 
 const init = () => {
   printToDom("#profile-card", profileString)
-  createCards(organizations,orgCard,"#org-objects-container");
+  if (document.title === "Organizations") {
+    createCards(organizations,orgCard,"#org-objects-container")};
 };
 
 init();
