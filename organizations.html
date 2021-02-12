@@ -12,11 +12,10 @@
     />
     <!-- CSS Link -->
     <link rel="stylesheet" href="main.css" />
-    <title>Gitsub | Repositories</title>
+    <title>Gitsub | Organizations</title>
   </head>
   <body>
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-sm navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark">
       <ul class="navbar-nav">
         <li class="nav-item">
           <a href="./" class="nav-link">Overview</a>
@@ -35,19 +34,41 @@
         </li>
       </ul>
     </nav>
-
-    <div class="d-flex mx-auto px-4" id="reposPage">
-      <!-- PROFILE CARD -->
-
-      <div class="col-sm-3 m-3" id="profile-card">
-        <!--Profile Card - aligned left-->
-      </div>
-
-      <div class="w-100">
-        <div class="d-flex flex-column" id="reposContainer"></div>
+    <div class="container-fluid">
+      <div class="row content">
+        <div class="col-sm-3" id="profile-card">
+          <!--Profile Card - aligned left-->
+        </div>
       </div>
     </div>
-
+    <div class="col-sm-9" id="org-objects-container">
+      <!--This is for projects, repos, etc-->
+      <br /><!--Objects --><br />
+      <div class="col-sm-9" id="org-form-container">
+        <!--For each page's create & submit form-->
+        <br />
+        <!--Form-->
+        <div class="mb-3">
+          <label for="title" class="form-label">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="text-input"
+            placeholder="Your Project Name"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <textarea
+            class="form-control"
+            id="object-description"
+            rows="3"
+          ></textarea>
+        </div>
+        <br />
+        <button type="button" class="btn btn-outline-info">Submit</button>
+      </div>
+    </div>
     <!-- Footer -->
     <nav class="navbar navbar-expand-lg fixed-bottom navbar-light bg-light">
       <div class="container-fluid">
@@ -103,7 +124,6 @@
         </div>
       </div>
     </nav>
-
     <!-- Bootstrap Script -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
