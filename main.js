@@ -94,6 +94,7 @@ const repos = [
     description: 'Use the form below to create repositories of your own.',
   },
 ];
+
 // Creates new packages after package form is submitted
 const packageMaker = (e) => {
   
@@ -122,11 +123,6 @@ const packageMaker = (e) => {
   packages.push(newPackage);
   createCards(packages, newPackageCardString, "#package-container");
 }
-
-//Stretch:
-// Sponsors go on bottom of Profile section
-// const sponsors = [
-//   {
 
 // HTML string of Package cards to be printed to DOM
 const packageCardString = (item) => { 
@@ -215,16 +211,18 @@ const profileString = `<!-- Profile -->
 <!-- Sponsors -->
   <!-- Print Images of Sponsors Object Here -->`
 
-const buttonEvents = () => {
-  document.querySelector("#create-package").addEventListener("click", packageMaker)
+// Prints package cards when on "Packages" page
+const printPage = () => {
+  if (document.title === "Packages") {
+    createCards(packages, packageCardString, "#package-container")
+    document.querySelector("#create-package").addEventListener("click", packageMaker)
+  }
 }
 
 // Init function
 const init = () => {
   printToDom("#profile-card", profileString);
-  buttonEvents();
-  createCards(packages, packageCardString, "#package-container");
-  
+  printPage();
 }
 
 init();
