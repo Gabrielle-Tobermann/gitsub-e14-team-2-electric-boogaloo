@@ -168,7 +168,7 @@ const createCards = (arr, card, id) => {
   printToDom(id, domString);
 };
 
-// Create Profile Card
+// Start Create Profile Card
 const profileString = `<!-- Profile -->
 <!-- Picture -->
 <img
@@ -224,6 +224,20 @@ const profileString = `<!-- Profile -->
   <div></div>
 <!-- Sponsors -->
   <!-- Print Images of Sponsors Object Here -->`;
+// End Create Profile Card
+
+// MG - Start Create Organizations Cards 
+const orgCard = (item) => { 
+return `<div class="card bg-transparent" >
+  <div class="card-body">
+    <img src=${item.img} alt="${item.name} logo">
+    <h6 class="card-subtitle text-muted">${item.name}</h6>
+    member and collaborator on ${item.repos} repositories
+    <button type="button">Leave</button>
+  </div>
+</div>`};
+// MG - End Create Organizations Cards
+
 
 // Gabby - projects page 
 const projectCards = (projects) => {
@@ -241,6 +255,8 @@ const init = () => {
   printToDom("#profile-card", profileString);
   createCards(pins, pinCard, "#pin-container");
   pinButtonEvent();
+  if (document.title === "Organizations") {
+    createCards(organizations,orgCard,"#org-objects-container")}
 };
 
 init();
