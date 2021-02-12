@@ -10,3 +10,11 @@ nav {
 #package-form-container {
   margin-bottom: 25%;
 }
+
+#pin-container {
+  position: absolute;
+  right: 100px;
+  width: 60%;
+  padding: 10px;
+  border-bottom: 50%;
+}

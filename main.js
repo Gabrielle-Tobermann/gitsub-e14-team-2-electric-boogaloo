@@ -23,24 +23,24 @@ const projects = [
 // Start arrays
 const organizations = [
   {
-    img:"images/orgImgs/oi_nss.png",
-    name:"nss-evening-cohort-14",
-    repos:30,
+    img: "images/orgImgs/oi_nss.png",
+    name: "nss-evening-cohort-14",
+    repos: 30,
   },
   {
-    img:"images/orgImgs/oi_org1.png",
-    name:"React Ladies",
-    repos:32,
+    img: "images/orgImgs/oi_org1.png",
+    name: "React Ladies",
+    repos: 32,
   },
   {
-    img:"images/orgImgs/oi_org2.png",
-    name:"TN Code Pros",
-    repos:20,
+    img: "images/orgImgs/oi_org2.png",
+    name: "TN Code Pros",
+    repos: 20,
   },
   {
-    img:"images/orgImgs/oi_org3.png",
-    name:"Fortune 500 Devs",
-    repos:27,
+    img: "images/orgImgs/oi_org3.png",
+    name: "Fortune 500 Devs",
+    repos: 27,
   },
 ];
 
@@ -86,12 +86,32 @@ const packages = [
 
 const repos = [
   {
-    name: 'example-repo',
-    description: 'This is an example of what a repository will look like.',
+    name: "example-repo",
+    description: "This is an example of what a repository will look like.",
   },
   {
-    name: 'create-your-own-repo',
-    description: 'Use the form below to create repositories of your own.',
+    name: "create-your-own-repo",
+    description: "Use the form below to create repositories of your own.",
+  },
+];
+
+const pins = [
+  {
+    name: "affirmation-generator",
+    description:
+      "This app randomly generates an affirmation statement. Built by React.js.",
+  },
+  {
+    name: "github-clone",
+    description: "Powered by HTML, CSS, Vanilla Javascript, Bootstrap.",
+  },
+  {
+    name: "accessibility-hacks",
+    description: "Snippets to enhance app accessibility.",
+  },
+  {
+    name: "portfolio",
+    description: "Personal portfolio site, deployed through Netlify.",
   },
 ];
 
@@ -141,6 +161,72 @@ const packageCardString = (item) => {
             </div>
           </div>`
 }
+//Holly - card to print after submitting form
+const pinCard = (item) => {
+  return `<div class="card text-white bg-dark mb-3" style="max-width: 18rem;" id="${item.id}">
+      <div class="card-header"></div>
+      <div class="card-body">
+        <h5 class="card-title">${item.name}</h5>
+        <p class="card-text">${item.description}</p>
+        <div class="card-footer text-center font-weight-bolder" id="pinned">
+        <img
+        src="images/profileImgs/pi_fullStar.png"
+        alt="image of solid star"
+      />
+        </div>
+      </div>
+    </div>`;
+};
+
+//Upon clicking 'customize' button, this form appears
+const pinButtonEvent = () => {
+  document.querySelector("#customize").addEventListener("click", pinCardForm);
+};
+
+//Stretch goal: add a search form to add items from other pages
+const pinCardForm = () => {
+  console.log("click")
+  let form = `<div class="mb-3 text-white">
+                <label for="title" class="form-label">Name</label>
+                <input
+                  type="text"
+                  class="form-control bg-dark text-white"
+                  id="text-input"
+                  placeholder="Your Project Name"
+                />
+              </div>
+              <div class="mb-3 text-white border-white">
+                <label for="description" class="form-label">Description</label>
+                <textarea
+                  class="form-control bg-dark text-white"
+                  id="pin-description"
+                  rows="3"
+                ></textarea>
+              </div>
+              <br />
+              <button type="button" class="btn btn-outline-info" id="submitButton">Submit</button>`;
+  printToDom('#form-container', form);
+  document.querySelector("#submitButton").addEventListener("click", submitPinnedCard);
+};
+
+//Holly - this will take in the form info + push to pins array; then will reset form
+const submitPinnedCard = (e) => {
+  
+  e.preventDefault();
+  
+  const name = document.querySelector("#text-input").value;
+  const description = document.querySelector("#pin-description").value;
+  const id = 1;
+
+  const newPin = {
+    name,
+    description,
+    id,
+  }
+
+  pins.push(newPin);
+  createCards(pins, pinCard, "#pin-container");
+};
 
 // Print to DOM function
 const printToDom = (divId, textToPrint) => {
@@ -159,7 +245,7 @@ const createCards = (arr, card, id) => {
   printToDom(id, domString);
 }
 
-// HTML string for printing profile sidebar via printToDom function
+// Create Profile Card
 const profileString = `<!-- Profile -->
 <!-- Picture -->
 <img
@@ -182,7 +268,7 @@ const profileString = `<!-- Profile -->
 <!-- Stats? -->
 <!-- Contact info -->
 <p>
-  <img src="images/profileImgs/pi_location.png" alt="pin drop image" />New York,New
+  <img src="images/profileImgs/pi_location.png" alt="pin drop image" />New York, New
   York<br/>
   <img
     src="images/profileImgs/pi_email.png"
@@ -216,6 +302,17 @@ const profileString = `<!-- Profile -->
 <!-- Sponsors -->
   <!-- Print Images of Sponsors Object Here -->`
 
+// Gabby - projects page 
+const projectCards = (projects) => {
+  return `<div class="card">
+  <h5 class="card-header"></h5>
+  <div class="card-body">
+    <h5 class="card-title">${projects.name}</h5>
+    <p class="card-text">${projects.description}</p>
+  </div>
+</div>`
+};
+
 // Prints package cards when on "Packages" page
 const printPage = () => {
   if (document.title === "Packages") {
@@ -228,6 +325,7 @@ const printPage = () => {
 const init = () => {
   printToDom("#profile-card", profileString);
   printPage();
-}
+  createCards(pins, pinCard, "#pin-container");
+};
 
 init();
