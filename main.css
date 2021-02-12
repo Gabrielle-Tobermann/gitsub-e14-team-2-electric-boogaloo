@@ -6,3 +6,11 @@ body {
 nav {
   border-bottom: 1px solid #8B949E;
 }
+
+#pin-container {
+  position: absolute;
+  right: 100px;
+  width: 60%;
+  padding: 10px;
+  border-bottom: 50%;
+}
