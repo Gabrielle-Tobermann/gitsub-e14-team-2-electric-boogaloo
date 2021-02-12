@@ -319,6 +319,9 @@ const printPage = () => {
     createCards(packages, packageCardString, "#package-container")
     document.querySelector("#create-package").addEventListener("click", packageMaker)
   }
+  if (document.title === "Projects Page") {
+    createCards(projects, projectCards, "#project-container")
+  }
 }
 
 // Init function
