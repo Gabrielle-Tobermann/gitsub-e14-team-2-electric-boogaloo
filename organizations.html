@@ -12,71 +12,76 @@
     />
     <!-- CSS Link -->
     <link rel="stylesheet" href="main.css" />
-    <title>Gitsub | Packages</title>
+    <title>Gitsub | Organizations</title>
   </head>
   <body>
-<!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a href="./" class="nav-link">Overview</a>
-      </li>
-      <li class="nav-item">
-        <a href="./repos.html" class="nav-link">Repositories</a>
-      </li>
-      <li class="nav-item">
-        <a href="./projects.html" class="nav-link">Projects</a>
-      </li>
-      <li class="nav-item">
-        <a href="./packages.html" class="nav-link">Packages</a>
-      </li>
-      <li class="nav-item">
-        <a href="./organizations.html" class="nav-link">Organizations</a>
-      </li>
-    </ul>
-  </nav>
-
-<!-- PROFILE CARD -->
-  <div class="col-sm-3 m-3" id="profile-card">
-    <!--Profile Card - aligned left--> 
-  </div>
-
-<!--This is for projects, repos, etc-->
-  <div class="w-100"> 
-    <div class="container d-flex flex-wrap" id="package-container">
-      
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a href="./" class="nav-link">Overview</a>
+        </li>
+        <li class="nav-item">
+          <a href="./repos.html" class="nav-link">Repositories</a>
+        </li>
+        <li class="nav-item">
+          <a href="./projects.html" class="nav-link">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a href="./packages.html" class="nav-link">Packages</a>
+        </li>
+        <li class="nav-item">
+          <a href="./organizations.html" class="nav-link">Organizations</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="container-fluid">
+      <div class="row content">
+        <div class="col-sm-3" id="profile-card">
+          <!--Profile Card - aligned left-->
+        </div>
+      </div>
     </div>
-
-<!--For each page's create & submit form-->
-    <div class="container">  
-      <div id="package-form-container">
-<!--Form-->
+    <div class="col-sm-9" id="org-objects-container">
+      <!--This is for projects, repos, etc-->
+      <br /><!--Objects --><br />
+      <div class="col-sm-9" id="org-form-container">
+        <!--For each page's create & submit form-->
+        <br />
+        <!--Form-->
         <div class="mb-3">
           <label for="title" class="form-label">Name</label>
           <input
             type="text"
             class="form-control"
-            id="package-name"
-            placeholder="New Package Name"
+            id="text-input"
+            placeholder="Your Project Name"
           />
         </div>
-        <div>
+        <div class="mb-3">
           <label for="description" class="form-label">Description</label>
           <textarea
             class="form-control"
-            id="package-description"
-            rows="6"
+            id="object-description"
+            rows="3"
           ></textarea>
         </div>
-        <button type="button" class="btn btn-outline-info" id="create-package">Submit</button>
+        <br />
+        <button type="button" class="btn btn-outline-info">Submit</button>
       </div>
     </div>
-  </div> 
-<!-- Footer -->
+    <!-- Footer -->
     <nav class="navbar navbar-expand-lg fixed-bottom navbar-light bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">@ 2021 Github, Inc.</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarText"
+          aria-controls="navbarText"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse">
@@ -96,7 +101,7 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Docs</a>
             </li>
-            <img src="GitHub-Mark-Light-64px.png">
+            <img src="GitHub-Mark-Light-64px.png" />
             <li class="nav-item">
               <a class="nav-link" href="#">Contact Github</a>
             </li>
@@ -119,14 +124,13 @@
         </div>
       </div>
     </nav>
-
-<!-- Bootstrap Script -->
+    <!-- Bootstrap Script -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-      crossorigin="anonymous">
-    </script>
-<!-- JS Script -->
-    <script src="main.js"></script>
+      crossorigin="anonymous"
+    ></script>
+    <!-- JS Script -->
+    <script src="main.js" async defer></script>
   </body>
 </html>
