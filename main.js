@@ -191,7 +191,7 @@ const profileString = `<!-- Profile -->
 <!-- Stats? -->
 <!-- Contact info -->
 <p>
-  <img src="images/profileImgs/pi_location.png" alt="pin drop image" />New York,New
+  <img src="images/profileImgs/pi_location.png" alt="pin drop image" />New York, New
   York<br/>
   <img
     src="images/profileImgs/pi_email.png"
