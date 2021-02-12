@@ -104,12 +104,15 @@ const packageMaker = (e) => {
   const description = document.querySelector("#package-description").value;
   const id = 1;
   const newPackageCardString = (item) => { 
-    return `<div class="card border-secondary mb-3 bg-transparent" style="max-width: 18rem;" id="${item.id}">
+    return `<div class="card border-secondary mb-3 bg-transparent" style="width: 18rem; height: 18rem;" id="${item.id}">
               <div class="card-body text-secondary">
+                <img src="${item.iconImgSrc}">
                 <h5 class="card-title">${item.name}</h5>
                 <p class="card-text">${item.description}</p>
-                <button type="button" class="btn btn-secondary">Learn More</button>
-                <button type="button" class="btn btn-danger" id="${item.id}">Delete</button>
+                <div class="d-flex align-contnent-end">
+                  <button type="button" class="btn btn-secondary">Learn More</button>
+                  <button type="button" class="btn btn-danger" id="${item.id}">Delete</button>
+                </div>
               </div>
             </div>`
   }
@@ -126,13 +129,15 @@ const packageMaker = (e) => {
 
 // HTML string of Package cards to be printed to DOM
 const packageCardString = (item) => { 
-  return `<div class="card border-secondary mb-3 bg-transparent" style="max-width: 18rem;" id="${item.id}">
+  return `<div class="card border-secondary mb-3 bg-transparent" style="width: 18rem; height: 18rem;" id="${item.id}">
             <div class="card-body text-secondary">
               <img src="${item.iconImgSrc}">
               <h5 class="card-title">${item.name}</h5>
               <p class="card-text">${item.description}</p>
-              <button type="button" class="btn btn-secondary">Learn More</button>
-              <button type="button" class="btn btn-danger" id="${item.id}">Delete</button>
+              <div class="d-flex align-contnent-end">
+                <button type="button" class="btn btn-secondary">Learn More</button>
+                <button type="button" class="btn btn-danger" id="${item.id}">Delete</button>
+              </div>
             </div>
           </div>`
 }
