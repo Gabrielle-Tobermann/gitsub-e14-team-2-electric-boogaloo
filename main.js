@@ -44,6 +44,46 @@ const organizations = [
   },
 ];
 
+// Array of package objects
+const packages = [
+  {
+   name: "Docker",
+   description: "A software platform used for building applications based on containers — small and lightweight execution environments.",
+   iconImgSrc: "packagesIcons/Docker.png",
+   id: 0,
+  },
+  {
+   name: "Apache Maven",
+   description: "A default package manager used for the Java programming language and the Java runtime environment.",
+   iconImgSrc: "packagesIcons/Apache-Maven.png",
+   id: 1,
+  },
+  {
+   name: "NuGet",
+   description: "A free and open source package manager used for the Microsoft development platforms including .NET.",
+   iconImgSrc: "packagesIcons/NuGet.png",
+   id: 2,
+  },
+  {
+   name: "RubyGems",
+   description: "A standard format for distributing Ruby programs and libraries used for the Ruby programming language.",
+   iconImgSrc: "packagesIcons/RubyGems.png",
+   id: 3,
+  },
+  {
+   name: "npm",
+   description: "A package manager for JavaScript, included with Node.js. npm makes it easy for developers to share and reuse code.",
+   iconImgSrc: "packagesIcons/npm.png",
+   id: 4,
+  },
+  {
+   name: "Containers",
+   description: "A single place for your team to manage Docker images and decide who can see and access your images.",
+   iconImgSrc: "packagesIcons/Containers.png", 
+   id: 5,
+   },
+];
+
 const repos = [
   {
     name: "example-repo",
@@ -75,15 +115,52 @@ const pins = [
   },
 ];
 
-//Stretch:
-// Sponsors go on bottom of Profile section
-// const sponsors = [
-//   {
+// Creates new packages after package form is submitted
+const packageMaker = (e) => {
+  
+  e.preventDefault();
+  
+  const name = document.querySelector("#package-name").value;
+  const description = document.querySelector("#package-description").value;
+  const id = 1;
+  const newPackageCardString = (item) => { 
+    return `<div class="card border-secondary mb-3 bg-transparent" style="width: 18rem; height: 18rem;" id="${item.id}">
+              <div class="card-body text-secondary">
+                <img src="${item.iconImgSrc}">
+                <h5 class="card-title">${item.name}</h5>
+                <p class="card-text">${item.description}</p>
+                <div class="d-flex align-contnent-end">
+                  <button type="button" class="btn btn-secondary">Learn More</button>
+                  <button type="button" class="btn btn-danger" id="${item.id}">Delete</button>
+                </div>
+              </div>
+            </div>`
+  }
 
-//   },
-// ]
-// End arrays
+  const newPackage = {
+    name,
+    description,
+    id,
+  }
 
+  packages.push(newPackage);
+  createCards(packages, newPackageCardString, "#package-container");
+}
+
+// HTML string of Package cards to be printed to DOM
+const packageCardString = (item) => { 
+  return `<div class="card border-secondary mb-3 bg-transparent" style="width: 18rem; height: 18rem;" id="${item.id}">
+            <div class="card-body text-secondary">
+              <img src="${item.iconImgSrc}">
+              <h5 class="card-title">${item.name}</h5>
+              <p class="card-text">${item.description}</p>
+              <div class="d-flex align-contnent-end">
+                <button type="button" class="btn btn-secondary">Learn More</button>
+                <button type="button" class="btn btn-danger" id="${item.id}">Delete</button>
+              </div>
+            </div>
+          </div>`
+}
 //Holly - card to print after submitting form
 const pinCard = (item) => {
   return `<div class="card text-white bg-dark mb-3" style="max-width: 18rem;" id="${item.id}">
@@ -155,7 +232,7 @@ const submitPinnedCard = (e) => {
 const printToDom = (divId, textToPrint) => {
   const selectedDiv = document.querySelector(divId);
   selectedDiv.innerHTML = textToPrint; 
-};
+}
 
 // Create card function
 const createCards = (arr, card, id) => {
@@ -166,7 +243,7 @@ const createCards = (arr, card, id) => {
 
   }
   printToDom(id, domString);
-};
+}
 
 // Start Create Profile Card
 const profileString = `<!-- Profile -->
@@ -250,9 +327,21 @@ const projectCards = (projects) => {
 </div>`
 };
 
+// Prints package cards when on "Packages" page
+const printPage = () => {
+  if (document.title === "Packages") {
+    createCards(packages, packageCardString, "#package-container")
+    document.querySelector("#create-package").addEventListener("click", packageMaker)
+  }
+  if (document.title === "Projects Page") {
+    createCards(projects, projectCards, "#project-container")
+  }
+}
+
 // Init function
 const init = () => {
   printToDom("#profile-card", profileString);
+  printPage();
   createCards(pins, pinCard, "#pin-container");
   pinButtonEvent();
   if (document.title === "Organizations") {
