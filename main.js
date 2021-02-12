@@ -347,6 +347,42 @@ const projectCards = (projects) => {
 </div>`;
 };
 
+const projectsForm = () => {
+  let formString = `<form>
+  <div class="mb-3">
+    <div class='form-text'>Create a new project</div>
+    <div class='form-text'>Coordinate, track and update all in one place, so projects stay transparent and on schedule</div>
+    <label for="projectsForm" class="form-label">Project board name</label>
+    <input type="text" class="form-control" id="project-board-name" aria-describedby="projectBoardNameHelp">
+  </div>
+  <div class="mb-3">
+    <label for="projectDescription" class="form-label">Description (optional)</label>
+    <input type="text" class="form-control" id="project-description">
+  </div>
+  <button type="submit" class="btn btn-primary">Create project</button>
+</form>`
+
+printToDom('#project-form', formString);
+document.querySelector('form').addEventListener('submit', projectsFormInfo);
+}
+
+// Gabby - updating projects when form is filled in 
+const projectsFormInfo = (e) => {
+  e.preventDefault();
+
+  const name = document.querySelector('#project-board-name').value;
+  const description = document.querySelector('#project-description').value;
+
+  const obj = {
+    name,
+    description,
+  }
+  projects.push(obj);
+  createCards(projects, projectCards, '#project-container'); 
+  //This will have to call onProjectsPage instead of createcards after PR is approved
+  document.querySelector('form').reset();
+}
+
 // Runs page's functions
 const pageInit = () => {
   const fileName = location.pathname.split('/').slice(-1);
@@ -365,6 +401,7 @@ const pageInit = () => {
     createCards(organizations, orgCard, '#org-objects-container');
   } else if (fileName[0] === 'projects.html') {
     createCards(projects, projectCards, '#project-container');
+    projectsForm();
   }
 };
 
