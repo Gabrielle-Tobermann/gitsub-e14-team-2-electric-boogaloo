@@ -2,7 +2,7 @@ const projects = [
   {
     name: 'Project 1',
     description: 'no description',
-  }, 
+  },
   {
     name: 'Project 2',
     description: 'no description',
@@ -10,36 +10,36 @@ const projects = [
   {
     name: 'Project 3',
     description: 'no description',
-  }, 
+  },
   {
-    name: 'project 4', 
+    name: 'project 4',
     description: 'no description',
   },
   {
     name: 'project 5',
     description: 'no description',
-  }
+  },
 ];
 // Start arrays
 const organizations = [
   {
-    img: "images/orgImgs/oi_nss.png",
-    name: "nss-evening-cohort-14",
+    img: 'images/orgImgs/oi_nss.png',
+    name: 'nss-evening-cohort-14',
     repos: 30,
   },
   {
-    img: "images/orgImgs/oi_org1.png",
-    name: "React Ladies",
+    img: 'images/orgImgs/oi_org1.png',
+    name: 'React Ladies',
     repos: 32,
   },
   {
-    img: "images/orgImgs/oi_org2.png",
-    name: "TN Code Pros",
+    img: 'images/orgImgs/oi_org2.png',
+    name: 'TN Code Pros',
     repos: 20,
   },
   {
-    img: "images/orgImgs/oi_org3.png",
-    name: "Fortune 500 Devs",
+    img: 'images/orgImgs/oi_org3.png',
+    name: 'Fortune 500 Devs',
     repos: 27,
   },
 ];
@@ -47,83 +47,88 @@ const organizations = [
 // Array of package objects
 const packages = [
   {
-   name: "Docker",
-   description: "A software platform used for building applications based on containers — small and lightweight execution environments.",
-   iconImgSrc: "packagesIcons/Docker.png",
-   id: 0,
+    name: 'Docker',
+    description:
+      'A software platform used for building applications based on containers — small and lightweight execution environments.',
+    iconImgSrc: 'packagesIcons/Docker.png',
+    id: 0,
   },
   {
-   name: "Apache Maven",
-   description: "A default package manager used for the Java programming language and the Java runtime environment.",
-   iconImgSrc: "packagesIcons/Apache-Maven.png",
-   id: 1,
+    name: 'Apache Maven',
+    description:
+      'A default package manager used for the Java programming language and the Java runtime environment.',
+    iconImgSrc: 'packagesIcons/Apache-Maven.png',
+    id: 1,
   },
   {
-   name: "NuGet",
-   description: "A free and open source package manager used for the Microsoft development platforms including .NET.",
-   iconImgSrc: "packagesIcons/NuGet.png",
-   id: 2,
+    name: 'NuGet',
+    description:
+      'A free and open source package manager used for the Microsoft development platforms including .NET.',
+    iconImgSrc: 'packagesIcons/NuGet.png',
+    id: 2,
   },
   {
-   name: "RubyGems",
-   description: "A standard format for distributing Ruby programs and libraries used for the Ruby programming language.",
-   iconImgSrc: "packagesIcons/RubyGems.png",
-   id: 3,
+    name: 'RubyGems',
+    description:
+      'A standard format for distributing Ruby programs and libraries used for the Ruby programming language.',
+    iconImgSrc: 'packagesIcons/RubyGems.png',
+    id: 3,
   },
   {
-   name: "npm",
-   description: "A package manager for JavaScript, included with Node.js. npm makes it easy for developers to share and reuse code.",
-   iconImgSrc: "packagesIcons/npm.png",
-   id: 4,
+    name: 'npm',
+    description:
+      'A package manager for JavaScript, included with Node.js. npm makes it easy for developers to share and reuse code.',
+    iconImgSrc: 'packagesIcons/npm.png',
+    id: 4,
   },
   {
-   name: "Containers",
-   description: "A single place for your team to manage Docker images and decide who can see and access your images.",
-   iconImgSrc: "packagesIcons/Containers.png", 
-   id: 5,
-   },
+    name: 'Containers',
+    description:
+      'A single place for your team to manage Docker images and decide who can see and access your images.',
+    iconImgSrc: 'packagesIcons/Containers.png',
+    id: 5,
+  },
 ];
 
 const repos = [
   {
-    name: "example-repo",
-    description: "This is an example of what a repository will look like.",
+    name: 'example-repo',
+    description: 'This is an example of what a repository will look like.',
   },
   {
-    name: "create-your-own-repo",
-    description: "Use the form below to create repositories of your own.",
+    name: 'create-your-own-repo',
+    description: 'Use the form below to create repositories of your own.',
   },
 ];
 
 const pins = [
   {
-    name: "affirmation-generator",
+    name: 'affirmation-generator',
     description:
-      "This app randomly generates an affirmation statement. Built by React.js.",
+      'This app randomly generates an affirmation statement. Built by React.js.',
   },
   {
-    name: "github-clone",
-    description: "Powered by HTML, CSS, Vanilla Javascript, Bootstrap.",
+    name: 'github-clone',
+    description: 'Powered by HTML, CSS, Vanilla Javascript, Bootstrap.',
   },
   {
-    name: "accessibility-hacks",
-    description: "Snippets to enhance app accessibility.",
+    name: 'accessibility-hacks',
+    description: 'Snippets to enhance app accessibility.',
   },
   {
-    name: "portfolio",
-    description: "Personal portfolio site, deployed through Netlify.",
+    name: 'portfolio',
+    description: 'Personal portfolio site, deployed through Netlify.',
   },
 ];
 
 // Creates new packages after package form is submitted
 const packageMaker = (e) => {
-  
   e.preventDefault();
-  
-  const name = document.querySelector("#package-name").value;
-  const description = document.querySelector("#package-description").value;
+
+  const name = document.querySelector('#package-name').value;
+  const description = document.querySelector('#package-description').value;
   const id = 1;
-  const newPackageCardString = (item) => { 
+  const newPackageCardString = (item) => {
     return `<div class="card border-secondary mb-3 bg-transparent" style="width: 18rem; height: 18rem;" id="${item.id}">
               <div class="card-body text-secondary">
                 <img src="${item.iconImgSrc}">
@@ -134,21 +139,21 @@ const packageMaker = (e) => {
                   <button type="button" class="btn btn-danger" id="${item.id}">Delete</button>
                 </div>
               </div>
-            </div>`
-  }
+            </div>`;
+  };
 
   const newPackage = {
     name,
     description,
     id,
-  }
+  };
 
   packages.push(newPackage);
-  createCards(packages, newPackageCardString, "#package-container");
-}
+  createCards(packages, newPackageCardString, '#package-container');
+};
 
 // HTML string of Package cards to be printed to DOM
-const packageCardString = (item) => { 
+const packageCardString = (item) => {
   return `<div class="card border-secondary mb-3 bg-transparent" style="width: 18rem; height: 18rem;" id="${item.id}">
             <div class="card-body text-secondary">
               <img src="${item.iconImgSrc}">
@@ -159,8 +164,8 @@ const packageCardString = (item) => {
                 <button type="button" class="btn btn-danger" id="${item.id}">Delete</button>
               </div>
             </div>
-          </div>`
-}
+          </div>`;
+};
 //Holly - card to print after submitting form
 const pinCard = (item) => {
   return `<div class="card text-white bg-dark mb-3" style="max-width: 18rem;" id="${item.id}">
@@ -180,12 +185,12 @@ const pinCard = (item) => {
 
 //Upon clicking 'customize' button, this form appears
 const pinButtonEvent = () => {
-  document.querySelector("#customize").addEventListener("click", pinCardForm);
+  document.querySelector('#customize').addEventListener('click', pinCardForm);
 };
 
 //Stretch goal: add a search form to add items from other pages
 const pinCardForm = () => {
-  console.log("click")
+  console.log('click');
   let form = `<div class="mb-3 text-white">
                 <label for="title" class="form-label">Name</label>
                 <input
@@ -206,44 +211,44 @@ const pinCardForm = () => {
               <br />
               <button type="button" class="btn btn-outline-info" id="submitButton">Submit</button>`;
   printToDom('#form-container', form);
-  document.querySelector("#submitButton").addEventListener("click", submitPinnedCard);
+  document
+    .querySelector('#submitButton')
+    .addEventListener('click', submitPinnedCard);
 };
 
 //Holly - this will take in the form info + push to pins array; then will reset form
 const submitPinnedCard = (e) => {
-  
   e.preventDefault();
-  
-  const name = document.querySelector("#text-input").value;
-  const description = document.querySelector("#pin-description").value;
+
+  const name = document.querySelector('#text-input').value;
+  const description = document.querySelector('#pin-description').value;
   const id = 1;
 
   const newPin = {
     name,
     description,
     id,
-  }
+  };
 
   pins.push(newPin);
-  createCards(pins, pinCard, "#pin-container");
+  createCards(pins, pinCard, '#pin-container');
 };
 
 // Print to DOM function
 const printToDom = (divId, textToPrint) => {
   const selectedDiv = document.querySelector(divId);
-  selectedDiv.innerHTML = textToPrint; 
-}
+  selectedDiv.innerHTML = textToPrint;
+};
 
 // Create card function
 const createCards = (arr, card, id) => {
   let domString = '';
 
   for (let item of arr) {
-  domString += card(item);
-
+    domString += card(item);
   }
   printToDom(id, domString);
-}
+};
 
 // Start Create Profile Card
 const profileString = `<!-- Profile -->
@@ -301,22 +306,37 @@ const profileString = `<!-- Profile -->
   <div></div>
 <!-- Sponsors -->
   <!-- Print Images of Sponsors Object Here -->`;
+
+// end my code
+
+const repoCard = (item) => `<div class="repo-card w-100" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">${item.name}</h5>
+      <p class="card-text">${item.description}</p>
+    </div>
+  </div>`;
+
+const buildReposPage = () => {
+  createCards(repos, repoCard, '#reposContainer');
+};
+
+
 // End Create Profile Card
 
-// MG - Start Create Organizations Cards 
-const orgCard = (item) => { 
-return `<div class="card bg-transparent" >
+// MG - Start Create Organizations Cards
+const orgCard = (item) => {
+  return `<div class="card bg-transparent" >
   <div class="card-body">
     <img src=${item.img} alt="${item.name} logo">
     <h6 class="card-subtitle text-muted">${item.name}</h6>
     member and collaborator on ${item.repos} repositories
     <button type="button">Leave</button>
   </div>
-</div>`};
+</div>`;
+};
 // MG - End Create Organizations Cards
 
-
-// Gabby - projects page 
+// Gabby - projects page
 const projectCards = (projects) => {
   return `<div class="card">
   <h5 class="card-header"></h5>
@@ -324,28 +344,34 @@ const projectCards = (projects) => {
     <h5 class="card-title">${projects.name}</h5>
     <p class="card-text">${projects.description}</p>
   </div>
-</div>`
+</div>`;
 };
 
-// Prints package cards when on "Packages" page
-const printPage = () => {
-  if (document.title === "Packages") {
-    createCards(packages, packageCardString, "#package-container")
-    document.querySelector("#create-package").addEventListener("click", packageMaker)
+// Runs page's functions
+const pageInit = () => {
+  const fileName = location.pathname.split('/').slice(-1);
+
+  if (fileName[0] === 'repos.html') {
+    buildReposPage();
+  } else if (fileName[0] === 'index.html') {
+    createCards(pins, pinCard, '#pin-container');
+    pinButtonEvent();
+  } else if (fileName[0] === 'packages.html') {
+    createCards(packages, packageCardString, '#package-container');
+    document
+      .querySelector('#create-package')
+      .addEventListener('click', packageMaker);
+  } else if (fileName[0] === 'organizations.html') {
+    createCards(organizations, orgCard, '#org-objects-container');
+  } else if (fileName[0] === 'projects.html') {
+    createCards(projects, projectCards, '#project-container');
   }
-  if (document.title === "Projects Page") {
-    createCards(projects, projectCards, "#project-container")
-  }
-}
+};
 
 // Init function
 const init = () => {
-  printToDom("#profile-card", profileString);
-  printPage();
-  createCards(pins, pinCard, "#pin-container");
-  pinButtonEvent();
-  if (document.title === "Organizations") {
-    createCards(organizations,orgCard,"#org-objects-container")}
+  printToDom('#profile-card', profileString);
+  pageInit();
 };
 
 init();
