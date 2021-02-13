@@ -36,7 +36,7 @@
     </nav>
     
     <!-- Flex Obj -->
-    <div class="d-flex flex-row">
+    <div class="d-flex flex-row mb-3">
       <!-- Col 1 -->
       <div>
         <div id="profile-card">
@@ -47,51 +47,40 @@
       <!-- Col 2 -->
       <div class="flex-row">
         <!-- Row 1 -->
-        <h3>Organizations</h3>
+        <div class="d-flex flex-row">
+          <h3>Organizations</h3>
+          <button type="button" class="btn btn-dark btn-sm ms-auto " id="new-org-btn">New Organizaton</button>
+        </div>
         <div id="org-objects-container">
           <!--Organizations Cards -->
         </div>
         
         <!-- Row 2 -->
-        <h3>Add Organization</h3>
-        <div id="org-form-container">
+        <div id="org-form-container" style="display:none">
+          <h3>Add Organization</h3>
             <!--Form-->
-            <div class="mb-3">
-              <label for="title" class="form-label">Name</label>
-              <input
-                type="text"
-                class="form-control"
-                id="text-input"
-                placeholder="Your Project Name"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="description" class="form-label">Description</label>
-              <textarea
-                class="form-control"
-                id="object-description"
-                rows="3"
-              ></textarea>
-            </div>
-            <br />
-            <button type="button" class="btn btn-outline-info">Submit</button>
+            <form>
+              <div class="mb-3">
+                <label for="title" class="form-label">Org Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="org-text-input"
+                  placeholder="Your Organization's Name"
+                  required
+                />
+              </div>
+              <button on type="submit" class="btn btn-dark btn-sm ml-3" style="color:#C9D1D4">Submit</button>
+            </form>
         </div>
       </div>
     </div>
 
     <!-- Footer -->
-    <nav class="navbar navbar-expand-lg fixed-bottom navbar-light bg-light">
+    <footer class="navbar navbar-expand-lg d-flex justify-content-left">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">@ 2021 Github, Inc.</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarText"
-          aria-controls="navbarText"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse">
@@ -111,7 +100,7 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Docs</a>
             </li>
-            <img src="GitHub-Mark-Light-64px.png" />
+            <img src="GitHub-Mark-Light-64px.png">
             <li class="nav-item">
               <a class="nav-link" href="#">Contact Github</a>
             </li>
@@ -133,7 +122,7 @@
           </ul>
         </div>
       </div>
-    </nav>
+    </footer>
     <!-- Bootstrap Script -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"

@@ -23,7 +23,7 @@ body {
 }
 
 #package-form-container {
-  margin-bottom: 25%;
+  margin-bottom: 10%;
 }
 
 #pin-container {
@@ -32,4 +32,34 @@ body {
   width: 60%;
   padding: 10px;
   border-bottom: 50%;
+}
+
+#pj-card-container {
+  height:max-content;
+}
+
+#pj-header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #171F20;
+  color: #D1D1D1;
+}
+
+#project-container .card-body {
+  border-bottom: #8b949e solid 0.5px;
+  border-top: #8b949e solid 0.5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#project-container .card-title {
+  color: #D1D1D1;
+}
+
+#dots {
+  font-size: 25px;
+}
+
+.new-project {
+  color: #D1D1D1;
 }

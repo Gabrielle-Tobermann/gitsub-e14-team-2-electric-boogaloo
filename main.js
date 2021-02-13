@@ -3,23 +3,23 @@
 const projects = [
   {
     name: 'Project 1',
-    description: 'no description',
+    description: 'No description',
   },
   {
     name: 'Project 2',
-    description: 'no description',
+    description: 'No description',
   },
   {
     name: 'Project 3',
-    description: 'no description',
+    description: 'No description',
   },
   {
-    name: 'project 4',
-    description: 'no description',
+    name: 'Project 4',
+    description: 'No description',
   },
   {
-    name: 'project 5',
-    description: 'no description',
+    name: 'Project 5',
+    description: 'No description',
   },
 ];
 // Organizations Array
@@ -128,16 +128,16 @@ const pins = [
 
 // HTML string of Package cards to be printed to DOM
 const packageCardString = (item) => {
-  return `<div class="card border-secondary m-3 bg-transparent" style="width: 20rem; height: 18rem;" id="${item.id}">
+  return `<div class="card border-secondary m-2 bg-transparent" style="width: 20rem; height: 18rem;" id="${item.id}">
             <div class="card-body text-secondary">
               <img src="${item.iconImgSrc}" style="width: 3rem; height: 3rem;">
               <h5 class="card-title">${item.name}</h5>
               <p class="card-text">${item.description}</p>
             </div>
-            <div class="d-flex flex-wrap mt-auto mx-auto mb-3">
+            <div class="d-flex flex-wrap mt-auto mx-auto mb-3" id="package-buttons">
                 <button type="button" class="btn btn-secondary m-1">Learn More</button>
-                <button type="button" class="btn btn-danger m-1" id="${item.id}">Delete</button>
-              </div>
+                <button type="button" class="btn btn-danger m-1" id="delete-package">Delete</button>
+            </div>
           </div>`;
 };
 
@@ -157,12 +157,26 @@ const packageMaker = (e) => {
     id,
   };
 
-  packages.push(newPackage);
-  createCards(packages, packageCardString, '#package-container');
+  if (!name) {
+    alert("Please input name");
+  } else {
+    packages.push(newPackage);
+    createCards(packages, packageCardString, '#package-container');
+    document.querySelector('#package-form-container').reset();
+  }
 };
 
-
-
+// Deletes package when delete button is clicked
+const deletePackage = (e) => {
+  let targetId = e.target.id;
+  let targetType = e.target.type;
+  
+  if (targetId === 'delete-package' && targetType === 'button') {
+    packages.splice((packages.length - 1),1);  
+  }
+  createCards(packages, packageCardString, '#package-container');
+};
+  
 //Holly - card to print after submitting form
 const pinCard = (item) => {
   return `<div class="card text-white bg-dark mb-3" style="max-width: 18rem;" id="${item.id}">
@@ -354,36 +368,109 @@ const orgCard = (item) => {
               <div class="align-self-center" style="font-size:13px">  
                 member and collaborator on ${item.repos} repositories
               </div>
-              <button type="button" class="btn btn-dark btn-sm ml-3 ms-auto " style="color:#C9D1D4">Leave</button>
+              <button type="button" class="btn btn-dark btn-sm ml-3 ms-auto" style="color:#C9D1D4">Leave</button>
             </div>    
           </div>`;
 };
 // MG - End Create Organizations Cards
+// MG - Start Org Page Functions
+// Org Page Functions
+
+// Toggle Form Display
+const toggleOrgForm = (e) => {
+  const formStatus = document.querySelector("#org-form-container");
+
+  if (formStatus.style.display == "none") {
+    formStatus.style.display = "block"
+  } else if (formStatus.style.display == "block") {
+    formStatus.style.display = "none"
+  }
+};
+
+// Submit Org Form
+const submitOrgForm = (e) => {
+  // Prevent page refresh from form submission
+  e.preventDefault();
+  // Grab form name value
+  const formName = document.querySelector("#org-text-input").value;
+  // Create img array
+  const imgArr = [
+    'images/orgImgs/oi_nss.png',
+    'images/orgImgs/oi_org1.png',
+    'images/orgImgs/oi_org2.png',
+    'images/orgImgs/oi_org3.png'
+  ];
+  // Generate random repos between 35 and 20
+  const randomRepos = Math.floor(Math.random() * (35 - 20 +1)) + 20;
+  // Create new object properties
+  const img = imgArr[Math.floor(Math.random() * imgArr.length)];
+  const name = formName;
+  const repos = randomRepos;
+  // Create new object
+  const obj = {
+    img,
+    name,
+    repos,
+  };
+  // Push object into organizations array
+  organizations.push(obj);
+  // Rebuild the DOM
+  createCards(organizations, orgCard, '#org-objects-container');
+  // Reset the form fields
+  document.querySelector("form").reset();
+};
+
+// Remove Org From Page
+const removeOrg = (e) => {
+  // Capture type and Id of button click
+  const targetType = e.target.type;
+  const targetId = e.target.id;
+  // Remove that specific element from array
+  if (targetType === "button") {
+    organizations.splice(targetId,1);
+  };
+  // Re-print organizations array
+  createCards(organizations, orgCard, '#org-objects-container');
+};
+
+// Listen for Button Clicks
+const orgButtonEvents = () => {
+  const fileName = location.pathname.split('/').slice(-1);
+  if (fileName[0] === 'organizations.html') {
+    document.querySelector("#new-org-btn").addEventListener("click",toggleOrgForm);
+    document.querySelector("form").addEventListener("submit",submitOrgForm);
+    document.querySelector("#org-objects-container").addEventListener("click",removeOrg);
+  }
+};
+// MG - End Org Page Functions
 
 // Gabby - projects page
 const projectCards = (projects) => {
-  return `<div class="card">
-  <h5 class="card-header"></h5>
-  <div class="card-body">
-    <h5 class="card-title">${projects.name}</h5>
-    <p class="card-text">${projects.description}</p>
-  </div>
+  return `<div class="card-body">
+      <div>
+        <h5 class="card-title">${projects.name}</h5>
+        <p class="card-text fs-6"> Updated 1 mimute ago </p>
+      </div>
+      <p class="card-text">${projects.description}</p>
+      <p class="card-text" id="dots">...</p>
+    </div>
 </div>`;
 };
 
 const projectsForm = () => {
   let formString = `<form>
   <div class="mb-3">
-    <div class='form-text'>Create a new project</div>
+    <div class='form-text fs-3 new-project'>Create a new project</div>
     <div class='form-text'>Coordinate, track and update all in one place, so projects stay transparent and on schedule</div>
-    <label for="projectsForm" class="form-label">Project board name</label>
-    <input type="text" class="form-control" id="project-board-name" aria-describedby="projectBoardNameHelp">
+    <hr/>
+    <label for="projectsForm" class="form-label mt-2 fw-bold new-project">Project board name</label>
+    <input type="text" class="form-control bg-transparent border border-secondary w-50 text-secondary" id="project-board-name" aria-describedby="projectBoardNameHelp" placeholder="Example" required>
   </div>
   <div class="mb-3">
-    <label for="projectDescription" class="form-label">Description (optional)</label>
-    <input type="text" class="form-control" id="project-description">
+    <label for="projectDescription" class="form-label fw-bold new-project">Description (optional)</label>
+    <input type="text" class="form-control bg-transparent border border-secondary pb-5 text-secondary" id="project-description">
   </div>
-  <button type="submit" class="btn btn-primary">Create project</button>
+  <button type="submit" class="btn btn-success">Create project</button>
 </form>`;
 
   printToDom('#project-form', formString);
@@ -422,6 +509,9 @@ const pageInit = () => {
     document
       .querySelector('#create-package')
       .addEventListener('click', packageMaker);
+    document
+      .querySelector('#package-container')
+      .addEventListener('click', deletePackage);  
   } else if (fileName[0] === 'organizations.html') {
     createCards(organizations, orgCard, '#org-objects-container');
   } else if (fileName[0] === 'projects.html') {
@@ -434,6 +524,7 @@ const pageInit = () => {
 const init = () => {
   printToDom('#profile-card', profileString);
   pageInit();
+  orgButtonEvents();
 };
 
 init();
