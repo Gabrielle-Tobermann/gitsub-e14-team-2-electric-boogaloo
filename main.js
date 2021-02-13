@@ -3,23 +3,23 @@
 const projects = [
   {
     name: 'Project 1',
-    description: 'no description',
+    description: 'No description',
   },
   {
     name: 'Project 2',
-    description: 'no description',
+    description: 'No description',
   },
   {
     name: 'Project 3',
-    description: 'no description',
+    description: 'No description',
   },
   {
-    name: 'project 4',
-    description: 'no description',
+    name: 'Project 4',
+    description: 'No description',
   },
   {
-    name: 'project 5',
-    description: 'no description',
+    name: 'Project 5',
+    description: 'No description',
   },
 ];
 // Organizations Array
@@ -446,28 +446,31 @@ const orgButtonEvents = () => {
 
 // Gabby - projects page
 const projectCards = (projects) => {
-  return `<div class="card">
-  <h5 class="card-header"></h5>
-  <div class="card-body">
-    <h5 class="card-title">${projects.name}</h5>
-    <p class="card-text">${projects.description}</p>
-  </div>
+  return `<div class="card-body">
+      <div>
+        <h5 class="card-title">${projects.name}</h5>
+        <p class="card-text fs-6"> Updated 1 mimute ago </p>
+      </div>
+      <p class="card-text">${projects.description}</p>
+      <p class="card-text" id="dots">...</p>
+    </div>
 </div>`;
 };
 
 const projectsForm = () => {
   let formString = `<form>
   <div class="mb-3">
-    <div class='form-text'>Create a new project</div>
+    <div class='form-text fs-3 new-project'>Create a new project</div>
     <div class='form-text'>Coordinate, track and update all in one place, so projects stay transparent and on schedule</div>
-    <label for="projectsForm" class="form-label">Project board name</label>
-    <input type="text" class="form-control" id="project-board-name" aria-describedby="projectBoardNameHelp">
+    <hr/>
+    <label for="projectsForm" class="form-label mt-2 fw-bold new-project">Project board name</label>
+    <input type="text" class="form-control bg-transparent border border-secondary w-50 text-secondary" id="project-board-name" aria-describedby="projectBoardNameHelp" placeholder="Example" required>
   </div>
   <div class="mb-3">
-    <label for="projectDescription" class="form-label">Description (optional)</label>
-    <input type="text" class="form-control" id="project-description">
+    <label for="projectDescription" class="form-label fw-bold new-project">Description (optional)</label>
+    <input type="text" class="form-control bg-transparent border border-secondary pb-5 text-secondary" id="project-description">
   </div>
-  <button type="submit" class="btn btn-primary">Create project</button>
+  <button type="submit" class="btn btn-success">Create project</button>
 </form>`;
 
   printToDom('#project-form', formString);
