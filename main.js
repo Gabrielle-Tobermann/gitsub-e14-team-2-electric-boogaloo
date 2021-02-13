@@ -126,51 +126,43 @@ const pins = [
 ];
 // End Arrays
 
+// HTML string of Package cards to be printed to DOM
+const packageCardString = (item) => {
+  return `<div class="card border-secondary m-3 bg-transparent" style="width: 20rem; height: 18rem;" id="${item.id}">
+            <div class="card-body text-secondary">
+              <img src="${item.iconImgSrc}" style="width: 3rem; height: 3rem;">
+              <h5 class="card-title">${item.name}</h5>
+              <p class="card-text">${item.description}</p>
+            </div>
+            <div class="d-flex flex-wrap mt-auto mx-auto mb-3">
+                <button type="button" class="btn btn-secondary m-1">Learn More</button>
+                <button type="button" class="btn btn-danger m-1" id="${item.id}">Delete</button>
+              </div>
+          </div>`;
+};
+
 // Creates new packages after package form is submitted
 const packageMaker = (e) => {
   e.preventDefault();
 
   const name = document.querySelector('#package-name').value;
   const description = document.querySelector('#package-description').value;
+  const iconImgSrc = document.querySelector('#package-img-src').value;
   const id = 1;
-  const newPackageCardString = (item) => {
-    return `<div class="card border-secondary mb-3 bg-transparent" style="width: 18rem; height: 18rem;" id="${item.id}">
-              <div class="card-body text-secondary">
-                <img src="${item.iconImgSrc}">
-                <h5 class="card-title">${item.name}</h5>
-                <p class="card-text">${item.description}</p>
-                <div class="d-flex align-contnent-end">
-                  <button type="button" class="btn btn-secondary">Learn More</button>
-                  <button type="button" class="btn btn-danger" id="${item.id}">Delete</button>
-                </div>
-              </div>
-            </div>`;
-  };
 
   const newPackage = {
     name,
     description,
+    iconImgSrc,
     id,
   };
 
   packages.push(newPackage);
-  createCards(packages, newPackageCardString, '#package-container');
+  createCards(packages, packageCardString, '#package-container');
 };
 
-// HTML string of Package cards to be printed to DOM
-const packageCardString = (item) => {
-  return `<div class="card border-secondary mb-3 bg-transparent" style="width: 18rem; height: 18rem;" id="${item.id}">
-            <div class="card-body text-secondary">
-              <img src="${item.iconImgSrc}">
-              <h5 class="card-title">${item.name}</h5>
-              <p class="card-text">${item.description}</p>
-              <div class="d-flex align-contnent-end">
-                <button type="button" class="btn btn-secondary">Learn More</button>
-                <button type="button" class="btn btn-danger" id="${item.id}">Delete</button>
-              </div>
-            </div>
-          </div>`;
-};
+
+
 //Holly - card to print after submitting form
 const pinCard = (item) => {
   return `<div class="card text-white bg-dark mb-3" style="max-width: 18rem;" id="${item.id}">
