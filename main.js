@@ -380,11 +380,11 @@ const projectsForm = () => {
     <div class='form-text'>Coordinate, track and update all in one place, so projects stay transparent and on schedule</div>
     <hr/>
     <label for="projectsForm" class="form-label mt-2 fw-bold new-project">Project board name</label>
-    <input type="text" class="form-control bg-transparent border border-secondary w-50" id="project-board-name" aria-describedby="projectBoardNameHelp" placeholder="Example" required>
+    <input type="text" class="form-control bg-transparent border border-secondary w-50 text-secondary" id="project-board-name" aria-describedby="projectBoardNameHelp" placeholder="Example" required>
   </div>
   <div class="mb-3">
     <label for="projectDescription" class="form-label fw-bold new-project">Description (optional)</label>
-    <input type="text" class="form-control bg-transparent border border-secondary pb-5 ps-5" id="project-description">
+    <input type="text" class="form-control bg-transparent border border-secondary pb-5 text-secondary" id="project-description">
   </div>
   <button type="submit" class="btn btn-success">Create project</button>
 </form>`;
