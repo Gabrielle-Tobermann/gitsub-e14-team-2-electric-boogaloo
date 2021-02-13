@@ -36,7 +36,6 @@ nav {
 }
 
 #pj-card-container {
-  max-width: 800px;
   height:max-content;
 }
 
@@ -44,7 +43,7 @@ nav {
   padding-top: 20px;
   padding-bottom: 20px;
   background-color: #171F20;
-  color:#E2E3E3
+  color: #D1D1D1;
 }
 
 #project-container .card-body {
@@ -55,9 +54,13 @@ nav {
 }
 
 #project-container .card-title {
-  color: #E2E3E3;
+  color: #D1D1D1;
 }
 
 #dots {
   font-size: 25px;
+}
+
+.new-project {
+  color: #D1D1D1;
 }

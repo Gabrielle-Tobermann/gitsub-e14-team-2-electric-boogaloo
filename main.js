@@ -349,16 +349,17 @@ const projectCards = (projects) => {
 const projectsForm = () => {
   let formString = `<form>
   <div class="mb-3">
-    <div class='form-text'>Create a new project</div>
+    <div class='form-text fs-3 new-project'>Create a new project</div>
     <div class='form-text'>Coordinate, track and update all in one place, so projects stay transparent and on schedule</div>
-    <label for="projectsForm" class="form-label">Project board name</label>
-    <input type="text" class="form-control" id="project-board-name" aria-describedby="projectBoardNameHelp">
+    <hr/>
+    <label for="projectsForm" class="form-label mt-2 fw-bold new-project">Project board name</label>
+    <input type="text" class="form-control bg-transparent border border-secondary" id="project-board-name" aria-describedby="projectBoardNameHelp" required>
   </div>
   <div class="mb-3">
-    <label for="projectDescription" class="form-label">Description (optional)</label>
-    <input type="text" class="form-control" id="project-description">
+    <label for="projectDescription" class="form-label fw-bold new-project">Description (optional)</label>
+    <input type="text" class="form-control bg-transparent border border-secondary pb-5 ps-5" id="project-description">
   </div>
-  <button type="submit" class="btn btn-primary">Create project</button>
+  <button type="submit" class="btn btn-success">Create project</button>
 </form>`
 
 printToDom('#project-form', formString);
