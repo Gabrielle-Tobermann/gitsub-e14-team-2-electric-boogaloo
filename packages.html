@@ -35,47 +35,49 @@
         </li>
       </ul>
     </nav>
-  <!-- DIV CONTAINING PROFILE AND CARDS -->
-  <div class="d-flex flex-lg-row flex-wrap m-lg-5">
-      <div class="me-lg-3" id="profile-card">
-  <!-- PROFILE CARD PRINTED HERE  -->
-      </div>
-  <!-- DIV CONTAINING FORM AND CARDS -->
-    <div class="d-flex flex-lg-column flex-wrap mt-lg-3">
-      <div class="container d-flex flex-wrap" id="package-container"></div>
-        <div class="container">  
-          <div class= "mt-4" id="package-form-container">
-            <div class="mb-3">
-              <label for="title" class="form-label">Name</label>
-              <input
-                type="text"
-                class="form-control"
-                id="package-name"
-                placeholder="New Package Name"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="package-img-src" class="form-label">Package Icon URL</label>
-              <input
-                type="text"
-                class="form-control"
-                id="package-img-src"
-                placeholder="Icon URL"
-              />
-            </div>
-            <div>
-              <label for="description" class="form-label">Description</label>
-              <textarea
-                class="form-control"
-                id="package-description"
-                rows="6"
-              ></textarea>
-            </div>
-            <button type="button" class="btn btn-outline-info" id="create-package">Submit</button>
-          </div>
-      </div>
+    <!-- DIV CONTAINING PROFILE AND CARDS -->
+    <div class="d-flex flex-lg-row flex-wrap m-lg-5">
+        <div class="me-lg-3" id="profile-card"></div>
+    <!-- DIV CONTAINING FORM AND CARDS -->
+        <div class="container d-flex flex-wrap" id="package-container"></div>
     </div>
-  </div>
+  
+  <!-- FORM CONTAINER -->
+    <h2 class="text-center m-5">Create a New Package</h2>
+    <form class= "container mt-4" id="package-form-container">
+      <div class="mb-3">
+        <label for="title" class="form-label">Name</label>
+        <input 
+          type="text"
+          class="form-control"
+          id="package-name"
+          placeholder="New Package Name"
+          aria-describedby="newPackageName"
+          required 
+        />
+      </div>
+      <div class="mb-3">
+        <label for="package-img-src" class="form-label">Package Icon URL</label>
+        <input 
+          type="text"
+          class="form-control"
+          id="package-img-src"
+          placeholder="Icon URL"
+          aria-describedby="newPackageIcon"
+          required
+        />
+      </div>
+      <div>
+        <label for="description" class="form-label">Description</label>
+        <textarea
+          class="form-control"
+          id="package-description"
+          rows="6"
+        ></textarea>
+      </div>
+      <button type="button" class="btn btn-outline-info" id="create-package">Submit</button>
+    </form>
+   
 
   <!-- FOOTER -->
     <footer class="navbar navbar-expand-lg d-flex justify-content-left">
