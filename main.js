@@ -128,16 +128,16 @@ const pins = [
 
 // HTML string of Package cards to be printed to DOM
 const packageCardString = (item) => {
-  return `<div class="card border-secondary m-3 bg-transparent" style="width: 20rem; height: 18rem;" id="${item.id}">
+  return `<div class="card border-secondary m-2 bg-transparent" style="width: 20rem; height: 18rem;" id="${item.id}">
             <div class="card-body text-secondary">
               <img src="${item.iconImgSrc}" style="width: 3rem; height: 3rem;">
               <h5 class="card-title">${item.name}</h5>
               <p class="card-text">${item.description}</p>
             </div>
-            <div class="d-flex flex-wrap mt-auto mx-auto mb-3">
+            <div class="d-flex flex-wrap mt-auto mx-auto mb-3" id="package-buttons">
                 <button type="button" class="btn btn-secondary m-1">Learn More</button>
-                <button type="button" class="btn btn-danger m-1" id="${item.id}">Delete</button>
-              </div>
+                <button type="button" class="btn btn-danger m-1" id="delete-package">Delete</button>
+            </div>
           </div>`;
 };
 
@@ -157,12 +157,26 @@ const packageMaker = (e) => {
     id,
   };
 
-  packages.push(newPackage);
-  createCards(packages, packageCardString, '#package-container');
+  if (!name) {
+    alert("Please input name");
+  } else {
+    packages.push(newPackage);
+    createCards(packages, packageCardString, '#package-container');
+    document.querySelector('#package-form-container').reset();
+  }
 };
 
-
-
+// Deletes package when delete button is clicked
+const deletePackage = (e) => {
+  let targetId = e.target.id;
+  let targetType = e.target.type;
+  
+  if (targetId === 'delete-package' && targetType === 'button') {
+    packages.splice((packages.length - 1),1);  
+  }
+  createCards(packages, packageCardString, '#package-container');
+};
+  
 //Holly - card to print after submitting form
 const pinCard = (item) => {
   return `<div class="card text-white bg-dark mb-3" style="max-width: 18rem;" id="${item.id}">
@@ -495,6 +509,9 @@ const pageInit = () => {
     document
       .querySelector('#create-package')
       .addEventListener('click', packageMaker);
+    document
+      .querySelector('#package-container')
+      .addEventListener('click', deletePackage);  
   } else if (fileName[0] === 'organizations.html') {
     createCards(organizations, orgCard, '#org-objects-container');
   } else if (fileName[0] === 'projects.html') {
