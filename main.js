@@ -1,23 +1,23 @@
 const projects = [
   {
     name: 'Project 1',
-    description: 'no description',
+    description: 'No description',
   },
   {
     name: 'Project 2',
-    description: 'no description',
+    description: 'No description',
   },
   {
     name: 'Project 3',
-    description: 'no description',
+    description: 'No description',
   },
   {
     name: 'Project 4',
-    description: 'no description',
+    description: 'No description',
   },
   {
     name: 'Project 5',
-    description: 'no description',
+    description: 'No description',
   },
 ];
 // Start arrays
@@ -341,7 +341,7 @@ const projectCards = (projects) => {
   return `<div class="card-body">
       <h5 class="card-title">${projects.name}</h5>
       <p class="card-text">${projects.description}</p>
-      <p class="card-text">...</p>
+      <p class="card-text" id="dots">...</p>
     </div>
 </div>`;
 };

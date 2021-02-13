@@ -35,6 +35,10 @@ nav {
   border-bottom: 50%;
 }
 
+#pj-card-container {
+  max-width: 800px;
+}
+
 #pj-header {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -51,4 +55,9 @@ nav {
 
 #project-container .card-title {
   color: #E2E3E3;
+}
+
+#dots {
+  font-size: 25px;
+  align-items: flex-start;
 }
