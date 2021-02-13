@@ -36,7 +36,7 @@
     </nav>
     
     <!-- Flex Obj -->
-    <div class="d-flex flex-row">
+    <div class="d-flex flex-row mb-3">
       <!-- Col 1 -->
       <div>
         <div id="profile-card">
@@ -49,35 +49,29 @@
         <!-- Row 1 -->
         <div class="d-flex flex-row">
           <h3>Organizations</h3>
-          <button type="button" class="btn btn-dark btn-sm ms-auto " id="new-org">New Organizaton</button>
+          <button type="button" class="btn btn-dark btn-sm ms-auto " id="new-org-btn">New Organizaton</button>
         </div>
         <div id="org-objects-container">
           <!--Organizations Cards -->
         </div>
         
         <!-- Row 2 -->
-        <h3>Add Organization</h3>
-        <div id="org-form-container">
+        <div id="org-form-container" style="display:none">
+          <h3>Add Organization</h3>
             <!--Form-->
-            <div class="mb-3">
-              <label for="title" class="form-label">Name</label>
-              <input
-                type="text"
-                class="form-control"
-                id="text-input"
-                placeholder="Your Project Name"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="description" class="form-label">Description</label>
-              <textarea
-                class="form-control"
-                id="object-description"
-                rows="3"
-              ></textarea>
-            </div>
-            <br />
-            <button type="button" class="btn btn-outline-info">Submit</button>
+            <form>
+              <div class="mb-3">
+                <label for="title" class="form-label">Org Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="org-text-input"
+                  placeholder="Your Organization's Name"
+                  required
+                />
+              </div>
+              <button on type="submit" class="btn btn-dark btn-sm ml-3" style="color:#C9D1D4">Submit</button>
+            </form>
         </div>
       </div>
     </div>

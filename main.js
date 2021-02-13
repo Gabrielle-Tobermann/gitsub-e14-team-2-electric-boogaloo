@@ -339,6 +339,76 @@ const orgCard = (item) => {
           </div>`;
 };
 // MG - End Create Organizations Cards
+// MG - Start Org Page Functions
+// Org Page Functions
+
+// Toggle Form Display
+const toggleOrgForm = (e) => {
+  const formStatus = document.querySelector("#org-form-container");
+
+  if (formStatus.style.display == "none") {
+    formStatus.style.display = "block"
+  } else if (formStatus.style.display == "block") {
+    formStatus.style.display = "none"
+  }
+};
+
+// Submit Org Form
+const submitOrgForm = (e) => {
+  // Prevent page refresh from form submission
+  e.preventDefault();
+  // Grab form name value
+  const formName = document.querySelector("#org-text-input").value;
+  // Create img array
+  const imgArr = [
+    'images/orgImgs/oi_nss.png',
+    'images/orgImgs/oi_org1.png',
+    'images/orgImgs/oi_org2.png',
+    'images/orgImgs/oi_org3.png'
+  ];
+  // Generate random repos between 35 and 20
+  const randomRepos = Math.floor(Math.random() * (35 - 20 +1)) + 20;
+  // Create new object properties
+  const img = imgArr[Math.floor(Math.random() * imgArr.length)];
+  const name = formName;
+  const repos = randomRepos;
+  // Create new object
+  const obj = {
+    img,
+    name,
+    repos,
+  };
+  // Push object into organizations array
+  organizations.push(obj);
+  // Rebuild the DOM
+  createCards(organizations, orgCard, '#org-objects-container');
+  // Reset the form fields
+  document.querySelector("form").reset();
+};
+
+// Remove Org From Page
+const removeOrg = (e) => {
+  // Capture type and Id of button click
+  const targetType = e.target.type;
+  const targetId = e.target.id;
+  // Remove that specific element from array
+  if (targetType === "button") {
+    organizations.splice(targetId,1);
+  };
+  // Re-print organizations array
+  createCards(organizations, orgCard, '#org-objects-container');
+};
+
+// Listen for Button Clicks
+const orgButtonEvents = () => {
+  const fileName = location.pathname.split('/').slice(-1);
+  if (fileName[0] === 'organizations.html') {
+    document.querySelector("#new-org-btn").addEventListener("click",toggleOrgForm);
+    document.querySelector("form").addEventListener("submit",submitOrgForm);
+    document.querySelector("#org-objects-container").addEventListener("click",removeOrg);
+  }
+};
+// MG - End Org Page Functions
 
 // Gabby - projects page
 const projectCards = (projects) => {
@@ -413,6 +483,7 @@ const pageInit = () => {
 const init = () => {
   printToDom('#profile-card', profileString);
   pageInit();
+  orgButtonEvents();
 };
 
 init();
