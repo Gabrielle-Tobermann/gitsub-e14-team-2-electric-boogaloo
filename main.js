@@ -1,3 +1,5 @@
+// Start Arrays
+// Projects Array
 const projects = [
   {
     name: 'Project 1',
@@ -20,7 +22,7 @@ const projects = [
     description: 'no description',
   },
 ];
-// Start arrays
+// Organizations Array
 const organizations = [
   {
     img: 'images/orgImgs/oi_nss.png',
@@ -43,8 +45,7 @@ const organizations = [
     repos: 27,
   },
 ];
-
-// Array of package objects
+// Packages Array
 const packages = [
   {
     name: 'Docker',
@@ -89,7 +90,7 @@ const packages = [
     id: 5,
   },
 ];
-
+// Repos Array
 const repos = [
   {
     name: 'example-repo',
@@ -101,6 +102,9 @@ const repos = [
   },
 ];
 
+const favoriteRepos = [];
+
+// Pins Array
 const pins = [
   {
     name: 'affirmation-generator',
@@ -120,6 +124,7 @@ const pins = [
     description: 'Personal portfolio site, deployed through Netlify.',
   },
 ];
+// End Arrays
 
 // HTML string of Package cards to be printed to DOM
 const packageCardString = (item) => {
@@ -259,7 +264,7 @@ const profileString = `<!-- Profile -->
 <!-- Blurb -->
 <p>
   Building tech to elevate people. Founder of React Ladies a community for
-  React JS develops.
+  React JS developers.
 </p>
 <!-- Buttons? -->
 <!-- Stats? -->
@@ -299,9 +304,7 @@ const profileString = `<!-- Profile -->
 <!-- Sponsors -->
   <!-- Print Images of Sponsors Object Here -->`;
 
-// end my code
-
-const repoCard = (item) => `<div class="repo-card w-100" style="width: 18rem;">
+const repoCard = (item) => `<div class="repo-card w-100 bottom-border" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">${item.name}</h5>
       <p class="card-text">${item.description}</p>
@@ -312,19 +315,48 @@ const buildReposPage = () => {
   createCards(repos, repoCard, '#reposContainer');
 };
 
+const repoFormSubmit = (e) => {
+  e.preventDefault();
+
+  const repoName = document.querySelector('#repoName').value;
+  const repoDescription = document.querySelector('#repoDescription').value;
+
+  document.querySelector('#repoName').value = '';
+  document.querySelector('#repoDescription').value = '';
+
+  const newRepo = {
+    name: repoName,
+    description: repoDescription,
+  };
+
+  repos.push(newRepo);
+  buildReposPage();
+};
+
+const repoEvents = () => {
+  document
+    .querySelector('#repoSubmit')
+    .addEventListener('click', repoFormSubmit);
+};
 
 // End Create Profile Card
 
 // MG - Start Create Organizations Cards
 const orgCard = (item) => {
-  return `<div class="card bg-transparent" >
-  <div class="card-body">
-    <img src=${item.img} alt="${item.name} logo">
-    <h6 class="card-subtitle text-muted">${item.name}</h6>
-    member and collaborator on ${item.repos} repositories
-    <button type="button">Leave</button>
-  </div>
-</div>`;
+  return `<div class="card bg-transparent">
+            <div class="card-body d-flex flex-row border border-2 border-dark rounded">
+              <div>
+                <img src=${item.img} alt="${item.name} logo">
+              </div>
+              <div class="text-center align-self-center px-2">
+                <h6 class="card-subtitle" style="color:#58A6FF">${item.name}</h6>
+              </div>
+              <div class="align-self-center" style="font-size:13px">  
+                member and collaborator on ${item.repos} repositories
+              </div>
+              <button type="button" class="btn btn-dark btn-sm ml-3 ms-auto " style="color:#C9D1D4">Leave</button>
+            </div>    
+          </div>`;
 };
 // MG - End Create Organizations Cards
 
@@ -352,13 +384,13 @@ const projectsForm = () => {
     <input type="text" class="form-control" id="project-description">
   </div>
   <button type="submit" class="btn btn-primary">Create project</button>
-</form>`
+</form>`;
 
-printToDom('#project-form', formString);
-document.querySelector('form').addEventListener('submit', projectsFormInfo);
-}
+  printToDom('#project-form', formString);
+  document.querySelector('form').addEventListener('submit', projectsFormInfo);
+};
 
-// Gabby - updating projects when form is filled in 
+// Gabby - updating projects when form is filled in
 const projectsFormInfo = (e) => {
   e.preventDefault();
 
@@ -368,12 +400,12 @@ const projectsFormInfo = (e) => {
   const obj = {
     name,
     description,
-  }
+  };
   projects.push(obj);
-  createCards(projects, projectCards, '#project-container'); 
+  createCards(projects, projectCards, '#project-container');
   //This will have to call onProjectsPage instead of createcards after PR is approved
   document.querySelector('form').reset();
-}
+};
 
 // Runs page's functions
 const pageInit = () => {
@@ -381,7 +413,8 @@ const pageInit = () => {
 
   if (fileName[0] === 'repos.html') {
     buildReposPage();
-  } else if (fileName[0] === 'index.html') {
+    repoEvents();
+  } else if (fileName[0] === '') {
     createCards(pins, pinCard, '#pin-container');
     pinButtonEvent();
   } else if (fileName[0] === 'packages.html') {
