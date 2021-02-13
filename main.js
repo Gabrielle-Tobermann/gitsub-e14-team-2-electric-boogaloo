@@ -386,7 +386,7 @@ const projectsForm = () => {
     <label for="projectDescription" class="form-label fw-bold new-project">Description (optional)</label>
     <input type="text" class="form-control bg-transparent border border-secondary pb-5 ps-5" id="project-description">
   </div>
-  <button type="submit" class="btn btn-primary">Create project</button>
+  <button type="submit" class="btn btn-success">Create project</button>
 </form>`;
 
   printToDom('#project-form', formString);
