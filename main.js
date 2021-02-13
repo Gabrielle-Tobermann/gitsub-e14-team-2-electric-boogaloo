@@ -12,11 +12,11 @@ const projects = [
     description: 'no description',
   },
   {
-    name: 'project 4',
+    name: 'Project 4',
     description: 'no description',
   },
   {
-    name: 'project 5',
+    name: 'Project 5',
     description: 'no description',
   },
 ];
@@ -325,7 +325,7 @@ const buildReposPage = () => {
 
 // MG - Start Create Organizations Cards
 const orgCard = (item) => {
-  return `<div class="card bg-transparent" >
+  return `<div class="card bg-transparent">
   <div class="card-body">
     <img src=${item.img} alt="${item.name} logo">
     <h6 class="card-subtitle text-muted">${item.name}</h6>
@@ -338,12 +338,11 @@ const orgCard = (item) => {
 
 // Gabby - projects page
 const projectCards = (projects) => {
-  return `<div class="card">
-  <h5 class="card-header"></h5>
-  <div class="card-body">
-    <h5 class="card-title">${projects.name}</h5>
-    <p class="card-text">${projects.description}</p>
-  </div>
+  return `<div class="card-body">
+      <h5 class="card-title">${projects.name}</h5>
+      <p class="card-text">${projects.description}</p>
+      <p class="card-text">...</p>
+    </div>
 </div>`;
 };
 

@@ -34,3 +34,21 @@ nav {
   padding: 10px;
   border-bottom: 50%;
 }
+
+#pj-header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #171F20;
+  color:#E2E3E3
+}
+
+#project-container .card-body {
+  border-bottom: #8b949e solid 0.5px;
+  border-top: #8b949e solid 0.5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#project-container .card-title {
+  color: #E2E3E3;
+}
