@@ -34,41 +34,51 @@
         </li>
       </ul>
     </nav>
-    <div class="container-fluid">
-      <div class="row content">
-        <div class="col-sm-3" id="profile-card">
-          <!--Profile Card - aligned left-->
+    
+    <!-- Flex Obj -->
+    <div class="d-flex flex-row">
+      <!-- Col 1 -->
+      <div>
+        <div id="profile-card">
+          <!-- Profile Card -->
+        </div>
+      </div>
+
+      <!-- Col 2 -->
+      <div class="flex-row">
+        <!-- Row 1 -->
+        <h3>Organizations</h3>
+        <div id="org-objects-container">
+          <!--Organizations Cards -->
+        </div>
+        
+        <!-- Row 2 -->
+        <h3>Add Organization</h3>
+        <div id="org-form-container">
+            <!--Form-->
+            <div class="mb-3">
+              <label for="title" class="form-label">Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="text-input"
+                placeholder="Your Project Name"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="description" class="form-label">Description</label>
+              <textarea
+                class="form-control"
+                id="object-description"
+                rows="3"
+              ></textarea>
+            </div>
+            <br />
+            <button type="button" class="btn btn-outline-info">Submit</button>
         </div>
       </div>
     </div>
-    <div class="col-sm-9" id="org-objects-container">
-      <!--This is for projects, repos, etc-->
-      <br /><!--Objects --><br />
-      <div class="col-sm-9" id="org-form-container">
-        <!--For each page's create & submit form-->
-        <br />
-        <!--Form-->
-        <div class="mb-3">
-          <label for="title" class="form-label">Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="text-input"
-            placeholder="Your Project Name"
-          />
-        </div>
-        <div class="mb-3">
-          <label for="description" class="form-label">Description</label>
-          <textarea
-            class="form-control"
-            id="object-description"
-            rows="3"
-          ></textarea>
-        </div>
-        <br />
-        <button type="button" class="btn btn-outline-info">Submit</button>
-      </div>
-    </div>
+
     <!-- Footer -->
     <nav class="navbar navbar-expand-lg fixed-bottom navbar-light bg-light">
       <div class="container-fluid">
