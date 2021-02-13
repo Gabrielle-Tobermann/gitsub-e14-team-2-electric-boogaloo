@@ -335,8 +335,8 @@ const repoFormSubmit = (e) => {
 
 const repoEvents = () => {
   document
-    .querySelector('#repoSubmit')
-    .addEventListener('click', repoFormSubmit);
+    .querySelector('#repoForm')
+    .addEventListener('submit', repoFormSubmit);
 };
 
 // End Create Profile Card
