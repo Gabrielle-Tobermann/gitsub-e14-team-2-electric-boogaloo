@@ -15,65 +15,70 @@
     <title>Gitsub | Packages</title>
   </head>
   <body>
-<!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a href="./" class="nav-link">Overview</a>
-      </li>
-      <li class="nav-item">
-        <a href="./repos.html" class="nav-link">Repositories</a>
-      </li>
-      <li class="nav-item">
-        <a href="./projects.html" class="nav-link">Projects</a>
-      </li>
-      <li class="nav-item">
-        <a href="./packages.html" class="nav-link">Packages</a>
-      </li>
-      <li class="nav-item">
-        <a href="./organizations.html" class="nav-link">Organizations</a>
-      </li>
-    </ul>
-  </nav>
-
-<!-- PROFILE CARD -->
-  <div class="col-sm-3 m-3" id="profile-card">
-    <!--Profile Card - aligned left--> 
-  </div>
-
-<!--This is for projects, repos, etc-->
-  <div class="w-100"> 
-    <div class="container d-flex flex-wrap" id="package-container">
-      
-    </div>
-
-<!--For each page's create & submit form-->
-    <div class="container">  
-      <div id="package-form-container">
-<!--Form-->
-        <div class="mb-3">
-          <label for="title" class="form-label">Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="package-name"
-            placeholder="New Package Name"
-          />
-        </div>
-        <div>
-          <label for="description" class="form-label">Description</label>
-          <textarea
-            class="form-control"
-            id="package-description"
-            rows="6"
-          ></textarea>
-        </div>
-        <button type="button" class="btn btn-outline-info" id="create-package">Submit</button>
+  <!-- TOP NAV BAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a href="./" class="nav-link">Overview</a>
+        </li>
+        <li class="nav-item">
+          <a href="./repos.html" class="nav-link">Repositories</a>
+        </li>
+        <li class="nav-item">
+          <a href="./projects.html" class="nav-link">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a href="./packages.html" class="nav-link">Packages</a>
+        </li>
+        <li class="nav-item">
+          <a href="./organizations.html" class="nav-link">Organizations</a>
+        </li>
+      </ul>
+    </nav>
+  <!-- DIV CONTAINING PROFILE AND CARDS -->
+  <div class="d-flex flex-lg-row flex-wrap m-lg-5">
+      <div class="me-lg-3" id="profile-card">
+  <!-- PROFILE CARD PRINTED HERE  -->
+      </div>
+  <!-- DIV CONTAINING FORM AND CARDS -->
+    <div class="d-flex flex-lg-column flex-wrap mt-lg-3">
+      <div class="container d-flex flex-wrap" id="package-container"></div>
+        <div class="container">  
+          <div class= "mt-4" id="package-form-container">
+            <div class="mb-3">
+              <label for="title" class="form-label">Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="package-name"
+                placeholder="New Package Name"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="package-img-src" class="form-label">Package Icon URL</label>
+              <input
+                type="text"
+                class="form-control"
+                id="package-img-src"
+                placeholder="Icon URL"
+              />
+            </div>
+            <div>
+              <label for="description" class="form-label">Description</label>
+              <textarea
+                class="form-control"
+                id="package-description"
+                rows="6"
+              ></textarea>
+            </div>
+            <button type="button" class="btn btn-outline-info" id="create-package">Submit</button>
+          </div>
       </div>
     </div>
-  </div> 
-<!-- Footer -->
-    <nav class="navbar navbar-expand-lg fixed-bottom navbar-light bg-light">
+  </div>
+
+  <!-- FOOTER -->
+    <footer class="navbar navbar-expand-lg d-flex justify-content-left">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">@ 2021 Github, Inc.</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -118,15 +123,14 @@
           </ul>
         </div>
       </div>
-    </nav>
+    </footer>
 
-<!-- Bootstrap Script -->
+  <!-- SCRIPTS -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
       crossorigin="anonymous">
     </script>
-<!-- JS Script -->
     <script src="main.js"></script>
   </body>
 </html>
