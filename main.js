@@ -101,7 +101,7 @@ const repos = [
     description: 'Use the form below to create repositories of your own.',
   },
 ];
-// Pines Array
+// Pins Array
 const pins = [
   {
     name: 'affirmation-generator',
