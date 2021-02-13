@@ -121,7 +121,6 @@ const pins = [
   },
 ];
 
-
 // HTML string of Package cards to be printed to DOM
 const packageCardString = (item) => {
   return `<div class="card border-secondary m-3 bg-transparent" style="width: 20rem; height: 18rem;" id="${item.id}">
@@ -156,6 +155,8 @@ const packageMaker = (e) => {
   packages.push(newPackage);
   createCards(packages, packageCardString, '#package-container');
 };
+
+
 
 //Holly - card to print after submitting form
 const pinCard = (item) => {
