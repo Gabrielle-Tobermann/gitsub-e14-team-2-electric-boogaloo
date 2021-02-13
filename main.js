@@ -334,7 +334,7 @@ const orgCard = (item) => {
               <div class="align-self-center" style="font-size:13px">  
                 member and collaborator on ${item.repos} repositories
               </div>
-              <button type="button" class="btn btn-dark btn-sm ml-3 ms-auto " style="color:#C9D1D4">Leave</button>
+              <button type="button" class="btn btn-dark btn-sm ml-3 ms-auto" style="color:#C9D1D4">Leave</button>
             </div>    
           </div>`;
 };
