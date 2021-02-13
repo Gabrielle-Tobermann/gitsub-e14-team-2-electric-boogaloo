@@ -1,3 +1,5 @@
+// Start Arrays
+// Projects Array
 const projects = [
   {
     name: 'Project 1',
@@ -20,7 +22,7 @@ const projects = [
     description: 'no description',
   },
 ];
-// Start arrays
+// Organizations Array
 const organizations = [
   {
     img: 'images/orgImgs/oi_nss.png',
@@ -43,8 +45,7 @@ const organizations = [
     repos: 27,
   },
 ];
-
-// Array of package objects
+// Packages Array
 const packages = [
   {
     name: 'Docker',
@@ -89,7 +90,7 @@ const packages = [
     id: 5,
   },
 ];
-
+// Repos Array
 const repos = [
   {
     name: 'example-repo',
@@ -100,7 +101,7 @@ const repos = [
     description: 'Use the form below to create repositories of your own.',
   },
 ];
-
+// Pines Array
 const pins = [
   {
     name: 'affirmation-generator',
@@ -120,6 +121,7 @@ const pins = [
     description: 'Personal portfolio site, deployed through Netlify.',
   },
 ];
+// End Arrays
 
 // Creates new packages after package form is submitted
 const packageMaker = (e) => {
@@ -267,7 +269,7 @@ const profileString = `<!-- Profile -->
 <!-- Blurb -->
 <p>
   Building tech to elevate people. Founder of React Ladies a community for
-  React JS develops.
+  React JS developers.
 </p>
 <!-- Buttons? -->
 <!-- Stats? -->
@@ -307,8 +309,6 @@ const profileString = `<!-- Profile -->
 <!-- Sponsors -->
   <!-- Print Images of Sponsors Object Here -->`;
 
-// end my code
-
 const repoCard = (item) => `<div class="repo-card w-100" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">${item.name}</h5>
@@ -319,20 +319,24 @@ const repoCard = (item) => `<div class="repo-card w-100" style="width: 18rem;">
 const buildReposPage = () => {
   createCards(repos, repoCard, '#reposContainer');
 };
-
-
 // End Create Profile Card
 
 // MG - Start Create Organizations Cards
 const orgCard = (item) => {
-  return `<div class="card bg-transparent" >
-  <div class="card-body">
-    <img src=${item.img} alt="${item.name} logo">
-    <h6 class="card-subtitle text-muted">${item.name}</h6>
-    member and collaborator on ${item.repos} repositories
-    <button type="button">Leave</button>
-  </div>
-</div>`;
+  return `<div class="card bg-transparent">
+            <div class="card-body d-flex flex-row border border-2 border-dark rounded">
+              <div>
+                <img src=${item.img} alt="${item.name} logo">
+              </div>
+              <div class="text-center align-self-center px-2">
+                <h6 class="card-subtitle" style="color:#58A6FF">${item.name}</h6>
+              </div>
+              <div class="align-self-center" style="font-size:13px">  
+                member and collaborator on ${item.repos} repositories
+              </div>
+              <button type="button" class="btn btn-dark btn-sm ml-3 ms-auto " style="color:#C9D1D4">Leave</button>
+            </div>    
+          </div>`;
 };
 // MG - End Create Organizations Cards
 
