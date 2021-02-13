@@ -190,42 +190,20 @@ const pinCard = (item) => {
         alt="image of solid star"
       />
         </div>
+        <div class="d-flex flex-wrap mt-auto mx-auto mb-3" id="package-buttons">
+        <button type="button" class="btn btn-secondary m-1">Learn More</button>
+        <button type="button" class="btn btn-danger m-1" id="remove-pin">Remove pin</button>
+        </div>
       </div>
     </div>`;
 };
 
-//Upon clicking 'customize' button, this form appears
 const pinButtonEvent = () => {
-  document.querySelector('#customize').addEventListener('click', pinCardForm);
+  document.querySelector('#customize').addEventListener('click', submitPinnedCard);
+  document.querySelector('#remove-pin').addEventListener('click', removePin);
 };
 
-//Stretch goal: add a search form to add items from other pages
-const pinCardForm = () => {
-  console.log('click');
-  let form = `<div class="mb-3 text-white">
-                <label for="title" class="form-label">Name</label>
-                <input
-                  type="text"
-                  class="form-control bg-dark text-white"
-                  id="text-input"
-                  placeholder="Your Project Name"
-                />
-              </div>
-              <div class="mb-3 text-white border-white">
-                <label for="description" class="form-label">Description</label>
-                <textarea
-                  class="form-control bg-dark text-white"
-                  id="pin-description"
-                  rows="3"
-                ></textarea>
-              </div>
-              <br />
-              <button type="button" class="btn btn-outline-info" id="submitButton">Submit</button>`;
-  printToDom('#form-container', form);
-  document
-    .querySelector('#submitButton')
-    .addEventListener('click', submitPinnedCard);
-};
+
 
 //Holly - this will take in the form info + push to pins array; then will reset form
 const submitPinnedCard = (e) => {
@@ -242,6 +220,15 @@ const submitPinnedCard = (e) => {
   };
 
   pins.push(newPin);
+  createCards(pins, pinCard, '#pin-container');
+};
+
+const removePin = (e) => {
+  const targetType = e.target.type;
+  const targetId = e.target.id;
+  if (targetId === 'remove-pin' && targetType === 'button') {
+    pins.splice((pins.length - 1),1);  
+  }
   createCards(pins, pinCard, '#pin-container');
 };
 
