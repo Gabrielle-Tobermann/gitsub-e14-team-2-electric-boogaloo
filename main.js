@@ -339,7 +339,10 @@ const orgCard = (item) => {
 // Gabby - projects page
 const projectCards = (projects) => {
   return `<div class="card-body">
-      <h5 class="card-title">${projects.name}</h5>
+      <div>
+        <h5 class="card-title">${projects.name}</h5>
+        <p class="card-text fs-6"> Updated 1 mimute ago </p>
+      </div>
       <p class="card-text">${projects.description}</p>
       <p class="card-text" id="dots">...</p>
     </div>
@@ -353,7 +356,7 @@ const projectsForm = () => {
     <div class='form-text'>Coordinate, track and update all in one place, so projects stay transparent and on schedule</div>
     <hr/>
     <label for="projectsForm" class="form-label mt-2 fw-bold new-project">Project board name</label>
-    <input type="text" class="form-control bg-transparent border border-secondary" id="project-board-name" aria-describedby="projectBoardNameHelp" required>
+    <input type="text" class="form-control bg-transparent border border-secondary w-50" id="project-board-name" aria-describedby="projectBoardNameHelp" placeholder="Example" required>
   </div>
   <div class="mb-3">
     <label for="projectDescription" class="form-label fw-bold new-project">Description (optional)</label>
