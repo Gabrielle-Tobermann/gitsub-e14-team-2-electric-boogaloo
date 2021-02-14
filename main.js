@@ -27,6 +27,8 @@ const projects = [
     date: new Date('2021-02-02T10:00:00')
   },
 ];
+
+let sortedProjects = [];
 // Organizations Array
 const organizations = [
   {
@@ -497,22 +499,17 @@ const projectsFormInfo = (e) => {
   };
   projects.push(obj);
   createCards(projects, projectCards, '#project-container');
-  //This will have to call onProjectsPage instead of createcards after PR is approved
   document.querySelector('form').reset();
+  document.querySelector('#sort-btn').addEventListener('click', sortProjectCards) 
 };
 
 //Gabby stretch goal - sort cards 
 const sortProjectCards = (e) => {
-  buttonType= e.target.type;
-  let sortedProjects = [];
 
   if (e.target.id === 'sort-btn') {
-      sortedProjects = projects.sort((a, b) => b.date - a.date);
+       sortedProjects = projects.slice().sort((a, b) => b.date - a.date);
   };
-  //console.log(projectCards(sortedProjects));
-  
   createCards(sortedProjects, projectCards, '#project-container');
-  
 };
 
 // Runs page's functions
