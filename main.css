@@ -3,7 +3,19 @@ body {
   color: #8b949e;
 }
 
+.sidenav {
+  padding-top: 20px;
+  height: 100%;
+}
 
+@media screen and (max-width: 767px) {
+  .sidenav {
+    height: auto;
+    padding: 15px;
+  }
+  .row.content {
+    height:auto;
+}
 
 #profile-card {
   max-width: 250px;
@@ -26,14 +38,6 @@ body {
 
 #package-form-container {
   margin-bottom: 10%;
-}
-
-#pin-container {
-  position: absolute;
-  right: 100px;
-  width: 60%;
-  padding: 10px;
-  border-bottom: 50%;
 }
 
 #pj-card-container {
@@ -64,4 +68,5 @@ body {
 
 .new-project {
   color: #D1D1D1;
+}
 }
