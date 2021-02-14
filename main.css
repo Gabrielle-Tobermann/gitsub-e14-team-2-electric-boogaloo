@@ -3,10 +3,22 @@ body {
   color: #8b949e;
 }
 
-
-
 #profile-card {
   max-width: 250px;
+}
+
+.sidenav {
+  padding-top: 20px;
+  padding-right: 20px;
+  height: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .sidenav {
+    height: auto;
+    padding: 15px;
+  }
+  .row.content {height:auto;} 
 }
 
 .bottom-border {
