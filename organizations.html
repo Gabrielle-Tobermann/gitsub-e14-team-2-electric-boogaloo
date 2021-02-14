@@ -36,10 +36,10 @@
     </nav>
     
     <!-- Flex Obj -->
-    <div class="d-flex flex-row mb-3">
+    <div class="d-flex flex-row mt-3 mx-auto">
       <!-- Col 1 -->
       <div>
-        <div id="profile-card">
+        <div class="mx-3" id="profile-card">
           <!-- Profile Card -->
         </div>
       </div>
@@ -49,7 +49,7 @@
         <!-- Row 1 -->
         <div class="d-flex flex-row">
           <h3>Organizations</h3>
-          <button type="button" class="btn btn-dark btn-sm ms-auto " id="new-org-btn">New Organizaton</button>
+          <button type="button" class="btn btn-dark btn-sm ms-auto" id="new-org-btn">New Organizaton</button>
         </div>
         <div id="org-objects-container">
           <!--Organizations Cards -->
@@ -123,6 +123,15 @@
         </div>
       </div>
     </footer>
+    <!-- Enable Popovers -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(function(){
+        $('[data-toggle="popover"]').popover({
+          container: 'body'
+        });
+      });
+      </script>
     <!-- Bootstrap Script -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
