@@ -4,7 +4,7 @@ body {
 }
 
 #profile-card {
-  max-width: 250px;
+  max-width: 25%;
 }
 
 .bottom-border {
@@ -26,13 +26,20 @@ body {
   margin-bottom: 10%;
 }
 
-#pin-container {
-  position: absolute;
-  right: 100px;
-  width: 60%;
-  padding: 10px;
-  border-bottom: 50%;
+.overview-container {
+  float: right;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
 }
+
+#pin-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
 
 #pj-card-container {
   height:max-content;

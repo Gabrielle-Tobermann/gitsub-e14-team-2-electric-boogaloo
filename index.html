@@ -15,7 +15,7 @@
     <title>Gitsub | Overview</title>
   </head>
   <body>
-  <!-- TOP NAV BAR -->
+    <!-- TOP NAV BAR -->
     <nav class="navbar navbar-expand-lg navbar-dark">
       <ul class="navbar-nav">
         <li class="nav-item">
@@ -37,48 +37,68 @@
     </nav>
     <!-- DIV CONTAINING PROFILE AND CARDS -->
     <div class="d-flex flex-lg-row flex-wrap m-lg-5">
-        <div class="me-lg-3" id="profile-card"></div>
-    <!-- DIV CONTAINING FORM AND CARDS -->
-        <div class="container d-flex flex-wrap" id="pin-container"></div>
-    </div>
-  <!-- FORM CONTAINER -->
-    <div class="container mt-4" id="form-container">
-      <h2 class="text-center m-5">Highlight your achievements</h2>
-      <form >
-        <div class="mb-3">
-          <label for="title" class="form-label">Name</label>
-          <input 
-            type="text"
-            class="form-control bg-dark"
-            id="text-input"
-            placeholder="New Package Name"
-            aria-describedby="newPackageName"
-            required 
-          />
+      <div class="me-lg-3" id="profile-card"></div>
+      <div class="overview-container">
+        <div class="col-9">
+          <article class="article">
+            <div
+              class="media card bg-transparent border-secondary m-3 p-4"
+              id="pin-container"
+            ></div>
+          </article>
+          <div class="container mt-4" id="form-container">
+            <h3 class="text-center m-5">Highlight your achievements</h3>
+            <form id="add-pin" method="POST">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group mb-3">
+                    <input
+                      id="text-input"
+                      placeholder="Name *"
+                      class="form-control"
+                      type="text"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group mb-3">
+                    <textarea
+                      name="message"
+                      id="pin-description"
+                      placeholder="Description (optional) *"
+                      rows="6"
+                      class="form-control"
+                    ></textarea>
+                  </div>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <div class="send">
+                    <button id="customize" class="btn btn-lg btn-success">
+                      <span>Pin It</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
-        <div>
-          <label for="description" class="form-label">Description</label>
-          <textarea
-            class="form-control bg-dark"
-            id="pin-description"
-            rows="6"
-          ></textarea>
-        </div>
-        <button type="button" class="btn btn-dark btn-lg my-4" id="customize">Submit</button>
-      </form>
+      </div>
     </div>
-  <!-- FOOTER -->
+  </div>
+    <!-- FOOTER -->
     <footer class="navbar navbar-expand-lg d-flex justify-content-left">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">@ 2021 Github, Inc.</a>
-        <button 
-          class="navbar-toggler" 
-          type="button" 
-          data-bs-toggle="collapse" 
-          data-bs-target="#navbarText" 
-          aria-controls="navbarText" 
-          aria-expanded="false" 
-          aria-label="Toggle navigation">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarText"
+          aria-controls="navbarText"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse">
@@ -98,7 +118,7 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Docs</a>
             </li>
-            <img src="GitHub-Mark-Light-64px.png">
+            <img src="GitHub-Mark-Light-64px.png" />
             <li class="nav-item">
               <a class="nav-link" href="#">Contact Github</a>
             </li>
@@ -121,12 +141,12 @@
         </div>
       </div>
     </footer>
-  <!-- SCRIPTS -->
+    <!-- SCRIPTS -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-      crossorigin="anonymous">
-    </script>
+      crossorigin="anonymous"
+    ></script>
     <script src="main.js"></script>
   </body>
 </html>
