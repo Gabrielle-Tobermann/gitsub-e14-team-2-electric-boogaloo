@@ -12,10 +12,30 @@
     />
     <!-- CSS Link -->
     <link rel="stylesheet" href="main.css" />
-    <title>Gitsub</title>
+    <title>Gitsub | Repositories</title>
+  </head>
+    <style>
+      
+      /* Set gray background color and 100% height */
+      .sidenav {
+        padding-top: 20px;
+        padding-right: 20px;
+        height: 100%;
+      }
+      
+      /* On small screens, set height to 'auto' for sidenav and grid */
+      @media screen and (max-width: 767px) {
+        .sidenav {
+          height: auto;
+          padding: 15px;
+        }
+        .row.content {height:auto;} 
+      }
+    </style>
+    <title>Gitsub | Overview</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-sm navbar-dark bottom-border">
+    <nav class="navbar navbar-expand-sm navbar-dark bottom-border bg">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item">
           <a href="./" class="nav-link">Overview</a>
@@ -34,52 +54,47 @@
         </li>
       </ul>
     </nav>
-
-    <div class="container-fluid">
+  
+    <div class="container-fluid">    
       <div class="row content">
-        <div class="profile col-3 mr-0" id="profile-card">
-          <!--Profile Card - aligned left-->
-        </div>
-      </div>
-    </div>
+        <div class="col-sm-4 sidenav" id="profile-card">
 
-    <div class="col-sm-9" id="objects-container">
-      <!--This is for projects, repos, etc-->
-      <br /><!--Objects --><br />
-
-      <div class="col-sm-9" id="form-container">
-        <!--For each page's create & submit form-->
-        <br />
-        <!--Form-->
-        <div class="mb-3">
-          <label for="title" class="form-label">Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="text-input"
-            placeholder="Your Project Name"
-          />
         </div>
-        <div class="mt-4">
-          <button
-            type="submit"
-            class="btn btn-secondary btn-lg my-4"
-            id="customize"
-          >
-            Customize Your Pins
+        <div class="col-sm-7 text-left p-4"> 
+          <h1>Hi, I'm Monica!</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <hr>
+          <h3 class="m-3">Highlight your achievements</h3>
+          
+          <hr>
+          <div id="form-container">
+          <div class="form-group mb-3">
+            <input
+              id="text-input"
+              placeholder="Name *"
+              class="form-control bg-dark"
+              type="text"
+              required
+            />
+          </div>
+          <div class="form-group mb-3">
+            <textarea
+              name="message"
+              id="pin-description"
+              placeholder="Description (optional) *"
+              rows="6"
+              class="form-control bg-dark"
+            ></textarea>
+          </div>
+          <button id="customize" class="btn btn-lg btn-success mb-3">
+            <span>Pin It</span>
           </button>
         </div>
       </div>
     </div>
-    <div class="form col-sm-3" id="form-container"></div>
-    <!--For each page's create & submit form-->
-
-    <div class="pin row" id="pin-container"></div>
+    </div>
     <!-- Footer -->
-    <nav
-      class="navbar navbar-expand-lg fixed-bottom navbar-light bg-light"
-      id="bottom-nav"
-    >
+    <nav class="navbar navbar-expand-lg fixed-bottom navbar-light bg-">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">@ 2021 Github, Inc.</a>
         <button
@@ -133,14 +148,9 @@
         </div>
       </div>
     </nav>
-
-    <!-- Bootstrap Script -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-      crossorigin="anonymous"
-    ></script>
-    <!-- JS Script -->
+    <!--SCRIPTS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="main.js" async defer></script>
-  </body>
-</html>
+    </body>
+    </html>
