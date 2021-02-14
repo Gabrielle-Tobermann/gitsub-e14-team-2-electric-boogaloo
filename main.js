@@ -2,17 +2,17 @@
 // Projects Array
 const projects = [
   {
-    name: 'Project 1',
+    name: 'my-goals',
     description: 'No description',
     date: new Date('2021-01-30T03:32:00')
   },
   {
-    name: 'Project 2',
-    description: 'No description',
+    name: 'Team Project',
+    description: 'goals for first team project',
     date: new Date('2020-12-01T08:00:00')
   },
   {
-    name: 'Project 3',
+    name: 'Personal Project',
     description: 'No description',
     date: new Date('2021-02-02T12:30:00')
   },
@@ -22,8 +22,8 @@ const projects = [
     date: new Date('2021-02-04T09:14:00')
   },
   {
-    name: 'Project 5',
-    description: 'No description',
+    name: 'NSS-goals',
+    description: 'goals to achieve at NSS',
     date: new Date('2021-02-02T10:00:00')
   },
 ];
@@ -506,11 +506,13 @@ const sortProjectCards = (e) => {
   buttonType= e.target.type;
   let sortedProjects = [];
 
-  if (buttonType === 'button') {
-      sortedProjects = projects.sort((a, b) => b.date > a.date);
+  if (e.target.id === 'sort-btn') {
+      sortedProjects = projects.sort((a, b) => b.date - a.date);
   };
+  //console.log(projectCards(sortedProjects));
   
-  console.log(createCards(sortedProjects, projectCards, '#project-container'));
+  createCards(sortedProjects, projectCards, '#project-container');
+  
 };
 
 // Runs page's functions
@@ -536,7 +538,7 @@ const pageInit = () => {
   } else if (fileName[0] === 'projects.html') {
     createCards(projects, projectCards, '#project-container');
     projectsForm();
-    document.querySelector('#project-container').addEventListener('click', sortProjectCards);
+    document.querySelector('#sort-btn').addEventListener('click', sortProjectCards);
   }
 };
 
