@@ -162,7 +162,7 @@ const packageMaker = (e) => {
   } else {
     packages.push(newPackage);
     createCards(packages, packageCardString, '#package-container');
-    document.querySelector('#package-form-container').reset();
+    document.querySelector('form').reset();
   }
 };
 
