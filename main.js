@@ -46,7 +46,7 @@ const organizations = [
     img: 'images/orgImgs/oi_org3.png',
     name: 'Fortune 500 Devs',
     repos: 27,
-    topFive: ['stockModel','facebookUserStats','tiktokAPI','blackRock','vanguardIndexFunds'],
+    topFive: ['stockModel','facebookUserStats','tiktokAPI','blackRockFunds','appleOptimizer'],
   },
 ];
 // Packages Array
@@ -360,14 +360,18 @@ const repoEvents = () => {
 // End Create Profile Card
 
 // MG - Start Create Organizations Cards
-// jQuery
-$(function(){
-  $('[data-toggle="popover"]').popover({
-    container: 'body'
-  });
+// complex-data function
+const favRepoString = (arr) => {
+  let string = "Highlighted Repos:   ";
+  for (i = 0; i < arr.length; i++) {
+    string += `(${i+1})${arr[i]} `;
+  }
+  return string;
+};
+
 // create cards
-});
 const orgCard = (item) => {
+  let printFavs = favRepoString(item.topFive);
   return `<div class="card bg-transparent">
             <div class="card-body d-flex flex-row border border-2 border-dark rounded">
               <div>
@@ -377,7 +381,8 @@ const orgCard = (item) => {
                 <h6 class="card-subtitle" style="color:#58A6FF">${item.name}</h6>
               </div>
               <div class="align-self-center" style="font-size:13px">  
-                member and collaborator on <u data-toggle="popover" title="Fav Repos" data-content="${item.topFive}" data-placement="bottom" data-trigger="hover">${item.repos} repositories</u>
+                member and collaborator on ${item.repos} repositories
+                <br> ${printFavs}
               </div>
               <button type="button" class="btn btn-dark btn-sm ml-3 ms-auto" style="color:#C9D1D4">Leave</button>
             </div>    
@@ -418,7 +423,7 @@ const submitOrgForm = (e) => {
   const name = formName;
   const repos = randomRepos;
   // Create generic top-five repos
-  const topFive = ['fav-repo-1','fav-repo-2','fav-repo-3','fav-repo-4','fav-repo-5'];
+  const topFive = ['favRepo1','favRepo2','favRepo3','favRepo4','favRepo5'];
   // Create new object
   const obj = {
     img,
