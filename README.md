@@ -45,7 +45,11 @@ For user to see various aspects of their GitSub profile including:
 - Repositories Page
 ![]()
 - Projects Page
-![]()
+![gitsub-1](https://user-images.githubusercontent.com/76187279/107995743-a855c100-6f93-11eb-8e0f-e096f96632a3.png)
+![gitsub-2](https://user-images.githubusercontent.com/76187279/107995750-abe94800-6f93-11eb-94f5-05757c565f12.png)
+![gitsub-3](https://user-images.githubusercontent.com/76187279/107995760-aee43880-6f93-11eb-82cf-5e96cba6df3b.png)
+![gitsub-4](https://user-images.githubusercontent.com/76187279/107995798-c28f9f00-6f93-11eb-868d-721dcf3c410d.png)
+
 - Packages Page
 ![]()
 - Organizations Page
@@ -60,11 +64,7 @@ For user to see various aspects of their GitSub profile including:
 - [INSERT SEPARATE LINKS TO LOOM VIDEOS]
 - [Overview Page]()
 - [Repositories Page]()
-- Projects: 
-![gitsub-1](https://user-images.githubusercontent.com/76187279/107995743-a855c100-6f93-11eb-8e0f-e096f96632a3.png)
-![gitsub-2](https://user-images.githubusercontent.com/76187279/107995750-abe94800-6f93-11eb-94f5-05757c565f12.png)
-![gitsub-3](https://user-images.githubusercontent.com/76187279/107995760-aee43880-6f93-11eb-82cf-5e96cba6df3b.png)
-![gitsub-4](https://user-images.githubusercontent.com/76187279/107995798-c28f9f00-6f93-11eb-868d-721dcf3c410d.png)
+- Projects: https://www.loom.com/share/8c5b60a037a7458180a15d8f955af395
 
 - [Packages Page]()
 - [Organizations Page](https://www.loom.com/share/840adfb82fcd4a1c94e9d0ed0dc8ac61)
