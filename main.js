@@ -108,23 +108,23 @@ const favoriteRepos = [];
 // Pins Array
 const pins = [
   {
-    name: "affirmation-generator",
+    name: "🖥️ affirmation-generator",
     description:
       "This app randomly generates an affirmation statement. Built by React.js.",
     id: "aaa",
   },
   {
-    name: "github-clone",
+    name: "🖥️ github-clone",
     description: "Powered by HTML, CSS, Vanilla Javascript, Bootstrap.",
     id: "bbb",
   },
   {
-    name: "accessibility-hacks",
+    name: "🖥️ accessibility-hacks",
     description: "Snippets to enhance app accessibility.",
     id: "ccc",
   },
   {
-    name: "portfolio",
+    name: "🖥️ m0nicas-portfolio",
     description: "Personal portfolio site, deployed through Netlify.",
     id: "ddd",
   },
