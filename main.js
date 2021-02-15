@@ -393,7 +393,7 @@ const favRepoString = (arr) => {
 };
 
 // create cards
-const orgCard = (item) => {
+const orgCard = (item, i) => {
   let printFavs = favRepoString(item.topFive);
   return `<div class="card bg-transparent">
             <div class="card-body d-flex flex-row border border-2 border-dark rounded">
@@ -407,7 +407,7 @@ const orgCard = (item) => {
                 member and collaborator on ${item.repos} repositories
                 <br> ${printFavs}
               </div>
-              <button type="button" class="btn btn-dark btn-sm ml-3 ms-auto" style="color:#C9D1D4">Leave</button>
+              <button id = "${i}" type="button" class="btn btn-dark btn-sm ml-3 ms-auto" style="color:#C9D1D4">Leave</button>
             </div>    
           </div>`;
 };
