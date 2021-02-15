@@ -5,27 +5,27 @@ const projects = [
   {
     name: 'my-goals',
     description: 'No description',
-    date: new Date('2021-01-30T03:32:00')
+    date: new Date('2021-01-30T03:32:00'),
   },
   {
     name: 'Team Project',
     description: 'goals for first team project',
-    date: new Date('2020-12-01T08:00:00')
+    date: new Date('2020-12-01T08:00:00'),
   },
   {
     name: 'Personal Project',
     description: 'No description',
-    date: new Date('2021-02-02T12:30:00')
+    date: new Date('2021-02-02T12:30:00'),
   },
   {
     name: 'Project 4',
     description: 'No description',
-    date: new Date('2021-02-04T09:14:00')
+    date: new Date('2021-02-04T09:14:00'),
   },
   {
     name: 'NSS-goals',
     description: 'goals to achieve at NSS',
-    date: new Date('2021-02-02T10:00:00')
+    date: new Date('2021-02-02T10:00:00'),
   },
 ];
 
@@ -64,42 +64,36 @@ const packages = [
     description:
       "A software platform used for building applications based on containers — small and lightweight execution environments.",
     iconImgSrc: "packagesIcons/Docker.png",
-    id: 0,
   },
   {
     name: "Apache Maven",
     description:
       "A default package manager used for the Java programming language and the Java runtime environment.",
     iconImgSrc: "packagesIcons/Apache-Maven.png",
-    id: 1,
   },
   {
     name: "NuGet",
     description:
       "A free and open source package manager used for the Microsoft development platforms including .NET.",
     iconImgSrc: "packagesIcons/NuGet.png",
-    id: 2,
   },
   {
     name: "RubyGems",
     description:
       "A standard format for distributing Ruby programs and libraries used for the Ruby programming language.",
     iconImgSrc: "packagesIcons/RubyGems.png",
-    id: 3,
   },
   {
     name: "npm",
     description:
       "A package manager for JavaScript, included with Node.js. npm makes it easy for developers to share and reuse code.",
     iconImgSrc: "packagesIcons/npm.png",
-    id: 4,
   },
   {
     name: "Containers",
     description:
       "A single place for your team to manage Docker images and decide who can see and access your images.",
     iconImgSrc: "packagesIcons/Containers.png",
-    id: 5,
   },
 ];
 // Repos Array
@@ -143,8 +137,8 @@ const pins = [
 // End Arrays
 
 // HTML string of Package cards to be printed to DOM
-const packageCardString = (item) => {
-  return `<div class="card border-secondary m-2 bg-transparent" style="width: 20rem; height: 18rem;" id="${item.id}">
+const packageCardString = (item, i) => {
+  return `<div class="card border-secondary m-2 bg-transparent" style="width: 20rem; height: 18rem;" id="${i}">
             <div class="card-body text-secondary">
               <img src="${item.iconImgSrc}" style="width: 3rem; height: 3rem;">
               <h5 class="card-title">${item.name}</h5>
@@ -152,7 +146,7 @@ const packageCardString = (item) => {
             </div>
             <div class="d-flex flex-wrap mt-auto mx-auto mb-3" id="package-buttons">
                 <button type="button" class="btn btn-secondary m-1">Learn More</button>
-                <button type="button" class="btn btn-danger m-1" id="delete-package">Delete</button>
+                <button type="button" class="btn btn-danger m-1" id="${i}">Delete</button>
             </div>
           </div>`;
 };
@@ -164,21 +158,19 @@ const packageMaker = (e) => {
   const name = document.querySelector("#package-name").value;
   const description = document.querySelector("#package-description").value;
   const iconImgSrc = document.querySelector("#package-img-src").value;
-  const id = 1;
 
   const newPackage = {
     name,
     description,
     iconImgSrc,
-    id,
   };
 
   if (!name) {
     alert("Please input name");
   } else {
     packages.push(newPackage);
-    createCards(packages, packageCardString, "#package-container");
-    document.querySelector("#package-form-container").reset();
+    createCards(packages, packageCardString, '#package-container');
+    document.querySelector('form').reset();
   }
 };
 
@@ -187,8 +179,8 @@ const deletePackage = (e) => {
   let targetId = e.target.id;
   let targetType = e.target.type;
 
-  if (targetId === "delete-package" && targetType === "button") {
-    packages.splice(packages.length - 1, 1);
+  if (targetType === "button") {
+    packages.splice(targetId, 1);
   }
   createCards(packages, packageCardString, "#package-container");
 };
@@ -255,19 +247,18 @@ const submitPinnedCard = (e) => {
 
   pins.push(newPin);
   createCards(pins, pinCard, "#pin-container");
-  document.querySelector("#pin-form").reset();
   pins.forEach((pin) =>
     document
       .getElementById(pin.id)
       .addEventListener("click", (e) => removePin(e))
-    );
-  
+  );
+  document.querySelector("form").reset();
 };
 
 const pinButtonEvent = () => {
   document
-    .querySelector("#customize")
-    .addEventListener("click", submitPinnedCard);
+    .querySelector("#pin-form")
+    .addEventListener("submit", submitPinnedCard);
   // document.querySelector(".card").addEventListener("click", (e) => {
   //   console.log(e);
   //   removePin(e); 
@@ -289,8 +280,8 @@ const printToDom = (divId, textToPrint) => {
 const createCards = (arr, card, id) => {
   let domString = "";
 
-  for (let item of arr) {
-    domString += card(item);
+  for (let [i, item] of arr.entries()) {
+    domString += card(item, i);
   }
   printToDom(id, domString);
 };
@@ -303,7 +294,7 @@ const profileString = `<!-- Profile -->
   class="img-fluid rounded-circle"
   alt="profile picture"
   height="200"
-  width="200"
+  width="2
 />
 <!-- Name -->
 <h4>Monica Powell</h4>
@@ -476,9 +467,6 @@ const removeOrg = (e) => {
   // Capture type and Id of button click
   const targetType = e.target.type;
   const targetId = e.target.id;
-  console.log(e);
-  console.log(targetType);
-  console.log(targetId);
   // Remove that specific element from array
   if (targetType === "button") {
     organizations.splice(targetId, 1);
@@ -541,27 +529,27 @@ const projectsFormInfo = (e) => {
 
   const name = document.querySelector('#project-board-name').value;
   const description = document.querySelector('#project-description').value;
-  const date = Date();
+  const date = new Date();
 
   const obj = {
     name,
     description,
-    date
+    date,
   };
   projects.push(obj);
   createCards(projects, projectCards, '#project-container');
   document.querySelector('form').reset();
-  document.querySelector('#sort-btn').addEventListener('click', sortProjectCards) 
+  document.querySelector('#sort-btn').addEventListener('click', sortProjectCards);
 };
-
 //Gabby stretch goal - sort cards 
 const sortProjectCards = (e) => {
-
   if (e.target.id === 'sort-btn') {
-       sortedProjects = projects.slice().sort((a, b) => b.date - a.date);
+    sortedProjects = projects.sort((a, b) => b.date - a.date);
   };
   createCards(sortedProjects, projectCards, '#project-container');
 };
+
+
 
 // Runs page's functions
 const pageInit = () => {
@@ -579,14 +567,14 @@ const pageInit = () => {
       .querySelector("#create-package")
       .addEventListener("click", packageMaker);
     document
-      .querySelector("#package-container")
-      .addEventListener("click", deletePackage);
-  } else if (fileName[0] === "organizations.html") {
-    createCards(organizations, orgCard, "#org-objects-container");
-  } else if (fileName[0] === "projects.html") {
-    createCards(projects, projectCards, "#project-container");
-    projectsForm();
+      .querySelector('#package-container')
+      .addEventListener('click', deletePackage);  
+  } else if (fileName[0] === 'organizations.html') {
+    createCards(organizations, orgCard, '#org-objects-container');
+  } else if (fileName[0] === 'projects.html') {
+    createCards(projects, projectCards, '#project-container');
     document.querySelector('#sort-btn').addEventListener('click', sortProjectCards);
+    projectsForm();
   }
 };
 
