@@ -255,11 +255,13 @@ const submitPinnedCard = (e) => {
 
   pins.push(newPin);
   createCards(pins, pinCard, "#pin-container");
+  document.querySelector("#pin-form").reset();
   pins.forEach((pin) =>
     document
       .getElementById(pin.id)
       .addEventListener("click", (e) => removePin(e))
-  );
+    );
+  
 };
 
 const pinButtonEvent = () => {
