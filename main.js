@@ -1,30 +1,31 @@
+  
 // Start Arrays
 // Projects Array
 const projects = [
   {
     name: 'my-goals',
     description: 'No description',
-    date: new Date('2021-01-30T03:32:00'),
+    date: new Date('2021-01-30T03:32:00')
   },
   {
     name: 'Team Project',
     description: 'goals for first team project',
-    date: new Date('2020-12-01T08:00:00'),
+    date: new Date('2020-12-01T08:00:00')
   },
   {
     name: 'Personal Project',
     description: 'No description',
-    date: new Date('2021-02-02T12:30:00'),
+    date: new Date('2021-02-02T12:30:00')
   },
   {
     name: 'Project 4',
     description: 'No description',
-    date: new Date('2021-02-04T09:14:00'),
+    date: new Date('2021-02-04T09:14:00')
   },
   {
     name: 'NSS-goals',
     description: 'goals to achieve at NSS',
-    date: new Date('2021-02-02T10:00:00'),
+    date: new Date('2021-02-02T10:00:00')
   },
 ];
 
@@ -32,26 +33,26 @@ let sortedProjects = [];
 // Organizations Array
 const organizations = [
   {
-    img: 'images/orgImgs/oi_nss.png',
-    name: 'nss-evening-cohort-14',
+    img: "images/orgImgs/oi_nss.png",
+    name: "nss-evening-cohort-14",
     repos: 30,
     topFive: ['productCards','petAdoption','sortingHat','gitSub','instaFam'],
   },
   {
-    img: 'images/orgImgs/oi_org1.png',
-    name: 'React Ladies',
+    img: "images/orgImgs/oi_org1.png",
+    name: "React Ladies",
     repos: 32,
     topFive: ['searchEngine','dataMapper','weatherApp','snowMap','gpsLocator'],
   },
   {
-    img: 'images/orgImgs/oi_org2.png',
-    name: 'TN Code Pros',
+    img: "images/orgImgs/oi_org2.png",
+    name: "TN Code Pros",
     repos: 20,
     topFive: ['trafficMap','liveMusicCalendar','restaurantRater','nhlStatsKeeper','barRaterApp'],
   },
   {
-    img: 'images/orgImgs/oi_org3.png',
-    name: 'Fortune 500 Devs',
+    img: "images/orgImgs/oi_org3.png",
+    name: "Fortune 500 Devs",
     repos: 27,
     topFive: ['stockModel','facebookUserStats','tiktokAPI','blackRockFunds','appleOptimizer'],
   },
@@ -59,57 +60,57 @@ const organizations = [
 // Packages Array
 const packages = [
   {
-    name: 'Docker',
+    name: "Docker",
     description:
-      'A software platform used for building applications based on containers — small and lightweight execution environments.',
-    iconImgSrc: 'packagesIcons/Docker.png',
+      "A software platform used for building applications based on containers — small and lightweight execution environments.",
+    iconImgSrc: "packagesIcons/Docker.png",
     id: 0,
   },
   {
-    name: 'Apache Maven',
+    name: "Apache Maven",
     description:
-      'A default package manager used for the Java programming language and the Java runtime environment.',
-    iconImgSrc: 'packagesIcons/Apache-Maven.png',
+      "A default package manager used for the Java programming language and the Java runtime environment.",
+    iconImgSrc: "packagesIcons/Apache-Maven.png",
     id: 1,
   },
   {
-    name: 'NuGet',
+    name: "NuGet",
     description:
-      'A free and open source package manager used for the Microsoft development platforms including .NET.',
-    iconImgSrc: 'packagesIcons/NuGet.png',
+      "A free and open source package manager used for the Microsoft development platforms including .NET.",
+    iconImgSrc: "packagesIcons/NuGet.png",
     id: 2,
   },
   {
-    name: 'RubyGems',
+    name: "RubyGems",
     description:
-      'A standard format for distributing Ruby programs and libraries used for the Ruby programming language.',
-    iconImgSrc: 'packagesIcons/RubyGems.png',
+      "A standard format for distributing Ruby programs and libraries used for the Ruby programming language.",
+    iconImgSrc: "packagesIcons/RubyGems.png",
     id: 3,
   },
   {
-    name: 'npm',
+    name: "npm",
     description:
-      'A package manager for JavaScript, included with Node.js. npm makes it easy for developers to share and reuse code.',
-    iconImgSrc: 'packagesIcons/npm.png',
+      "A package manager for JavaScript, included with Node.js. npm makes it easy for developers to share and reuse code.",
+    iconImgSrc: "packagesIcons/npm.png",
     id: 4,
   },
   {
-    name: 'Containers',
+    name: "Containers",
     description:
-      'A single place for your team to manage Docker images and decide who can see and access your images.',
-    iconImgSrc: 'packagesIcons/Containers.png',
+      "A single place for your team to manage Docker images and decide who can see and access your images.",
+    iconImgSrc: "packagesIcons/Containers.png",
     id: 5,
   },
 ];
 // Repos Array
 const repos = [
   {
-    name: 'example-repo',
-    description: 'This is an example of what a repository will look like.',
+    name: "example-repo",
+    description: "This is an example of what a repository will look like.",
   },
   {
-    name: 'create-your-own-repo',
-    description: 'Use the form below to create repositories of your own.',
+    name: "create-your-own-repo",
+    description: "Use the form below to create repositories of your own.",
   },
 ];
 
@@ -118,21 +119,25 @@ const favoriteRepos = [];
 // Pins Array
 const pins = [
   {
-    name: 'affirmation-generator',
+    name: "🖥️ affirmation-generator",
     description:
-      'This app randomly generates an affirmation statement. Built by React.js.',
+      "This app randomly generates an affirmation statement. Built by React.js.",
+    id: "aaa",
   },
   {
-    name: 'github-clone',
-    description: 'Powered by HTML, CSS, Vanilla Javascript, Bootstrap.',
+    name: "🖥️ github-clone",
+    description: "Powered by HTML, CSS, Vanilla Javascript, Bootstrap.",
+    id: "bbb",
   },
   {
-    name: 'accessibility-hacks',
-    description: 'Snippets to enhance app accessibility.',
+    name: "🖥️ accessibility-hacks",
+    description: "Snippets to enhance app accessibility.",
+    id: "ccc",
   },
   {
-    name: 'portfolio',
-    description: 'Personal portfolio site, deployed through Netlify.',
+    name: "🖥️ m0nicas-portfolio",
+    description: "Personal portfolio site, deployed through Netlify.",
+    id: "ddd",
   },
 ];
 // End Arrays
@@ -156,9 +161,9 @@ const packageCardString = (item) => {
 const packageMaker = (e) => {
   e.preventDefault();
 
-  const name = document.querySelector('#package-name').value;
-  const description = document.querySelector('#package-description').value;
-  const iconImgSrc = document.querySelector('#package-img-src').value;
+  const name = document.querySelector("#package-name").value;
+  const description = document.querySelector("#package-description").value;
+  const iconImgSrc = document.querySelector("#package-img-src").value;
   const id = 1;
 
   const newPackage = {
@@ -172,8 +177,8 @@ const packageMaker = (e) => {
     alert("Please input name");
   } else {
     packages.push(newPackage);
-    createCards(packages, packageCardString, '#package-container');
-    document.querySelector('#package-form-container').reset();
+    createCards(packages, packageCardString, "#package-container");
+    document.querySelector("#package-form-container").reset();
   }
 };
 
@@ -181,69 +186,65 @@ const packageMaker = (e) => {
 const deletePackage = (e) => {
   let targetId = e.target.id;
   let targetType = e.target.type;
-  
-  if (targetId === 'delete-package' && targetType === 'button') {
-    packages.splice((packages.length - 1),1);  
+
+  if (targetId === "delete-package" && targetType === "button") {
+    packages.splice(packages.length - 1, 1);
   }
-  createCards(packages, packageCardString, '#package-container');
+  createCards(packages, packageCardString, "#package-container");
 };
-  
+
 //Holly - card to print after submitting form
 const pinCard = (item) => {
-  return `<div class="card text-white bg-dark mb-3" style="max-width: 18rem;" id="${item.id}">
+  return `<div class="card text-white bg-dark mb-3 pin-card" style="max-width: 20rem;" id="${item.id}">
       <div class="card-header"></div>
       <div class="card-body">
         <h5 class="card-title">${item.name}</h5>
         <p class="card-text">${item.description}</p>
-        <div class="card-footer text-center font-weight-bolder" id="pinned">
-        <img
-        src="images/profileImgs/pi_fullStar.png"
-        alt="image of solid star"
-      />
+        <div class="card-footer text-center font-weight-bolder justify-content-center" id="pinned">
+        <button type="button" class="pin btn-large btn-dark m-1" id="pin-${item.id}">☆</button>
+        </div>
+        <div class="d-flex flex-wrap mt-auto mx-auto mb-3 justify-content-center" id="pin-buttons">
+        <button type="button" class="remove-pin btn btn-danger btn-large m-1" id="remove-${item.id}">Remove pin</button>
         </div>
       </div>
     </div>`;
 };
+//loop through pin array for each- add EL that takes item.id on click
+const removePin = (e) => {
+  const targetType = e.target.type;
+  const targetId = e.target.id;
 
-//Upon clicking 'customize' button, this form appears
-const pinButtonEvent = () => {
-  document.querySelector('#customize').addEventListener('click', pinCardForm);
+  if (targetType === "button" && targetId.includes("remove")) {
+    const id = targetId.split("-")[1];
+    const pinToDelete = pins.find((pin) => pin.id === id);
+    const deleteIndex = pins.indexOf(pinToDelete); //we have to do this by index
+
+    pins.splice(deleteIndex, 1);
+    createCards(pins, pinCard, "#pin-container");
+    resetEventListenersForPins()
+  }
 };
 
-//Stretch goal: add a search form to add items from other pages
-const pinCardForm = () => {
-  console.log('click');
-  let form = `<div class="mb-3 text-white">
-                <label for="title" class="form-label">Name</label>
-                <input
-                  type="text"
-                  class="form-control bg-dark text-white"
-                  id="text-input"
-                  placeholder="Your Project Name"
-                />
-              </div>
-              <div class="mb-3 text-white border-white">
-                <label for="description" class="form-label">Description</label>
-                <textarea
-                  class="form-control bg-dark text-white"
-                  id="pin-description"
-                  rows="3"
-                ></textarea>
-              </div>
-              <br />
-              <button type="button" class="btn btn-outline-info" id="submitButton">Submit</button>`;
-  printToDom('#form-container', form);
-  document
-    .querySelector('#submitButton')
-    .addEventListener('click', submitPinnedCard);
+//Without this function, removePin only removes one item from the array. It looks like it works, but it doesn't. SSOOO we need to reset those event listeners so we can run it again!
+const resetEventListenersForPins = () => {
+  pins.forEach((pin) =>
+    document
+      .getElementById(pin.id)
+      .removeEventListener("click", (e) => removePin(e))
+  );
+  pins.forEach((pin) =>
+    document
+      .getElementById(pin.id)
+      .addEventListener("click", (e) => removePin(e))
+  );
 };
 
 //Holly - this will take in the form info + push to pins array; then will reset form
 const submitPinnedCard = (e) => {
   e.preventDefault();
 
-  const name = document.querySelector('#text-input').value;
-  const description = document.querySelector('#pin-description').value;
+  const name = document.querySelector("#text-input").value;
+  const description = document.querySelector("#pin-description").value;
   const id = 1;
 
   const newPin = {
@@ -253,7 +254,29 @@ const submitPinnedCard = (e) => {
   };
 
   pins.push(newPin);
-  createCards(pins, pinCard, '#pin-container');
+  createCards(pins, pinCard, "#pin-container");
+  document.querySelector("#pin-form").reset();
+  pins.forEach((pin) =>
+    document
+      .getElementById(pin.id)
+      .addEventListener("click", (e) => removePin(e))
+    );
+  
+};
+
+const pinButtonEvent = () => {
+  document
+    .querySelector("#customize")
+    .addEventListener("click", submitPinnedCard);
+  // document.querySelector(".card").addEventListener("click", (e) => {
+  //   console.log(e);
+  //   removePin(e); 
+  // });
+  pins.forEach((pin) =>
+    document
+      .getElementById(pin.id)
+      .addEventListener("click", (e) => removePin(e)) 
+  );
 };
 
 // Print to DOM function
@@ -264,7 +287,7 @@ const printToDom = (divId, textToPrint) => {
 
 // Create card function
 const createCards = (arr, card, id) => {
-  let domString = '';
+  let domString = "";
 
   for (let item of arr) {
     domString += card(item);
@@ -329,7 +352,9 @@ const profileString = `<!-- Profile -->
 <!-- Sponsors -->
   <!-- Print Images of Sponsors Object Here -->`;
 
-const repoCard = (item) => `<div class="repo-card w-100 bottom-border" style="width: 18rem;">
+const repoCard = (
+  item
+) => `<div class="repo-card w-100 bottom-border" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">${item.name}</h5>
       <p class="card-text">${item.description}</p>
@@ -337,17 +362,17 @@ const repoCard = (item) => `<div class="repo-card w-100 bottom-border" style="wi
   </div>`;
 
 const buildReposPage = () => {
-  createCards(repos, repoCard, '#reposContainer');
+  createCards(repos, repoCard, "#reposContainer");
 };
 
 const repoFormSubmit = (e) => {
   e.preventDefault();
 
-  const repoName = document.querySelector('#repoName').value;
-  const repoDescription = document.querySelector('#repoDescription').value;
+  const repoName = document.querySelector("#repoName").value;
+  const repoDescription = document.querySelector("#repoDescription").value;
 
-  document.querySelector('#repoName').value = '';
-  document.querySelector('#repoDescription').value = '';
+  document.querySelector("#repoName").value = "";
+  document.querySelector("#repoDescription").value = "";
 
   const newRepo = {
     name: repoName,
@@ -360,8 +385,8 @@ const repoFormSubmit = (e) => {
 
 const repoEvents = () => {
   document
-    .querySelector('#repoForm')
-    .addEventListener('submit', repoFormSubmit);
+    .querySelector("#repoForm")
+    .addEventListener("submit", repoFormSubmit);
 };
 
 // End Create Profile Card
@@ -404,9 +429,9 @@ const toggleOrgForm = (e) => {
   const formStatus = document.querySelector("#org-form-container");
 
   if (formStatus.style.display == "none") {
-    formStatus.style.display = "block"
+    formStatus.style.display = "block";
   } else if (formStatus.style.display == "block") {
-    formStatus.style.display = "none"
+    formStatus.style.display = "none";
   }
 };
 
@@ -418,13 +443,13 @@ const submitOrgForm = (e) => {
   const formName = document.querySelector("#org-text-input").value;
   // Create img array
   const imgArr = [
-    'images/orgImgs/oi_nss.png',
-    'images/orgImgs/oi_org1.png',
-    'images/orgImgs/oi_org2.png',
-    'images/orgImgs/oi_org3.png'
+    "images/orgImgs/oi_nss.png",
+    "images/orgImgs/oi_org1.png",
+    "images/orgImgs/oi_org2.png",
+    "images/orgImgs/oi_org3.png",
   ];
   // Generate random repos between 35 and 20
-  const randomRepos = Math.floor(Math.random() * (35 - 20 +1)) + 20;
+  const randomRepos = Math.floor(Math.random() * (35 - 20 + 1)) + 20;
   // Create new object properties
   const img = imgArr[Math.floor(Math.random() * imgArr.length)];
   const name = formName;
@@ -441,7 +466,7 @@ const submitOrgForm = (e) => {
   // Push object into organizations array
   organizations.push(obj);
   // Rebuild the DOM
-  createCards(organizations, orgCard, '#org-objects-container');
+  createCards(organizations, orgCard, "#org-objects-container");
   // Reset the form fields
   document.querySelector("form").reset();
 };
@@ -453,19 +478,23 @@ const removeOrg = (e) => {
   const targetId = e.target.id;
   // Remove that specific element from array
   if (targetType === "button") {
-    organizations.splice(targetId,1);
-  };
+    organizations.splice(targetId, 1);
+  }
   // Re-print organizations array
-  createCards(organizations, orgCard, '#org-objects-container');
+  createCards(organizations, orgCard, "#org-objects-container");
 };
 
 // Listen for Button Clicks
 const orgButtonEvents = () => {
-  const fileName = location.pathname.split('/').slice(-1);
-  if (fileName[0] === 'organizations.html') {
-    document.querySelector("#new-org-btn").addEventListener("click",toggleOrgForm);
-    document.querySelector("form").addEventListener("submit",submitOrgForm);
-    document.querySelector("#org-objects-container").addEventListener("click",removeOrg);
+  const fileName = location.pathname.split("/").slice(-1);
+  if (fileName[0] === "organizations.html") {
+    document
+      .querySelector("#new-org-btn")
+      .addEventListener("click", toggleOrgForm);
+    document.querySelector("form").addEventListener("submit", submitOrgForm);
+    document
+      .querySelector("#org-objects-container")
+      .addEventListener("click", removeOrg);
   }
 };
 // MG - End Org Page Functions
@@ -499,8 +528,8 @@ const projectsForm = () => {
   <button type="submit" class="btn btn-success">Create project</button>
 </form>`;
 
-  printToDom('#project-form', formString);
-  document.querySelector('form').addEventListener('submit', projectsFormInfo);
+  printToDom("#project-form", formString);
+  document.querySelector("form").addEventListener("submit", projectsFormInfo);
 };
 
 // Gabby - updating projects when form is filled in
@@ -509,58 +538,58 @@ const projectsFormInfo = (e) => {
 
   const name = document.querySelector('#project-board-name').value;
   const description = document.querySelector('#project-description').value;
-  const date = new Date();
+  const date = Date();
 
   const obj = {
     name,
     description,
-    date,
+    date
   };
   projects.push(obj);
   createCards(projects, projectCards, '#project-container');
   document.querySelector('form').reset();
-  document.querySelector('#sort-btn').addEventListener('click', sortProjectCards);
+  document.querySelector('#sort-btn').addEventListener('click', sortProjectCards) 
 };
+
 //Gabby stretch goal - sort cards 
 const sortProjectCards = (e) => {
+
   if (e.target.id === 'sort-btn') {
-    sortedProjects = projects.sort((a, b) => b.date - a.date);
+       sortedProjects = projects.slice().sort((a, b) => b.date - a.date);
   };
   createCards(sortedProjects, projectCards, '#project-container');
 };
 
-
-
 // Runs page's functions
 const pageInit = () => {
-  const fileName = location.pathname.split('/').slice(-1);
+  const fileName = location.pathname.split("/").slice(-1);
 
-  if (fileName[0] === 'repos.html') {
+  if (fileName[0] === "repos.html") {
     buildReposPage();
     repoEvents();
-  } else if (fileName[0] === '') {
-    createCards(pins, pinCard, '#pin-container');
+  } else if (fileName[0] === "") {
+    createCards(pins, pinCard, "#pin-container");
     pinButtonEvent();
-  } else if (fileName[0] === 'packages.html') {
-    createCards(packages, packageCardString, '#package-container');
+  } else if (fileName[0] === "packages.html") {
+    createCards(packages, packageCardString, "#package-container");
     document
-      .querySelector('#create-package')
-      .addEventListener('click', packageMaker);
+      .querySelector("#create-package")
+      .addEventListener("click", packageMaker);
     document
-      .querySelector('#package-container')
-      .addEventListener('click', deletePackage);  
-  } else if (fileName[0] === 'organizations.html') {
-    createCards(organizations, orgCard, '#org-objects-container');
-  } else if (fileName[0] === 'projects.html') {
-    createCards(projects, projectCards, '#project-container');
-    document.querySelector('#sort-btn').addEventListener('click', sortProjectCards);
+      .querySelector("#package-container")
+      .addEventListener("click", deletePackage);
+  } else if (fileName[0] === "organizations.html") {
+    createCards(organizations, orgCard, "#org-objects-container");
+  } else if (fileName[0] === "projects.html") {
+    createCards(projects, projectCards, "#project-container");
     projectsForm();
+    document.querySelector('#sort-btn').addEventListener('click', sortProjectCards);
   }
 };
 
 // Init function
 const init = () => {
-  printToDom('#profile-card', profileString);
+  printToDom("#profile-card", profileString);
   pageInit();
   orgButtonEvents();
 };
