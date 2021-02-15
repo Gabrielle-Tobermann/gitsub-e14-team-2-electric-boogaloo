@@ -3,8 +3,6 @@ body {
   color: #8b949e;
 }
 
-
-
 #profile-card {
   max-width: 250px;
 }
@@ -26,14 +24,6 @@ body {
 
 #package-form-container {
   margin-bottom: 10%;
-}
-
-#pin-container {
-  position: absolute;
-  right: 100px;
-  width: 60%;
-  padding: 10px;
-  border-bottom: 50%;
 }
 
 #pj-card-container {
