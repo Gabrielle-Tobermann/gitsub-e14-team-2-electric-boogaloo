@@ -64,42 +64,36 @@ const packages = [
     description:
       "A software platform used for building applications based on containers — small and lightweight execution environments.",
     iconImgSrc: "packagesIcons/Docker.png",
-    id: 0,
   },
   {
     name: "Apache Maven",
     description:
       "A default package manager used for the Java programming language and the Java runtime environment.",
     iconImgSrc: "packagesIcons/Apache-Maven.png",
-    id: 1,
   },
   {
     name: "NuGet",
     description:
       "A free and open source package manager used for the Microsoft development platforms including .NET.",
     iconImgSrc: "packagesIcons/NuGet.png",
-    id: 2,
   },
   {
     name: "RubyGems",
     description:
       "A standard format for distributing Ruby programs and libraries used for the Ruby programming language.",
     iconImgSrc: "packagesIcons/RubyGems.png",
-    id: 3,
   },
   {
     name: "npm",
     description:
       "A package manager for JavaScript, included with Node.js. npm makes it easy for developers to share and reuse code.",
     iconImgSrc: "packagesIcons/npm.png",
-    id: 4,
   },
   {
     name: "Containers",
     description:
       "A single place for your team to manage Docker images and decide who can see and access your images.",
     iconImgSrc: "packagesIcons/Containers.png",
-    id: 5,
   },
 ];
 // Repos Array
@@ -143,8 +137,8 @@ const pins = [
 // End Arrays
 
 // HTML string of Package cards to be printed to DOM
-const packageCardString = (item) => {
-  return `<div class="card border-secondary m-2 bg-transparent" style="width: 20rem; height: 18rem;" id="${item.id}">
+const packageCardString = (item, i) => {
+  return `<div class="card border-secondary m-2 bg-transparent" style="width: 20rem; height: 18rem;" id="${i}">
             <div class="card-body text-secondary">
               <img src="${item.iconImgSrc}" style="width: 3rem; height: 3rem;">
               <h5 class="card-title">${item.name}</h5>
@@ -152,7 +146,7 @@ const packageCardString = (item) => {
             </div>
             <div class="d-flex flex-wrap mt-auto mx-auto mb-3" id="package-buttons">
                 <button type="button" class="btn btn-secondary m-1">Learn More</button>
-                <button type="button" class="btn btn-danger m-1" id="delete-package">Delete</button>
+                <button type="button" class="btn btn-danger m-1" id="${i}">Delete</button>
             </div>
           </div>`;
 };
@@ -164,21 +158,19 @@ const packageMaker = (e) => {
   const name = document.querySelector("#package-name").value;
   const description = document.querySelector("#package-description").value;
   const iconImgSrc = document.querySelector("#package-img-src").value;
-  const id = 1;
 
   const newPackage = {
     name,
     description,
     iconImgSrc,
-    id,
   };
 
   if (!name) {
     alert("Please input name");
   } else {
     packages.push(newPackage);
-    createCards(packages, packageCardString, "#package-container");
-    document.querySelector("#package-form-container").reset();
+    createCards(packages, packageCardString, '#package-container');
+    document.querySelector('form').reset();
   }
 };
 
@@ -187,8 +179,8 @@ const deletePackage = (e) => {
   let targetId = e.target.id;
   let targetType = e.target.type;
 
-  if (targetId === "delete-package" && targetType === "button") {
-    packages.splice(packages.length - 1, 1);
+  if (targetType === "button") {
+    packages.splice(targetId, 1);
   }
   createCards(packages, packageCardString, "#package-container");
 };
@@ -288,8 +280,8 @@ const printToDom = (divId, textToPrint) => {
 const createCards = (arr, card, id) => {
   let domString = "";
 
-  for (let item of arr) {
-    domString += card(item);
+  for (let [i, item] of arr.entries()) {
+    domString += card(item, i);
   }
   printToDom(id, domString);
 };
