@@ -58,6 +58,11 @@ For user to see various aspects of their GitSub profile including:
 - the form resets after the button is clicked
 
 4. Packages Page
+- A flexbox row with Profile card and header containing titles/logos for Packages
+- A flexbox column containg the package cards and form to create new packages
+- Ability to create and delete packages to be pushed into array
+- Reponsive design for mobile use
+- 
 5. Organizations Page
 
 - One flexbox div for responsive design, which holds two columns, the second column has multiple rows
@@ -81,9 +86,9 @@ For user to see various aspects of their GitSub profile including:
   ![gitsub-2](https://user-images.githubusercontent.com/76187279/107995750-abe94800-6f93-11eb-94f5-05757c565f12.png)
   ![gitsub-3](https://user-images.githubusercontent.com/76187279/107995760-aee43880-6f93-11eb-82cf-5e96cba6df3b.png)
   ![gitsub-4](https://user-images.githubusercontent.com/76187279/107995798-c28f9f00-6f93-11eb-868d-721dcf3c410d.png)
-
 - Packages Page
-  ![]()
+![Packages Top](images/readmeImgs/packagesTop.png)
+![Packages Bottom](images/readmeImgs/packagesBottom.png)
 - Organizations Page
   ![](images/readmeImgs/organizationsPage.png)
 
@@ -102,4 +107,5 @@ For user to see various aspects of their GitSub profile including:
 - [Projects](https://www.loom.com/share/8c5b60a037a7458180a15d8f955af395)
 
 - [Packages Page]()
+
 - [Organizations Page](https://www.loom.com/share/840adfb82fcd4a1c94e9d0ed0dc8ac61)
