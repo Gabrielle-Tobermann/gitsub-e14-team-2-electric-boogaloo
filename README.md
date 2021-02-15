@@ -64,7 +64,7 @@ For user to see various aspects of their GitSub profile including:
 - [INSERT SEPARATE LINKS TO LOOM VIDEOS]
 - [Overview Page]()
 - [Repositories Page]()
-- Projects: https://www.loom.com/share/8c5b60a037a7458180a15d8f955af395
+- [Projects](https://www.loom.com/share/8c5b60a037a7458180a15d8f955af395)
 
 - [Packages Page]()
 - [Organizations Page](https://www.loom.com/share/840adfb82fcd4a1c94e9d0ed0dc8ac61)
