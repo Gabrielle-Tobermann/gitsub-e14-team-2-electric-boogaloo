@@ -36,7 +36,7 @@ For user to see various aspects of their GitSub profile including:
 4. Packages Page
 - A flexbox row with Profile card and header containing titles/logos for Packages
 - A flexbox column containg the package cards and form to create new packages
-- Ability to create and delete packages
+- Ability to create and delete packages to be pushed into array
 - Reponsive design for mobile use
 - 
 5. Organizations Page
@@ -75,12 +75,6 @@ For user to see various aspects of their GitSub profile including:
 - [INSERT SEPARATE LINKS TO LOOM VIDEOS]
 - [Overview Page](https://www.loom.com/share/8e2f287f88aa4a0e90e30aa41107b6f5)
 - [Repositories Page]()
-<<<<<<< HEAD
 - [Projects Page]()
 - [Packages Page](https://www.loom.com/share/564e1cbd261f4e1999bd5f9e0ff8546d)
-=======
-- [Projects](https://www.loom.com/share/8c5b60a037a7458180a15d8f955af395)
-
-- [Packages Page]()
->>>>>>> e9596dab1ba68a49823fbc1c46551b06057583d6
 - [Organizations Page](https://www.loom.com/share/840adfb82fcd4a1c94e9d0ed0dc8ac61)
