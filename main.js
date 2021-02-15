@@ -501,13 +501,12 @@ const projectsFormInfo = (e) => {
   createCards(projects, projectCards, '#project-container');
   document.querySelector('form').reset();
   document.querySelector('#sort-btn').addEventListener('click', sortProjectCards);
-};
 
+};
 //Gabby stretch goal - sort cards 
 const sortProjectCards = (e) => {
-
   if (e.target.id === 'sort-btn') {
-      sortedProjects = projects.slice().sort((a, b) => b.date - a.date);
+    sortedProjects = projects.sort((a, b) => b.date - a.date);
   };
   createCards(sortedProjects, projectCards, '#project-container');
 };
