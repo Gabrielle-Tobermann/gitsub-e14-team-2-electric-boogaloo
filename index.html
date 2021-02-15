@@ -12,10 +12,10 @@
     />
     <!-- CSS Link -->
     <link rel="stylesheet" href="main.css" />
-    <title>Gitsub</title>
+    <title>Gitsub | Overview</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-sm navbar-dark bottom-border">
+    <nav class="navbar navbar-expand-sm navbar-dark bottom-border bg">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item">
           <a href="./" class="nav-link">Overview</a>
@@ -37,110 +37,116 @@
 
     <div class="container-fluid">
       <div class="row content">
-        <div class="profile col-3 mr-0" id="profile-card">
-          <!--Profile Card - aligned left-->
-        </div>
-      </div>
-    </div>
-    
-    <div class="col-sm-9" id="objects-container">
-      <!--This is for projects, repos, etc-->
-      <br /><!--Objects --><br />
-
-      <div class="col-sm-9" id="form-container">
-        <!--For each page's create & submit form-->
-        <br />
-        <!--Form-->
-        <div class="mb-3">
-          <label for="title" class="form-label">Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="text-input"
-            placeholder="Your Project Name"
+        <div class="col-sm-3 sidenav" id="profile-card"></div>
+        <div class="col-sm-7 text-left p-4">
+          <h2>Hi, I'm Monica 🖖🏽👩🏾‍💻</h2>
+          <br />
+          <img
+            src="https://user-images.githubusercontent.com/67122062/107889994-dd064180-6edb-11eb-9866-0fb1de5e68e5.png"
+            alt="Monica About Me image that says software engineer, content creator, and community organizer"
           />
-        </div>
-        <div class="mt-4">
-          <button
-            type="submit"
-            class="btn btn-secondary btn-lg my-4"
-            id="customize"
-          >
-            Customize Your Pins
-          </button>
+          <hr />
+          <p>
+            I'm a software engineer who is passionate about making open-source more accessible, creating technology to elevate people, and building community. Some technologies I enjoy working with include
+            ReactJS, Jamstack (JavaScript, APIs + Markup) and GraphQL. I recently was selected to be an inaugural GitHub Star based on my involvement in the tech community. My interest in the React ecosystem led me to launch React Ladies, a community for women and non-binary ReactJS developers.
+        </p>
+         <p class="text-center"><h5>Find me around the web 🌎:</h5>
+          <ul>
+            <li>Learning in public on <span style="color: #22A7FC">Twitch</span> or <span style="color: #22A7FC">monica.dev</span>📽  📝</li>
+            <li>Tinkering with interactions on <span style="color: #22A7FC">Codepen</span>🏓</li>
+            <li>Sharing updates on <span style="color: #22A7FC">LinkedIn</span> 👩🏾‍🔧 </li>
+          </ul>         
+        </p>
+        <img src="https://user-images.githubusercontent.com/67122062/107890111-d9bf8580-6edc-11eb-9fb3-64988ca78463.png" alt="monica avatar girl holding a heart" height="100px" width="100px">
+          <hr />
+          <h3 class="m-3">My highlights</h3>
+          <div class="row" id="pin-container"></div>
+          <hr />
+          <div id="form-container">
+            <form id="pin-form">
+            <div class="form-group mb-3" aria-required="true">
+              <input
+                id="text-input"
+                placeholder="Name *"
+                class="form-control bg-dark text-white-50"
+                type="text"
+                required
+                aria-required="true"
+              />
+            </div>
+            <div class="form-group mb-3">
+              <textarea
+                name="message"
+                id="pin-description"
+                placeholder="Description (optional) *"
+                rows="6"
+                class="form-control bg-dark text-white-50"
+              ></textarea>
+            </div>
+            <button type="submit" id="customize" class="btn btn-lg btn-success mb-3">
+              <span>Pin It</span>
+            </button>
+          </form>
+          </div>
+          <hr />
         </div>
       </div>
     </div>
-    <div class="form col-sm-3" id="form-container"></div>
-    <!--For each page's create & submit form-->
-
-    <div class="pin row" id="pin-container"></div>
     <!-- Footer -->
-    <nav
-      class="navbar navbar-expand-lg fixed-bottom navbar-light bg-light"
-      id="bottom-nav"
-    >
+    <footer class="navbar navbar-expand-lg d-flex justify-content-left">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">@ 2021 Github, Inc.</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarText"
-          aria-controls="navbarText"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Terms</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Privacy</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Security</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Status</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Docs</a>
-            </li>
-            <img src="GitHub-Mark-Light-64px.png" />
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact Github</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">API</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Training</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Blog</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-          </ul>
-        </div>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Terms</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Privacy</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Security</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Status</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Docs</a>
+          </li>
+          <img src="GitHub-Mark-Light-64px.png" />
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact Github</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">API</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Training</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+        </ul>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <!-- Bootstrap Script -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-      crossorigin="anonymous"
-    ></script>
-    <!-- JS Script -->
-    <script src="main.js" async defer></script>
-  </body>
+  <!-- Bootstrap Script -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"
+  ></script>
+  <!-- JS Script -->
+  <script src="main.js" async defer></script>
+</body>
 </html>

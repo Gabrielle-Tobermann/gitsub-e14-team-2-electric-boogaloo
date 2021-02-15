@@ -26,14 +26,6 @@ body {
   margin-bottom: 10%;
 }
 
-#pin-container {
-  position: absolute;
-  right: 100px;
-  width: 60%;
-  padding: 10px;
-  border-bottom: 50%;
-}
-
 #pj-card-container {
   height:max-content;
 }
