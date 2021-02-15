@@ -2,47 +2,58 @@
 // Projects Array
 const projects = [
   {
-    name: 'Project 1',
+    name: 'my-goals',
     description: 'No description',
+    date: new Date('2021-01-30T03:32:00'),
   },
   {
-    name: 'Project 2',
-    description: 'No description',
+    name: 'Team Project',
+    description: 'goals for first team project',
+    date: new Date('2020-12-01T08:00:00'),
   },
   {
-    name: 'Project 3',
+    name: 'Personal Project',
     description: 'No description',
+    date: new Date('2021-02-02T12:30:00'),
   },
   {
     name: 'Project 4',
     description: 'No description',
+    date: new Date('2021-02-04T09:14:00'),
   },
   {
-    name: 'Project 5',
-    description: 'No description',
+    name: 'NSS-goals',
+    description: 'goals to achieve at NSS',
+    date: new Date('2021-02-02T10:00:00'),
   },
 ];
+
+let sortedProjects = [];
 // Organizations Array
 const organizations = [
   {
     img: 'images/orgImgs/oi_nss.png',
     name: 'nss-evening-cohort-14',
     repos: 30,
+    topFive: ['productCards','petAdoption','sortingHat','gitSub','instaFam'],
   },
   {
     img: 'images/orgImgs/oi_org1.png',
     name: 'React Ladies',
     repos: 32,
+    topFive: ['searchEngine','dataMapper','weatherApp','snowMap','gpsLocator'],
   },
   {
     img: 'images/orgImgs/oi_org2.png',
     name: 'TN Code Pros',
     repos: 20,
+    topFive: ['trafficMap','liveMusicCalendar','restaurantRater','nhlStatsKeeper','barRaterApp'],
   },
   {
     img: 'images/orgImgs/oi_org3.png',
     name: 'Fortune 500 Devs',
     repos: 27,
+    topFive: ['stockModel','facebookUserStats','tiktokAPI','blackRockFunds','appleOptimizer'],
   },
 ];
 // Packages Array
@@ -356,7 +367,18 @@ const repoEvents = () => {
 // End Create Profile Card
 
 // MG - Start Create Organizations Cards
+// complex-data function
+const favRepoString = (arr) => {
+  let string = "Highlighted Repos:   ";
+  for (i = 0; i < arr.length; i++) {
+    string += `(${i+1})${arr[i]} `;
+  }
+  return string;
+};
+
+// create cards
 const orgCard = (item) => {
+  let printFavs = favRepoString(item.topFive);
   return `<div class="card bg-transparent">
             <div class="card-body d-flex flex-row border border-2 border-dark rounded">
               <div>
@@ -367,6 +389,7 @@ const orgCard = (item) => {
               </div>
               <div class="align-self-center" style="font-size:13px">  
                 member and collaborator on ${item.repos} repositories
+                <br> ${printFavs}
               </div>
               <button type="button" class="btn btn-dark btn-sm ml-3 ms-auto" style="color:#C9D1D4">Leave</button>
             </div>    
@@ -406,11 +429,14 @@ const submitOrgForm = (e) => {
   const img = imgArr[Math.floor(Math.random() * imgArr.length)];
   const name = formName;
   const repos = randomRepos;
+  // Create generic top-five repos
+  const topFive = ['favRepo1','favRepo2','favRepo3','favRepo4','favRepo5'];
   // Create new object
   const obj = {
     img,
     name,
     repos,
+    topFive,
   };
   // Push object into organizations array
   organizations.push(obj);
@@ -445,13 +471,13 @@ const orgButtonEvents = () => {
 // MG - End Org Page Functions
 
 // Gabby - projects page
-const projectCards = (projects) => {
+const projectCards = (item) => {
   return `<div class="card-body">
       <div>
-        <h5 class="card-title">${projects.name}</h5>
-        <p class="card-text fs-6"> Updated 1 mimute ago </p>
+        <h5 class="card-title">${item.name}</h5>
+        <p class="card-text fs-6">${item.date}</p>
       </div>
-      <p class="card-text">${projects.description}</p>
+      <p class="card-text">${item.description}</p>
       <p class="card-text" id="dots">...</p>
     </div>
 </div>`;
@@ -483,16 +509,27 @@ const projectsFormInfo = (e) => {
 
   const name = document.querySelector('#project-board-name').value;
   const description = document.querySelector('#project-description').value;
+  const date = new Date();
 
   const obj = {
     name,
     description,
+    date,
   };
   projects.push(obj);
   createCards(projects, projectCards, '#project-container');
-  //This will have to call onProjectsPage instead of createcards after PR is approved
   document.querySelector('form').reset();
+  document.querySelector('#sort-btn').addEventListener('click', sortProjectCards);
 };
+//Gabby stretch goal - sort cards 
+const sortProjectCards = (e) => {
+  if (e.target.id === 'sort-btn') {
+    sortedProjects = projects.sort((a, b) => b.date - a.date);
+  };
+  createCards(sortedProjects, projectCards, '#project-container');
+};
+
+
 
 // Runs page's functions
 const pageInit = () => {
@@ -516,6 +553,7 @@ const pageInit = () => {
     createCards(organizations, orgCard, '#org-objects-container');
   } else if (fileName[0] === 'projects.html') {
     createCards(projects, projectCards, '#project-container');
+    document.querySelector('#sort-btn').addEventListener('click', sortProjectCards);
     projectsForm();
   }
 };

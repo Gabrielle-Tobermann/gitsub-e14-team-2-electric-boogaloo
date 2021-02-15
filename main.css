@@ -41,7 +41,6 @@ body {
 #pj-header {
   padding-top: 20px;
   padding-bottom: 20px;
-  background-color: #171F20;
   color: #D1D1D1;
 }
 
@@ -62,4 +61,10 @@ body {
 
 .new-project {
   color: #D1D1D1;
+}
+
+#header-elements {
+  display: flex;
+  justify-content: space-between;
+  background-color:#171F20;
 }
