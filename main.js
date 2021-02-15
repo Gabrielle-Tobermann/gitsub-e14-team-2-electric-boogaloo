@@ -35,21 +35,25 @@ const organizations = [
     img: 'images/orgImgs/oi_nss.png',
     name: 'nss-evening-cohort-14',
     repos: 30,
+    topFive: ['productCards','petAdoption','sortingHat','gitSub','instaFam'],
   },
   {
     img: 'images/orgImgs/oi_org1.png',
     name: 'React Ladies',
     repos: 32,
+    topFive: ['searchEngine','dataMapper','weatherApp','snowMap','gpsLocator'],
   },
   {
     img: 'images/orgImgs/oi_org2.png',
     name: 'TN Code Pros',
     repos: 20,
+    topFive: ['trafficMap','liveMusicCalendar','restaurantRater','nhlStatsKeeper','barRaterApp'],
   },
   {
     img: 'images/orgImgs/oi_org3.png',
     name: 'Fortune 500 Devs',
     repos: 27,
+    topFive: ['stockModel','facebookUserStats','tiktokAPI','blackRockFunds','appleOptimizer'],
   },
 ];
 // Packages Array
@@ -363,7 +367,18 @@ const repoEvents = () => {
 // End Create Profile Card
 
 // MG - Start Create Organizations Cards
+// complex-data function
+const favRepoString = (arr) => {
+  let string = "Highlighted Repos:   ";
+  for (i = 0; i < arr.length; i++) {
+    string += `(${i+1})${arr[i]} `;
+  }
+  return string;
+};
+
+// create cards
 const orgCard = (item) => {
+  let printFavs = favRepoString(item.topFive);
   return `<div class="card bg-transparent">
             <div class="card-body d-flex flex-row border border-2 border-dark rounded">
               <div>
@@ -374,6 +389,7 @@ const orgCard = (item) => {
               </div>
               <div class="align-self-center" style="font-size:13px">  
                 member and collaborator on ${item.repos} repositories
+                <br> ${printFavs}
               </div>
               <button type="button" class="btn btn-dark btn-sm ml-3 ms-auto" style="color:#C9D1D4">Leave</button>
             </div>    
@@ -413,11 +429,14 @@ const submitOrgForm = (e) => {
   const img = imgArr[Math.floor(Math.random() * imgArr.length)];
   const name = formName;
   const repos = randomRepos;
+  // Create generic top-five repos
+  const topFive = ['favRepo1','favRepo2','favRepo3','favRepo4','favRepo5'];
   // Create new object
   const obj = {
     img,
     name,
     repos,
+    topFive,
   };
   // Push object into organizations array
   organizations.push(obj);
