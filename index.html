@@ -60,13 +60,14 @@
           <div class="row" id="pin-container"></div>
           <hr />
           <div id="form-container">
-            <div class="form-group mb-3">
+            <div class="form-group mb-3" aria-required="true">
               <input
                 id="text-input"
                 placeholder="Name *"
                 class="form-control bg-dark"
                 type="text"
                 required
+                aria-required="true"
               />
             </div>
             <div class="form-group mb-3">
@@ -77,6 +78,7 @@
                 rows="6"
                 class="form-control bg-dark text-white-50"
                 required
+                aria-required="true"
               ></textarea>
             </div>
             <button id="customize" class="btn btn-lg btn-success mb-3">
