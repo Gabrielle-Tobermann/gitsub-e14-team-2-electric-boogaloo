@@ -2,26 +2,33 @@
 // Projects Array
 const projects = [
   {
-    name: 'Project 1',
+    name: 'my-goals',
     description: 'No description',
+    date: new Date('2021-01-30T03:32:00')
   },
   {
-    name: 'Project 2',
-    description: 'No description',
+    name: 'Team Project',
+    description: 'goals for first team project',
+    date: new Date('2020-12-01T08:00:00')
   },
   {
-    name: 'Project 3',
+    name: 'Personal Project',
     description: 'No description',
+    date: new Date('2021-02-02T12:30:00')
   },
   {
     name: 'Project 4',
     description: 'No description',
+    date: new Date('2021-02-04T09:14:00')
   },
   {
-    name: 'Project 5',
-    description: 'No description',
+    name: 'NSS-goals',
+    description: 'goals to achieve at NSS',
+    date: new Date('2021-02-02T10:00:00')
   },
 ];
+
+let sortedProjects = [];
 // Organizations Array
 const organizations = [
   {
@@ -445,13 +452,13 @@ const orgButtonEvents = () => {
 // MG - End Org Page Functions
 
 // Gabby - projects page
-const projectCards = (projects) => {
+const projectCards = (item) => {
   return `<div class="card-body">
       <div>
-        <h5 class="card-title">${projects.name}</h5>
-        <p class="card-text fs-6"> Updated 1 mimute ago </p>
+        <h5 class="card-title">${item.name}</h5>
+        <p class="card-text fs-6">${item.date}</p>
       </div>
-      <p class="card-text">${projects.description}</p>
+      <p class="card-text">${item.description}</p>
       <p class="card-text" id="dots">...</p>
     </div>
 </div>`;
@@ -483,15 +490,26 @@ const projectsFormInfo = (e) => {
 
   const name = document.querySelector('#project-board-name').value;
   const description = document.querySelector('#project-description').value;
+  const date = Date();
 
   const obj = {
     name,
     description,
+    date
   };
   projects.push(obj);
   createCards(projects, projectCards, '#project-container');
-  //This will have to call onProjectsPage instead of createcards after PR is approved
   document.querySelector('form').reset();
+  document.querySelector('#sort-btn').addEventListener('click', sortProjectCards) 
+};
+
+//Gabby stretch goal - sort cards 
+const sortProjectCards = (e) => {
+
+  if (e.target.id === 'sort-btn') {
+       sortedProjects = projects.slice().sort((a, b) => b.date - a.date);
+  };
+  createCards(sortedProjects, projectCards, '#project-container');
 };
 
 // Runs page's functions
@@ -517,6 +535,7 @@ const pageInit = () => {
   } else if (fileName[0] === 'projects.html') {
     createCards(projects, projectCards, '#project-container');
     projectsForm();
+    document.querySelector('#sort-btn').addEventListener('click', sortProjectCards);
   }
 };
 

@@ -65,3 +65,8 @@ body {
 .new-project {
   color: #D1D1D1;
 }
+
+#header-elements {
+  display: flex;
+  justify-content: space-between;
+}
