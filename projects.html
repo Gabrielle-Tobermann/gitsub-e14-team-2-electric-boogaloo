@@ -38,7 +38,7 @@
     <!-- profile card -->
     <div class="container-fluid">
       <div class="d-flex flex-row">
-        <div id="profile-card" class="me-5">
+        <div id="profile-card" class="ms-md-5 me-md-5 ps-5 mt-3">
           <!--Profile Card - aligned left-->
           <!-- Profile -->
           <!-- Picture -->
@@ -102,9 +102,12 @@
           <!-- Print Images of Sponsors Object Here -->
         </div>
     <!-- end profile card -->
-      <div class="d-flex flex-column ms-5 mt-5 w-75 me-5"> 
+      <div class="d-flex flex-column ms-auto mt-5 w-75 me-5"> 
       <div class="card bg-transparent border-secondary w-100 m-3" id="pj-card-container">
-        <h5 class="card-header" id="pj-header">5 open </h5>
+        <div class="d-flex flex-row" id="header-elements">
+         <h5 class="card-header" id="pj-header">5 open </h5>
+         <button type="button" class="btn btn-outline-secondary" id="sort-btn">Sort</button>
+        </div>
         <div id="project-container"></div>
       </div>
         <div id="project-form" class="m-3"></div>
