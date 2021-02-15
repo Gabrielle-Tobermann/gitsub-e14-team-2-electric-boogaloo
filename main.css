@@ -1,0 +1,62 @@
+body {
+  background-color: #0f1218;
+  color: #8b949e;
+}
+
+#profile-card {
+  max-width: 250px;
+}
+
+.bottom-border {
+  border-bottom: 1px solid #30363d;
+}
+
+#reposPage {
+  max-width: 1300px;
+}
+
+.repo-card {
+  width: 100%;
+  background-color: #0f1218;
+  margin: 10px;
+  padding: 10px;
+}
+
+#package-form-container {
+  margin-bottom: 10%;
+}
+
+#pj-card-container {
+  height:max-content;
+}
+
+#pj-header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #D1D1D1;
+}
+
+#project-container .card-body {
+  border-bottom: #8b949e solid 0.5px;
+  border-top: #8b949e solid 0.5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#project-container .card-title {
+  color: #D1D1D1;
+}
+
+#dots {
+  font-size: 25px;
+}
+
+.new-project {
+  color: #D1D1D1;
+}
+
+#header-elements {
+  display: flex;
+  justify-content: space-between;
+  background-color:#171F20;
+}
