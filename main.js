@@ -490,7 +490,7 @@ const projectsFormInfo = (e) => {
 
   const name = document.querySelector('#project-board-name').value;
   const description = document.querySelector('#project-description').value;
-  const date = Date();
+  const date = new Date();
 
   const obj = {
     name,
