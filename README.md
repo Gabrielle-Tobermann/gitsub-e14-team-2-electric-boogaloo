@@ -5,8 +5,15 @@ To make a GitHub clone site
 1. [Main Project](https://www.figma.com/file/8vIX1yEXd2UxdWARbWqAje/GitSub?node-id=0%3A1)
 2. [Additional Organizations Page](https://www.figma.com/file/V64DhnLjKDpvmE4kjt6tEs/GitSub-Copy?node-id=5%3A20)
 # Link to the deployed project
+<<<<<<< HEAD
 https://team2-gitsub.netlify.app/
 [![Netlify Status](https://api.netlify.com/api/v1/badges/96a668c2-33ab-47a5-974b-29c6f5f776b9/deploy-status)](https://app.netlify.com/sites/team2-gitsub/deploys)
+=======
+
+https://team2-gitsub.netlify.app/
+[![Netlify Status](https://api.netlify.com/api/v1/badges/96a668c2-33ab-47a5-974b-29c6f5f776b9/deploy-status)](https://app.netlify.com/sites/team2-gitsub/deploys)
+
+>>>>>>> 975c59eec74495c8e6e07e53ffca3f261e6ed703
 # Link to your project board
 [Project Board](https://github.com/nss-evening-cohort-14/gitsub-e14-team-2-electric-boogaloo/projects/2)
 # Description of the user
@@ -25,7 +32,11 @@ For user to see various aspects of their GitSub profile including:
 - Profile card, which appears on every page.
 - About Me section that gives an overview of the user, contact information, and an avatar specific to her.
 - Container for pinned repos, with delete functionality
+<<<<<<< HEAD
 - Form for creating new pins or highlights.
+=======
+- Form for creating new pins or highlights
+>>>>>>> 975c59eec74495c8e6e07e53ffca3f261e6ed703
 2. Repositories Page
 3. Projects Page
 4. Packages Page
@@ -38,7 +49,6 @@ For user to see various aspects of their GitSub profile including:
 - A form which accepts a required Org name, and populates a new Org card upon submission
 - Ability to Leave organizations, and thus delete the card
 - Showcases on each card the top favorited repos from that Org (complex data)
-
 # Screenshots of your project
 - Overview Page
 ![m0nica](https://user-images.githubusercontent.com/67122062/107985961-beae4d80-6f90-11eb-9d14-438f4599f14c.png)
