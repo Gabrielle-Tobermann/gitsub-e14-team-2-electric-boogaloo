@@ -28,6 +28,11 @@ For user to see various aspects of their GitSub profile including:
 - Form for creating new pins or highlights.
 2. Repositories Page
 3. Projects Page
+- Includes cards with 5 projects which contain the project name, description and date
+- A Form to add a new project 
+- The name field displays a message if the field is not filled
+- Projects can be sorted from newest to oldest
+- the form resets after the button is clicked 
 4. Packages Page
 - A flexbox row with Profile card and header containing titles/logos for Packages
 - A flexbox column containg the package cards and form to create new packages
@@ -50,7 +55,11 @@ For user to see various aspects of their GitSub profile including:
 - Repositories Page
 ![]()
 - Projects Page
-![]()
+![gitsub-1](https://user-images.githubusercontent.com/76187279/107995743-a855c100-6f93-11eb-8e0f-e096f96632a3.png)
+![gitsub-2](https://user-images.githubusercontent.com/76187279/107995750-abe94800-6f93-11eb-94f5-05757c565f12.png)
+![gitsub-3](https://user-images.githubusercontent.com/76187279/107995760-aee43880-6f93-11eb-82cf-5e96cba6df3b.png)
+![gitsub-4](https://user-images.githubusercontent.com/76187279/107995798-c28f9f00-6f93-11eb-868d-721dcf3c410d.png)
+
 - Packages Page
 ![Packages Top](images/readmeImgs/packagesTop.png)
 ![Packages Bottom](images/readmeImgs/packagesBottom.png)
@@ -66,6 +75,12 @@ For user to see various aspects of their GitSub profile including:
 - [INSERT SEPARATE LINKS TO LOOM VIDEOS]
 - [Overview Page](https://www.loom.com/share/8e2f287f88aa4a0e90e30aa41107b6f5)
 - [Repositories Page]()
+<<<<<<< HEAD
 - [Projects Page]()
 - [Packages Page](https://www.loom.com/share/564e1cbd261f4e1999bd5f9e0ff8546d)
+=======
+- [Projects](https://www.loom.com/share/8c5b60a037a7458180a15d8f955af395)
+
+- [Packages Page]()
+>>>>>>> e9596dab1ba68a49823fbc1c46551b06057583d6
 - [Organizations Page](https://www.loom.com/share/840adfb82fcd4a1c94e9d0ed0dc8ac61)
