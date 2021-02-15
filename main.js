@@ -265,8 +265,8 @@ const submitPinnedCard = (e) => {
 
 const pinButtonEvent = () => {
   document
-    .querySelector("#customize")
-    .addEventListener("click", submitPinnedCard);
+    .querySelector("#pin-form")
+    .addEventListener("submit", submitPinnedCard);
   // document.querySelector(".card").addEventListener("click", (e) => {
   //   console.log(e);
   //   removePin(e); 
