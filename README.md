@@ -23,6 +23,11 @@ For user to see various aspects of their GitSub profile including:
 1. Overview Page
 2. Repositories Page
 3. Projects Page
+- Includes cards with 5 projects which contain the project name, description and date
+- A Form to add a new project 
+- The name field displays a message if the field is not filled
+- Projects can be sorted from newest to oldest
+- the form resets after the button is clicked 
 4. Packages Page
 5. Organizations Page
 - One flexbox div for responsive design, which holds two columns, the second column has multiple rows
