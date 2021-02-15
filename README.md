@@ -29,6 +29,11 @@ For user to see various aspects of their GitSub profile including:
 2. Repositories Page
 3. Projects Page
 4. Packages Page
+- A flexbox row with Profile card and header containing titles/logos for Packages
+- A flexbox column containg the package cards and form to create new packages
+- Ability to create and delete packages
+- Reponsive design for mobile use
+- 
 5. Organizations Page
 - One flexbox div for responsive design, which holds two columns, the second column has multiple rows
 - First column for Profile Card
@@ -47,7 +52,8 @@ For user to see various aspects of their GitSub profile including:
 - Projects Page
 ![]()
 - Packages Page
-![]()
+![Packages Top](images/readmeImgs/packagesTop.png)
+![Packages Bottom](images/readmeImgs/packagesBottom.png)
 - Organizations Page
 ![](images/readmeImgs/organizationsPage.png)
 # List of contributors and links to their GH profiles
@@ -61,5 +67,5 @@ For user to see various aspects of their GitSub profile including:
 - [Overview Page](https://www.loom.com/share/8e2f287f88aa4a0e90e30aa41107b6f5)
 - [Repositories Page]()
 - [Projects Page]()
-- [Packages Page]()
+- [Packages Page](https://www.loom.com/share/564e1cbd261f4e1999bd5f9e0ff8546d)
 - [Organizations Page](https://www.loom.com/share/840adfb82fcd4a1c94e9d0ed0dc8ac61)
