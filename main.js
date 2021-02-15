@@ -294,7 +294,7 @@ const profileString = `<!-- Profile -->
   class="img-fluid rounded-circle"
   alt="profile picture"
   height="200"
-  width="2
+  width="200"
 />
 <!-- Name -->
 <h4>Monica Powell</h4>
