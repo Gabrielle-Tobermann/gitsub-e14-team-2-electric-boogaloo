@@ -86,7 +86,6 @@ For user to see various aspects of their GitSub profile including:
   ![gitsub-2](https://user-images.githubusercontent.com/76187279/107995750-abe94800-6f93-11eb-94f5-05757c565f12.png)
   ![gitsub-3](https://user-images.githubusercontent.com/76187279/107995760-aee43880-6f93-11eb-82cf-5e96cba6df3b.png)
   ![gitsub-4](https://user-images.githubusercontent.com/76187279/107995798-c28f9f00-6f93-11eb-868d-721dcf3c410d.png)
-
 - Packages Page
 ![Packages Top](images/readmeImgs/packagesTop.png)
 ![Packages Bottom](images/readmeImgs/packagesBottom.png)
