@@ -34,6 +34,11 @@ For user to see various aspects of their GitSub profile including:
 - Projects can be sorted from newest to oldest
 - the form resets after the button is clicked 
 4. Packages Page
+- A flexbox row with Profile card and header containing titles/logos for Packages
+- A flexbox column containg the package cards and form to create new packages
+- Ability to create and delete packages to be pushed into array
+- Reponsive design for mobile use
+- 
 5. Organizations Page
 - One flexbox div for responsive design, which holds two columns, the second column has multiple rows
 - First column for Profile Card
@@ -56,7 +61,8 @@ For user to see various aspects of their GitSub profile including:
 ![gitsub-4](https://user-images.githubusercontent.com/76187279/107995798-c28f9f00-6f93-11eb-868d-721dcf3c410d.png)
 
 - Packages Page
-![]()
+![Packages Top](images/readmeImgs/packagesTop.png)
+![Packages Bottom](images/readmeImgs/packagesBottom.png)
 - Organizations Page
 ![](images/readmeImgs/organizationsPage.png)
 # List of contributors and links to their GH profiles
@@ -69,7 +75,6 @@ For user to see various aspects of their GitSub profile including:
 - [INSERT SEPARATE LINKS TO LOOM VIDEOS]
 - [Overview Page](https://www.loom.com/share/8e2f287f88aa4a0e90e30aa41107b6f5)
 - [Repositories Page]()
-- [Projects](https://www.loom.com/share/8c5b60a037a7458180a15d8f955af395)
-
-- [Packages Page]()
+- [Projects Page]()
+- [Packages Page](https://www.loom.com/share/564e1cbd261f4e1999bd5f9e0ff8546d)
 - [Organizations Page](https://www.loom.com/share/840adfb82fcd4a1c94e9d0ed0dc8ac61)
