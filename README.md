@@ -41,7 +41,7 @@ For user to see various aspects of their GitSub profile including:
 
 # Screenshots of your project
 - Overview Page
-![Final screenshot](https://user-images.githubusercontent.com/67122062/107975127-3c685e00-6f7d-11eb-87ab-2ff16839e07f.png)
+![m0nica](https://user-images.githubusercontent.com/67122062/107985961-beae4d80-6f90-11eb-9d14-438f4599f14c.png)
 ![Final About Me](https://user-images.githubusercontent.com/67122062/107975130-3ecab800-6f7d-11eb-94d4-02c1dc5a8ab7.png)
 - Repositories Page
 ![]()
@@ -59,7 +59,7 @@ For user to see various aspects of their GitSub profile including:
 @seancrossettie
 # Link to Loom video walkthrough of your app
 - [INSERT SEPARATE LINKS TO LOOM VIDEOS]
-- [Overview Page]()
+- [Overview Page](https://www.loom.com/share/8e2f287f88aa4a0e90e30aa41107b6f5)
 - [Repositories Page]()
 - [Projects Page]()
 - [Packages Page]()
