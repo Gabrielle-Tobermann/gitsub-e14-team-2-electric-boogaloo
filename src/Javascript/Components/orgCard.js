@@ -1,3 +1,5 @@
+import { favRepoString } from '../../Javascript/Helpers/Data/orgData';
+
 const orgCard = (item, i) => {
   let printFavs = favRepoString(item.topFive);
   return `<div class="card bg-transparent">

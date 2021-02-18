@@ -1,3 +1,6 @@
+import createCards from '../../../Javascript/Components/createCards';
+import repoCard from '../../../Javascript/Components/repoCard';
+
 const repos = [
   {
     name: "example-repo",
@@ -33,4 +36,10 @@ const repoFormSubmit = (e) => {
   buildReposPage();
 };
 
-export { repos, favoriteRepos, buildReposPage, repoFormSubmit };
+const repoEvents = () => {
+  document
+    .querySelector("#repoForm")
+    .addEventListener("submit", repoFormSubmit);
+};
+
+export { repos, favoriteRepos, buildReposPage, repoFormSubmit, repoEvents };

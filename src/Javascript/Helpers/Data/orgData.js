@@ -1,3 +1,6 @@
+import createCards from '../../../Javascript/Components/createCards';
+import orgCard from '../../../Javascript/Components/orgCard';
+
 const organizations = [
   {
     img: "images/orgImgs/oi_nss.png",
@@ -90,4 +93,17 @@ const removeOrg = (e) => {
   createCards(organizations, orgCard, "#org-objects-container");
 };
 
-export { organizations, favRepoString, toggleOrgForm, submitOrgForm, removeOrg };
+const orgButtonEvents = () => {
+  const fileName = location.pathname.split("/").slice(-1);
+  if (fileName[0] === "organizations.html") {
+    document
+      .querySelector("#new-org-btn")
+      .addEventListener("click", toggleOrgForm);
+    document.querySelector("form").addEventListener("submit", submitOrgForm);
+    document
+      .querySelector("#org-objects-container")
+      .addEventListener("click", removeOrg);
+  }
+};
+
+export { organizations, favRepoString, toggleOrgForm, submitOrgForm, removeOrg, orgButtonEvents };

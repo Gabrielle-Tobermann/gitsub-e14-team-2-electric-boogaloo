@@ -1,3 +1,6 @@
+import createCards from '../../../Javascript/Components/createCards';
+import pinCard from '../../../Javascript/Components/pinCard';
+
 const pins = [
   {
     name: "🖥️ affirmation-generator",
@@ -74,5 +77,16 @@ const submitPinnedCard = (e) => {
   document.querySelector("form").reset();
 };
 
+const pinButtonEvent = () => {
+  document
+    .querySelector("#pin-form")
+    .addEventListener("submit", submitPinnedCard);
+  pins.forEach((pin) =>
+    document
+      .getElementById(pin.id)
+      .addEventListener("click", (e) => removePin(e)) 
+  );
+};
 
-export { pins, removePin, resetEventListenersForPins, submitPinnedCard };
+
+export { pins, removePin, resetEventListenersForPins, submitPinnedCard, pinButtonEvent };

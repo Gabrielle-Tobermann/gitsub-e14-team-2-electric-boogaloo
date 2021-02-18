@@ -1,3 +1,6 @@
+import createCards from '../../../Javascript/Components/createCards';
+import packageCardString from '../../../Javascript/Components/packageCardString';
+ 
 const packages = [
   {
     name: "Docker",
@@ -69,4 +72,4 @@ const deletePackage = (e) => {
   createCards(packages, packageCardString, "#package-container");
 };
 
-export {packages, packageMaker, deletePackage };
+export { packages, packageMaker, deletePackage };

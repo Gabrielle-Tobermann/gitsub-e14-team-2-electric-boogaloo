@@ -1,3 +1,4 @@
+import printToDom from '../../Javascript/Helpers/printToDom';
 
 const createCards = (arr, card, id) => {
   let domString = "";

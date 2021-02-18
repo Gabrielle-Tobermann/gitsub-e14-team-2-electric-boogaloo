@@ -1,3 +1,6 @@
+import createCards from '../../../Javascript/Components/createCards';
+import projectCards from '../../../Javascript/Components/projectCards';
+
 const projects = [
   {
     name: 'my-goals',
@@ -26,6 +29,9 @@ const projects = [
   },
 ];
 
+const sortedProjects = [];
+
+
 const projectsFormInfo = (e) => {
   e.preventDefault();
 
@@ -51,4 +57,4 @@ const sortProjectCards = (e) => {
   createCards(sortedProjects, projectCards, '#project-container');
 };
 
-export { projects, projectsFormInfo, sortProjectCards };
+export { projects, sortedProjects, projectsFormInfo, sortProjectCards };

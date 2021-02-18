@@ -1,5 +1,5 @@
 import printToDom from '../../Javascript/Helpers/printToDom';
-// NEED IMPORT FOR PROJECTSFORMINFO
+import {projectsFormInfo } from '../../Javascript/Helpers/Data/projectsData';
 
 const projectsForm = () => {
   let formString = `<form>

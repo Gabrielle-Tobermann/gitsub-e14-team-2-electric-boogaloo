@@ -10,43 +10,6 @@ import orgCard from '../Javascript/Components/orgCard';
 import packageCardString from '../Javascript/Components/packageCardString';
 
 
-//Holly - this will take in the form info + push to pins array; then will reset form
-
-const pinButtonEvent = () => {
-  document
-    .querySelector("#pin-form")
-    .addEventListener("submit", submitPinnedCard);
-  // document.querySelector(".card").addEventListener("click", (e) => {
-  //   console.log(e);
-  //   removePin(e); 
-  // });
-  pins.forEach((pin) =>
-    document
-      .getElementById(pin.id)
-      .addEventListener("click", (e) => removePin(e)) 
-  );
-};
-
-const repoEvents = () => {
-  document
-    .querySelector("#repoForm")
-    .addEventListener("submit", repoFormSubmit);
-};
-
-// Listen for Button Clicks
-const orgButtonEvents = () => {
-  const fileName = location.pathname.split("/").slice(-1);
-  if (fileName[0] === "organizations.html") {
-    document
-      .querySelector("#new-org-btn")
-      .addEventListener("click", toggleOrgForm);
-    document.querySelector("form").addEventListener("submit", submitOrgForm);
-    document
-      .querySelector("#org-objects-container")
-      .addEventListener("click", removeOrg);
-  }
-};
-
 // Runs page's functions
 const pageInit = () => {
   const fileName = location.pathname.split("/").slice(-1);
